@@ -1,0 +1,4 @@
+Se encargará de la lógica de negocio y la comunicación entre model y view.
+Procesará las solicitudes del usuario y actualizará la vista según corresponda.
+Gestionará acciones como comprar una entrada, listar eventos, iniciar sesión, etc.
+Ejemplo: EventoController.php, UsuarioController.php, EntradaController.php.
