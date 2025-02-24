@@ -1,0 +1,4 @@
+Contendrá las clases y estructuras que representan los datos del sistema.
+Aquí definirán las entidades principales, como usuarios, eventos, entradas, etc.
+Puede incluir conexiones a la base de datos y consultas relacionadas.
+Ejemplo: Evento.php, Usuario.php, Entrada.php.
