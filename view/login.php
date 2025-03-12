@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/fondo.png') no-repeat center center/cover;
+            background: url('img/fondo.png') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
