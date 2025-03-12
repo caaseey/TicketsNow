@@ -1,3 +1,5 @@
+Asignatura de Base de datos
+
 Contendrá las clases y estructuras que representan los datos del sistema.
 Aquí definirán las entidades principales, como usuarios, eventos, entradas, etc.
 Puede incluir conexiones a la base de datos y consultas relacionadas.
