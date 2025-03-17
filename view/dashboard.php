@@ -1,4 +1,3 @@
-<!--HOLA HOLAAAA SI SE LEE ESTO FUNCIONA EL PULL-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
