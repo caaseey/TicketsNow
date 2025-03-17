@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Dashboard | Tickets Now</title>
+    <title>TicketsNow</title>
 </head>
 <body>
     <nav class="navbar">
@@ -21,7 +21,7 @@
         <div class="search-container">
             <input type="text" class="search-bar" placeholder="Buscar...">
             <button class="search-button">
-                <img src="img/lupa.png" alt="Buscar">
+                <img src="img/Interfaces/lupa.png" alt="Buscar">
             </button>
         </div>
         <div class="account-menu">
@@ -67,14 +67,14 @@
     </div>
     <section class="featured-concerts">
         <a href="#" class="concert-banner most-featured-concert">
-            <img src="img/banner_twice.jpeg" alt="TWICE">
+            <img src="img/Banners/aurora.png" alt="TWICE">
             <div class="concert-info">
                 <p>Madrid, España | 15 de marzo de 2025</p>
                 <h3>TWICE - World Tour Ready To Be</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_aespa.jpg" alt="aespa">
+            <img src="img/Banners/aespa.png" alt="aespa">
             <div class="concert-info">
                 <p>España | 15 de marzo de 2025</p>
                 <h3>aespa</h3>
