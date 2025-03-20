@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- Hola-->
- <!-- Hola23-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +9,6 @@
 <body>
     <nav class="navbar">
         <div>
-            <!-- Adois-->
             <a href="#" class="logo">
                 <img src="img/logo.png" alt="Tickets Now">
             </a>
