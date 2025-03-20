@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <!-- Hola-->
- <!-- Hola2-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
