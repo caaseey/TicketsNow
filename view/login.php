@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             left: 20px;
         }
 
-        header a img {
+        header a img { /*hola*/
             width: 100px;
             transition: transform 0.3s ease;
         }
