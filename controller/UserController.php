@@ -1,66 +1,80 @@
 <?php
-    session_start();
 
-    class UserController
+class UserController
+{
+    private $conn;
+
+    // Constructor de la clase
+    public function __construct()
     {
- 
-        private $conn;
+        // Solo necesitas la conexión si vas a usar la base de datos en otros métodos
+        // (En este ejemplo, el login usa "users.dat", no la base de datos)
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "ticketsnow";
 
-        //Constructor de la clase
-        public function __construct()
-        {
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "ticketsnow";
- 
-            $this->conn = new mysqli($servername, $username, $password, $dbname);
-           
-            // Check connection
-            if ($this->conn->connect_error)
-            {
-                die("Connection failed: " . $this->conn->connect_error);
-            }
-            echo "Connection Succesfully";
-        }
+        $this->conn = new mysqli($servername, $username, $password, $dbname);
 
-        //Método de login
-        public function login(): void 
-        {
-            //Recoge la información del formulario POST
-            $email = $_POST["email"];
-            $password = $_POST["password"];
- 
-            //Lanzamos el SELECT a la base de datos
-            $stmt = $this->conn->prepare(query: "SELECT email, password FROM users WHERE email=? AND password=?");
-            $stmt->bind_param( "ss", $email, $password);
-            $stmt->execute();
-       
-            if ($stmt->fetch()) 
-            {
-                //Guardamos en $_SESSION que ya está logueado en la web
-                $_SESSION["logged"] = true;
-                $_SESSION["email"] = $email;
-
-                //Cerramos la conexión con la base de datos
-                $this->conn->close();
- 
-                //Redirección a la página de perfil después de loguearse
-                header(header: "Location: ../view/profile.php"); //TO-DO Igual hay que cambiar la ruta del fichero del perfil de usuario
-                exit();
-            }
-        }
- 
-        //Método de loguot
-        public function logout(): void 
-        {
-            //TO-DO
-        }
-        
-        //Método de register
-        public function register(): void 
-        {
-            //TO-DO
+        // Check connection
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         }
     }
-?>
+
+    /**
+     * Método de login usando archivo "users.dat"
+     * Retorna un string con el mensaje de error, o vacío si no hay error.
+     */
+    public function login(): string
+    {
+        $error = "";
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $email = $_POST["email"] ?? "";
+            $password = $_POST["password"] ?? "";
+
+            if (empty($email) || empty($password)) {
+                $error = "Todos los campos son obligatorios.";
+            } else {
+                // Buscar usuario en archivo
+                $users = @file('users.dat', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [];
+
+                foreach ($users as $user) {
+                    $data = explode('||', $user);
+                    // data[0] = email
+                    // data[1] = password hash (BCRYPT u otro) -- no texto plano
+                    // data[2] = nombre
+                    // data[3] = apellido (opcional)
+
+                    // Verificamos que coincida el email y la contraseña (password_verify con hash)
+                    if ($data[0] === $email && password_verify($password, $data[1])) {
+                        // Usuario válido
+                        $_SESSION['logged_in'] = true;
+                        $_SESSION['user_name'] = $data[2];
+
+                        // Redirigimos al index o a donde gustes
+                        header("Location: index.php");
+                        exit;
+                    }
+                }
+
+                // Si llega aquí, es que no coincidió con ningún registro del archivo
+                $error = "Email o contraseña incorrectos.";
+            }
+        }
+        return $error;
+    }
+
+    // Método de logout (por implementar)
+    public function logout(): void
+    {
+        //TO-DO
+    }
+
+    // Método de register (por implementar)
+    public function register(): void
+    {
+        //TO-DO
+    }
+}

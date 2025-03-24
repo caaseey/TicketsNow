@@ -1,40 +1,17 @@
 <?php
-session_start();
+// loginUser.php
+
+// Inicia la sesión **solo** si no está iniciada
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+require_once __DIR__ . '/../controller/UserController.php';
+
 $error = "";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST["email"] ?? "";
-    $password = $_POST["password"] ?? "";
-
-    if (empty($email) || empty($password)) {
-        $error = "Todos los campos son obligatorios.";
-    } else {
-        // Buscar usuario en archivo
-        $users = @file('users.dat', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [];
-        $found = false;
-
-        foreach ($users as $user) {
-            $data = explode('||', $user);
-            // data[0] = email
-            // data[1] = password hash
-            // data[2] = nombre
-            // data[3] = apellido
-            // ...
-
-            if ($data[0] === $email && password_verify($password, $data[1])) {
-                $_SESSION['logged_in'] = true;
-                // Guardamos el nombre en vez del email
-                $_SESSION['user_name'] = $data[2]; // <--- Aquí
-                // Si también quieres el apellido:
-                // $_SESSION['user_lastname'] = $data[3];
-
-                header("Location: index.php");
-                exit;
-            }
-        }
-
-        $error = "Email o contraseña incorrectos.";
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $UserController = new UserController();
+    $error = $UserController->login();
 }
 ?>
 <!DOCTYPE html>
@@ -99,23 +76,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .image-container {
-            /* Elimina el `flex: 1;` o reducélo según convenga */
             max-width: 400px;
-            /* Ajusta a tu preferencia */
             border-radius: 15px;
             overflow: hidden;
             transition: transform var(--transition-speed) ease;
             margin: auto;
-            /* Para centrarla horizontalmente (opcional) */
         }
 
         .image-container img {
             width: 100%;
             height: auto;
-            /* Mantiene la proporción original */
             object-fit: cover;
         }
-
 
         h2 {
             color: var(--primary-color);
@@ -146,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         .button {
             font-family: 'Poppins', sans-serif;
-            /* O 'inherit' */
             background: var(--primary-color);
             color: white;
             padding: 14px;
@@ -158,7 +129,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-weight: 600;
             transition: all var(--transition-speed) ease;
         }
-
 
         .button:hover {
             background: var(--accent-color);
@@ -226,7 +196,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             text-decoration: underline;
         }
 
-        /* Botones adicionales para admin y artista (opcional ajustar estilos) */
         .extra-buttons {
             margin-top: 1rem;
             display: flex;
@@ -250,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <body>
     <header>
-        <a href="dashboard.php">
+        <a href="index.php">
             <img src="img/Interfaces/logo.png" alt="Logo Tickets Now">
         </a>
     </header>
@@ -260,6 +229,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <h2>Iniciar Sesión</h2>
             <p>¿Nuevo en Tickets Now? <a href="register.php">Crear cuenta</a></p>
 
+            <!-- Aquí mostramos el error (si existe) -->
             <?php if (!empty($error)): ?>
                 <div class="error"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
@@ -268,17 +238,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="input-group">
                     <input type="email" name="email" placeholder="Email" required>
                 </div>
-
                 <div class="input-group">
                     <input type="password" name="password" id="password" placeholder="Contraseña" required>
                     <span class="show-password" onclick="togglePassword()">MOSTRAR</span>
                 </div>
-
                 <button type="submit" class="button">Acceder</button>
 
                 <div class="links">
                     <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-                    <!-- Botones adicionales -->
                     <div class="extra-buttons">
                         <button type="button" class="button" onclick="window.location.href='loginAdmin.php'">
                             Login como administrador
