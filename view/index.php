@@ -67,7 +67,7 @@
     </div>
     <section class="featured-concerts">
         <a href="#" class="concert-banner most-featured-concert">
-            <img src="img/Banners/aurora.png" alt="TWICE">
+            <img src="img/Banners/twice.png" alt="TWICE">
             <div class="concert-info">
                 <p>Madrid, España | 15 de marzo de 2025</p>
                 <h3>TWICE - World Tour Ready To Be</h3>
