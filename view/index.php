@@ -10,7 +10,7 @@
     <nav class="navbar">
         <div>
             <a href="#" class="logo">
-                <img src="img/logo.png" alt="Tickets Now">
+                <img src="img/Interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
         <div class="section-nav">
@@ -32,7 +32,7 @@
                     <hr>
                 </div>
                 <div class="account-picture">
-                    <img src="img/icon_user.png" alt="Usuario">
+                    <img src="img/Interfaces/icon_user.png" alt="Usuario">
                 </div>
             </button>
             <div class="account-dropdown-menu">
@@ -81,28 +81,28 @@
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_imagine_dragons.jpg" alt="Imagine Dragons">
+            <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
             <div class="concert-info">
                 <p>EE.UU. | 3 de julio de 2025</p>
                 <h3>Imagine Dragons</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_ado.jpg" alt="Ado">
+            <img src="img/Banners/ado.png" alt="Ado">
             <div class="concert-info">
                 <p>Japón | 22 de abril de 2025</p>
                 <h3>Ado</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_ksi.jpg" alt="KSI">
+            <img src="img/Banners/ksi.png" alt="KSI">
             <div class="concert-info">
                 <p>Reino Unido | 10 de mayo de 2025</p>
                 <h3>KSI</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_eladio_carrion.jpeg" alt="Eladio Carrión">
+            <img src="img/Banners/eladioCarrion.png" alt="Eladio Carrión">
             <div class="concert-info">
                 <p>México | 20 de agosto de 2025</p>
                 <h3>Eladio Carrión</h3>
@@ -116,21 +116,21 @@
     </div>
     <section class="recommended-concerts">
         <a href="#" class="concert-banner">
-            <img src="img/banner_twice.jpeg" alt="TWICE">
+            <img src="img/Banners/twice.png" alt="TWICE">
             <div class="concert-info">
                 <p>Madrid, España | 15 de marzo de 2025</p>
                 <h3>TWICE - World Tour Ready To Be</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_aespa.jpg" alt="aespa">
+            <img src="img/Banners/aespa.png" alt="aespa">
             <div class="concert-info">
                 <p>Nueva York, EE.UU. | 8 de junio de 2025</p>
                 <h3>aespa - LIVE TOUR</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_ado.jpg" alt="Ado">
+            <img src="img/Banners/ado.png" alt="Ado">
             <div class="concert-info">
                 <p>Tokyo, Japón | 22 de abril de 2025</p>
                 <h3>Ado - Kyougen Tour</h3>
@@ -147,42 +147,42 @@
     </div>
     <section class="discover-concerts">
         <a href="#" class="concert-banner">
-            <img src="img/banner_imagine_dragons.jpg" alt="Imagine Dragons">
+            <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
             <div class="concert-info">
                 <p>EE.UU. | 3 de julio de 2025</p>
                 <h3>Imagine Dragons</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_ksi.jpg" alt="KSI">
+            <img src="img/Banners/ksi.png" alt="KSI">
             <div class="concert-info">
                 <p>Reino Unido | 10 de mayo de 2025</p>
                 <h3>KSI</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_eladio_carrion.jpeg" alt="Eladio Carrión">
+            <img src="img/Banners/eladioCarrion.png" alt="Eladio Carrión">
             <div class="concert-info">
                 <p>México | 20 de agosto de 2025</p>
                 <h3>Eladio Carrión</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_imagine_dragons.jpg" alt="Imagine Dragons">
+            <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
             <div class="concert-info">
                 <p>EE.UU. | 3 de julio de 2025</p>
                 <h3>Imagine Dragons</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_ksi.jpg" alt="KSI">
+            <img src="img/Banners/ksi.png" alt="KSI">
             <div class="concert-info">
                 <p>Reino Unido | 10 de mayo de 2025</p>
                 <h3>KSI</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/banner_eladio_carrion.jpeg" alt="Eladio Carrión">
+            <img src="img/Banners/eladioCarrion.png" alt="Eladio Carrión">
             <div class="concert-info">
                 <p>México | 20 de agosto de 2025</p>
                 <h3>Eladio Carrión</h3>
@@ -197,7 +197,7 @@
                 <p>“Una explosión de energía y pasión, con una banda que hizo vibrar cada rincón del lugar; la conexión
                     con el público fue inigualable.”</p>
                 <div class="review-user">
-                    <img src="img/user1.jpg" alt="User foto">
+                    <img src="img/Interfaces/users/user1.png" alt="User foto">
                     <div>
                         <h4>Zeng</h4>
                         <p>Aespa</p>
@@ -208,7 +208,7 @@
                 <p>“Un viaje sonoro espectacular, con un set de luces impresionante y un ambiente que nunca dejó de
                     moverse. ¡Increíble!”</p>
                 <div class="review-user">
-                    <img src="img/user2.jpg" alt="User foto">
+                    <img src="img/Interfaces/users/user2.png" alt="User foto">
                     <div>
                         <h4>Nishimura</h4>
                         <p>Ado</p>
@@ -219,7 +219,7 @@
                 <p>“Un recital lleno de improvisación y talento, donde los músicos crearon una atmósfera mágica que
                     mantuvo a todos en suspenso.”</p>
                 <div class="review-user">
-                    <img src="img/user3.jpg" alt="User foto">
+                    <img src="img/Interfaces/users/user3.png" alt="User foto">
                     <div>
                         <h4>Hyo-Rin</h4>
                         <p>Twice</p>
