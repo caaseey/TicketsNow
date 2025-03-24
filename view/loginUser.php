@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Si también quieres el apellido:
                 // $_SESSION['user_lastname'] = $data[3];
 
-                header("Location: dashboard.php");
+                header("Location: index.php");
                 exit;
             }
         }
@@ -48,14 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <style>
         :root {
             --primary-color: rgba(77, 106, 141, 1);
-            --accent-color:rgba(77, 106, 141, 1);
-            --text-dark:rgba(45, 52, 54, 1);
+            --accent-color: rgba(77, 106, 141, 1);
+            --text-dark: rgba(45, 52, 54, 1);
             --transition-speed: 0.3s;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: url('img/fondo.png') no-repeat center center/cover;
+            background: url('img/Interfaces/fondo.png') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             left: 20px;
         }
 
-        header a img { /*hola*/
+        header a img {
             width: 100px;
             transition: transform 0.3s ease;
         }
@@ -99,17 +99,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .image-container {
-            flex: 1;
+            /* Elimina el `flex: 1;` o reducélo según convenga */
+            max-width: 400px;
+            /* Ajusta a tu preferencia */
             border-radius: 15px;
             overflow: hidden;
             transition: transform var(--transition-speed) ease;
+            margin: auto;
+            /* Para centrarla horizontalmente (opcional) */
         }
 
         .image-container img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            /* Mantiene la proporción original */
             object-fit: cover;
         }
+
 
         h2 {
             color: var(--primary-color);
@@ -139,6 +145,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .button {
+            font-family: 'Poppins', sans-serif;
+            /* O 'inherit' */
             background: var(--primary-color);
             color: white;
             padding: 14px;
@@ -150,6 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-weight: 600;
             transition: all var(--transition-speed) ease;
         }
+
 
         .button:hover {
             background: var(--accent-color);
@@ -169,12 +178,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         @keyframes shake {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateX(0);
             }
+
             25% {
                 transform: translateX(-5px);
             }
+
             75% {
                 transform: translateX(5px);
             }
@@ -213,12 +226,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             text-decoration: underline;
         }
 
+        /* Botones adicionales para admin y artista (opcional ajustar estilos) */
+        .extra-buttons {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
                 margin: 1rem;
                 padding: 1.5rem;
             }
+
             .image-container {
                 max-height: 200px;
             }
@@ -229,7 +251,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <header>
         <a href="dashboard.php">
-            <img src="img/logo.png" alt="Logo Tickets Now">
+            <img src="img/Interfaces/logo.png" alt="Logo Tickets Now">
         </a>
     </header>
 
@@ -256,12 +278,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="links">
                     <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                    <!-- Botones adicionales -->
+                    <div class="extra-buttons">
+                        <button type="button" class="button" onclick="window.location.href='loginAdmin.php'">
+                            Login como administrador
+                        </button>
+                        <button type="button" class="button" onclick="window.location.href='loginArtista.php'">
+                            Login como artista
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
 
         <div class="image-container">
-            <img src="img/concierto.jpg" alt="Experiencia musical">
+            <img src="img/Interfaces/concierto.png" alt="Experiencia musical">
         </div>
     </section>
 </body>
@@ -275,4 +306,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 </script>
+
 </html>
