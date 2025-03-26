@@ -120,37 +120,37 @@ $user = $_SESSION['user'];
         </a>
     </header>
     <body>
-    <div class="profile-container">
-        <div class="profile-sidebar">
-            <img src="img/Interfaces/avatar.png" alt="Foto de perfil">
-            <h3><?php echo htmlspecialchars($user['name']); ?></h3>
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <img src="img/Interfaces/avatar.png" alt="Foto de perfil">
+                <h3><?php echo htmlspecialchars($user['name']); ?></h3>
+            </div>
+            <div class="profile-form">
+                <h2>Mi perfil</h2>
+                <form method="post" action="updateProfile.php">
+                    <div class="input-group">
+                        <label>Nombre</label>
+                        <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Apellido</label>
+                        <input type="text" name="lastname" value="<?php echo htmlspecialchars($user['lastname'] ?? ''); ?>">
+                    </div>
+                    <button type="submit" class="button">Actualizar</button>
+                </form>
+                <form method="post" action="updatePassword.php">
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Contraseña</label>
+                        <input type="password" name="password">
+                    </div>
+                    <button type="submit" class="button">Actualizar</button>
+                </form>
+            </div>
         </div>
-        <div class="profile-form">
-            <h2>Mi perfil</h2>
-            <form method="post" action="updateProfile.php">
-                <div class="input-group">
-                    <label>Nombre</label>
-                    <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
-                </div>
-                <div class="input-group">
-                    <label>Apellido</label>
-                    <input type="text" name="lastname" value="<?php echo htmlspecialchars($user['lastname'] ?? ''); ?>">
-                </div>
-                <button type="submit" class="button">Actualizar</button>
-            </form>
-            <form method="post" action="updatePassword.php">
-                <div class="input-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
-                </div>
-                <div class="input-group">
-                    <label>Contraseña</label>
-                    <input type="password" name="password">
-                </div>
-                <button type="submit" class="button">Actualizar</button>
-            </form>
-        </div>
-    </div>
-</body>
+    </body>
 </body>
 </html>
