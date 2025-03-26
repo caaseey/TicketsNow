@@ -1,144 +1,154 @@
+:root {
+    --blue: rgba(80, 118, 135, 1);
+    --light: rgba(248, 245, 231, 1);
+    --dark: rgba(51, 51, 51, 1);
+}
+
 body {
-    background: #f8f5e7;
-    color: #333;
-    padding-left: 6%;
-    padding-right: 6%;
+    overflow-x: hidden;
+    background: var(--light);
+    color: var(--dark);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1em;
     line-height: 1.5;
+    margin: 0;
 }
 
 /* NAVBAR */
+/* CONTAINER */
 .navbar {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2vh 0;
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    background-color: var(--blue);
 }
 
-.logo {
-    order: 0;
-    display: flex;
-    align-items: center;
-    height: 4vh; 
-}
+/* NAVBAR */
+/* LOGO */
 .logo img {
-    width: 150px; 
+    width: 10em;
+    max-width: 100%;
+    height: auto;
     transition: transform 0.3s ease;
 }
 .logo img:hover {
     transform: scale(1.05);
 }
 
-.section-nav {
-    display: flex;
-    gap: 2vw;
-}
-.section-nav a {
-    color: rgba(77, 106, 141, 1);
-    text-decoration: none;
-    font-size: 2vh;
-    padding: 1vh 1vw; 
-    border-radius: 1vh; 
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-.section-nav a:hover {
-    background-color: rgba(77, 106, 141, 1);
-    color: white;
-}
-
+/* NAVBAR */
+/* SEARCH BAR*/
 .search-container {
     display: flex;
     align-items: center;
     background: white;
-    border-radius: 4vh;
-    box-shadow: 0.5vh 0.5vh 1vh rgba(0, 0, 0, 0.2); 
-    height: 6vh;
-    width: 40vw;
-    transition: 0.3s;
+    border-radius: 2em;
+    height: 3em;
+    width: 40%;
     overflow: hidden;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
 }
 .search-container:hover {
-    box-shadow: 0.8vh 0.8vh 1vh rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.6em 1.2em rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
 }
 .search-bar {
     width: 100%;
     border: none;
     outline: none;
-    font-size: 2vh;
-    padding: 1vh;
-    border-radius: 4vh;
+    font-size: 1em;
+    padding: 0.5em;
     background: transparent; 
 }
+
 .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 1vh;
-    padding-right: 2vh;
-    display: flex;
-    align-items: center;
+    padding: 0.5em;
 }
 .search-button img {
-    width: 3vh; 
-    height: 3vh;
+    width: 2.5em;
+    height: 2.5em;
 }
 
+/* NAVBAR */
+/* ACCOUNT MENU */
 .account-menu {
     position: relative;
 }
 .account-button {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: white;
     border: none;
-    padding: 1vh 1vw;
-    border-radius: 4vh;
-    box-shadow: 0.5vh 0.5vh 1vh rgba(0, 0, 0, 0.2); 
+    padding: 0 1em;
+    height: 3em;
+    border-radius: 2em;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    height: 6vh;
-    transition: 0.3s;
-    overflow: hidden;
+    gap: 0.8em;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
 }
+.account-button:hover {
+    box-shadow: 0 0.8em 1.5em rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+}
+
 .account-icon {
     display: flex;
     flex-direction: column;
-    gap: 0.2vh;
+    justify-content: center;
+    gap: 0.3em;
     margin-right: 1vw;
     min-height: 0;
 }
 .account-icon hr {
-    margin: 0.2vh;
-    width: 2.5vw; 
-    height: 0.3vh;
-    background-color: rgba(77, 106, 141, 1);
+    margin: 0;
+    width: 1.5em;
+    height: 0.2em;
+    background-color: var(--blue);
     border: none;
-    border-radius: 2vh;
+    border-radius: 1em;
     transition: transform 0.3s ease-in-out;
 }
+
 .account-picture {
-    width: 5vh; 
-    height: 5vh;
+    width: 2.2em; 
+    height: 2.2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ddd;
+    background: white;
     border-radius: 50%;
+    overflow: hidden;
 }
 .account-picture img {
-    width: 7vh;  
-    height: 7vh;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
+
 .account-dropdown-menu {
     position: absolute;
     top: 110%;
     right: 0;
     background: white;
-    box-shadow: 0.5vh 0.5vh 1vh rgba(0, 0, 0, 0.2);
-    border-radius: 2vh;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 1.5em;
     display: none;
-    width: 12vw;
+    width: 12em;
     min-width: 150px;
     z-index: 100;
     transition: opacity 0.3s ease-in-out;
@@ -146,17 +156,21 @@ body {
 }
 .account-dropdown-menu ul {
     list-style: none;
-    padding: 1vh;
+    padding: 1em;
     margin: 0;
 }
 .account-dropdown-menu li {
-    padding: 1vh;
-    font-size: 2vh;
+    padding: 0.75em;
+    font-size: 1rem;
 }
 .account-dropdown-menu li a {
     text-decoration: none;
-    color: black;
+    color: var(--dark);
     display: block;
+    transition: color 0.2s;
+}
+.account-dropdown-menu li a:hover {
+    color: var(--blue);
 }
 .account-menu:focus-within .account-dropdown-menu {
     display: block;
@@ -193,7 +207,7 @@ body {
 }
 .main-concert-banner button {
     background: white; 
-    color: rgba(77, 106, 141, 1);
+    color: var(--blue);
     font-size: 3vh;
     font-weight: bold;
     letter-spacing: 0.1vh;
@@ -205,7 +219,7 @@ body {
     box-shadow: 0.3vh 0.3vh 0.5vh rgba(0, 0, 0, 0.2);
 }
 .main-concert-banner button:hover {
-    background-color: rgba(77, 106, 141, 1);
+    background-color: var(--blue);
     color: white;
     transform: scale(1.05); 
 }
@@ -221,14 +235,14 @@ body {
     display: inline-block;
     font-size: 3vh;
     font-weight: semi-bold;
-    color: rgba(77, 106, 141, 1);
+    color: var(--blue);
     margin-bottom: 0.5vh;
     
 }
 .section-title hr {
     width: 100%;
     height: 0.3vh;
-    background-color: rgba(77, 106, 141, 1); 
+    background-color: var(--blue); 
     border: none;
 }
 
@@ -251,7 +265,7 @@ body {
     transition: 0.3s ease-in-out;
 }
 .concert-banner:hover {
-    background-color: rgba(77, 106, 141, 1);
+    background-color: var(--blue);
     
 }
 .concert-banner:hover p, 
@@ -272,7 +286,7 @@ body {
     margin-left: 1vh;
     margin-top: 1.2vh;
     margin-bottom: 1vh;
-    color: rgba(77, 106, 141, 1);
+    color: var(--blue);
     transition: 0.3s ease-in-out;
 }
 .concert-info h3 {
@@ -320,11 +334,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.3vh solid rgba(77, 106, 141, 1);
+    border: 0.3vh solid var(--blue);
     border-radius: 2vh;
     font-size: 2vh;
     font-weight: bold;
-    color: rgba(77, 106, 141, 1);
+    color: var(--blue);
     height: 45vh;
 }
 
@@ -396,8 +410,7 @@ pc: 1920 × 1080 px
         padding-bottom: 15vh; 
     }
 }
-*/
-/*
+
 @media screen and (max-width: 480px) {
     .logo {
         display: flex;
@@ -459,7 +472,7 @@ pc: 1920 × 1080 px
         justify-content: center;
     }
     .section-nav a {
-        color: rgba(77, 106, 141, 1);
+        color: var(--blue);
         text-decoration: none;
         font-size: 2vh;
         padding: 1vh; 
@@ -578,9 +591,11 @@ pc: 1920 × 1080 px
     }
 }
 */
+
+
 footer {
-    background-color: rgba(77, 106, 141, 1);
-    color: #f8f5e7;
+    background-color: var(--blue);
+    color: var(--light);
     padding: 1vh 1vw;
     margin-left: -6%;
     margin-right: -6%;
@@ -602,8 +617,8 @@ footer h2 {
     margin-right: auto;
 }
 .review-card {
-    background-color: #f8f5e7;
-    color: #333;
+    background-color: var(--light);
+    color: var(--dark);
     border-radius: 1.5vh;
     padding: 2vh;
     max-width: 20vw;
@@ -648,10 +663,10 @@ footer h2 {
 .footer-column h3 {
     margin-bottom: 1vh;
     font-size: 1.8vh;
-    color: #f8f5e7;
+    color: var(--light);
 }
 .footer-column a {
-    color: #f8f5e7;
+    color: var(--light);
     text-decoration: none;
     font-size: 1.5vh;
 }

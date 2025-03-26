@@ -13,11 +13,6 @@
                 <img src="img/Interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
-        <div class="section-nav">
-            <a href="#featured-concerts">Destacados</a>
-            <a href="#recommended-concerts">Recomendados</a>
-            <a href="#discover-concerts">Descubre</a>
-        </div>
         <div class="search-container">
             <input type="text" class="search-bar" placeholder="Buscar...">
             <button class="search-button">
