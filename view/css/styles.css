@@ -180,7 +180,7 @@ body {
     opacity: 1;
 }
 
-/* FIXED ELEMENT */
+/* NAVBAR */
 /* FLOATING CONTAINER */
 .floating-search-container {
     position: fixed;
@@ -189,60 +189,37 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 1em;
+    justify-content: center;
     align-items: center;
-    background: white;
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(8px);
     border-radius: 2em;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
     height: 3em;
     padding: 0 1em;
     font-size: 1em;
+    font-weight: bold;
     z-index: 999;
-    transition: top 0.4s ease-in-out;
-    width: 40%;
+    transition: top 0.4s ease-in-out, background 0.2s ease-in-out;
+    width: fit-content;
+    max-width: 90%;
 }
-
 .floating-search-container.visible {
-    top: 1em;
+    top: 1.5em;
+}
+.floating-search-container:hover {
+    background: rgba(255, 255, 255, 1);
 }
 
-.floating-search-container a {
+.floating-search-container a, span {
     text-decoration: none;
-    color: black;
-    font-weight: 500;
+    color: var(--blue);  
     transition: color 0.2s ease-in-out;
 }
 
-.floating-search-container a:hover {
-    color: var(--blue);
+.floating-search-container span {
+    cursor: default;
 }
-
-
-
-.floating-search-bar {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    padding: 0 0.5em;
-    background: transparent;
-}
-
-.floating-search-button {
-    background: var(--blue);
-    border: none;
-    border-radius: 50%;
-    padding: 0.5em;
-    cursor: pointer;
-    margin-left: 0.5em;
-}
-
-.floating-search-button img {
-    width: 1.2em;
-    height: 1.2em;
-    filter: brightness(0) invert(1);
-}
-
-
 
 .main-concert-banner {
     position: relative;

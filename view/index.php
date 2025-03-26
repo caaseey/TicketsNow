@@ -27,10 +27,12 @@
                     <hr>
                 </div>
                 <div class="account-picture">
-                    <img src="img/Interfaces/icon_user.png" alt="Usuario">
+                    <img src="img/Interfaces/user_icon.png" alt="Usuario">
                 </div>
             </button>
             <div class="account-dropdown-menu">
+                <?php
+                ?>
                 <ul>
                     <li><a href="login.php">Iniciar sesión</a></li>
                     <li><a href="register.php">Regístrate</a></li>
@@ -44,11 +46,11 @@
     </nav>
 
     <div id="floating-search" class="floating-search-container">
-        <a href="#featured-concerts">Artistas</a>
+        <a href="#featured-concerts">Destacado</a>
         <span class="divider">|</span>
-        <a href="#recommended-concerts">Conciertos</a>
+        <a href="#recommended-concerts">Recomendados</a>
         <span class="divider">|</span>
-        <a href="paginadeayuda.php">Ayuda</a>
+        <a href="#discover-concerts">Descubre</a>
     </div>
 
     <header class="main-concert-banner">
@@ -256,8 +258,9 @@
         </div>
     </footer>
     <script>
+    // Floating search bar script
     const floatingSearch = document.getElementById('floating-search');
-    const triggerOffset = 1080;
+    const triggerOffset = 660;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > triggerOffset) {
