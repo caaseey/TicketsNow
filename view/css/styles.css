@@ -22,6 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    height: 6em;
     padding-left: 1em;
     padding-right: 1em;
     box-sizing: border-box;
@@ -31,7 +32,7 @@ body {
 /* NAVBAR */
 /* LOGO */
 .logo img {
-    width: 10em;
+    width: 8em;
     max-width: 100%;
     height: auto;
     transition: transform 0.3s ease;
@@ -45,6 +46,7 @@ body {
 .search-container {
     display: flex;
     align-items: center;
+    box-sizing: border-box;
     background: white;
     border-radius: 2em;
     height: 3em;
@@ -90,10 +92,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
     background: white;
     border: none;
     padding: 0 1em;
-    height: 3em;
+    height: 3.5em;
     border-radius: 2em;
     box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.15);
     cursor: pointer;
@@ -116,7 +119,7 @@ body {
 }
 .account-icon hr {
     margin: 0;
-    width: 1.5em;
+    width: 1.6em;
     height: 0.2em;
     background-color: var(--blue);
     border: none;
@@ -135,8 +138,8 @@ body {
     overflow: hidden;
 }
 .account-picture img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     object-fit: contain;
 }
 
@@ -176,6 +179,70 @@ body {
     display: block;
     opacity: 1;
 }
+
+/* FIXED ELEMENT */
+/* FLOATING CONTAINER */
+.floating-search-container {
+    position: fixed;
+    top: -5em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    background: white;
+    border-radius: 2em;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    height: 3em;
+    padding: 0 1em;
+    font-size: 1em;
+    z-index: 999;
+    transition: top 0.4s ease-in-out;
+    width: 40%;
+}
+
+.floating-search-container.visible {
+    top: 1em;
+}
+
+.floating-search-container a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.floating-search-container a:hover {
+    color: var(--blue);
+}
+
+
+
+.floating-search-bar {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 0.5em;
+    background: transparent;
+}
+
+.floating-search-button {
+    background: var(--blue);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5em;
+    cursor: pointer;
+    margin-left: 0.5em;
+}
+
+.floating-search-button img {
+    width: 1.2em;
+    height: 1.2em;
+    filter: brightness(0) invert(1);
+}
+
+
 
 .main-concert-banner {
     position: relative;
@@ -678,14 +745,4 @@ footer h2 {
     font-size: 1.2vh;
     margin-top: 2vh;
 }
-
-
-
-
-
-
-
-
-
-
 
