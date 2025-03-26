@@ -115,11 +115,11 @@
         </a>
     </section>  
     
-    <div id="recommended-concerts" class="section-title">
+    <div id="recommended-concerts-title" class="section-title">
         <h2>Conciertos recomendados</h2>
         <hr>
     </div>
-    <section class="recommended-concerts">
+    <section id="recommended-concerts" class="recommended-concerts">
         <a href="#" class="concert-banner">
             <img src="img/Banners/twice.png" alt="TWICE">
             <div class="concert-info">
@@ -270,6 +270,25 @@
         }
     });
     </script>
+    <script>
+    const section = document.querySelector('#recommended-concerts');
 
+    const observer = new IntersectionObserver(
+        entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                section.classList.add('active');
+            } else {
+                section.classList.remove('active');
+            }
+        });
+        },
+        {
+        threshold: [0, 0.2, 1.0]
+        }
+    );
+
+    observer.observe(section);
+    </script>
 </body>
 </html>
