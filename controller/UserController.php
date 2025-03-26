@@ -49,7 +49,7 @@ class UserController
                     $_SESSION['user_surname'] = $user['surname'];
 
                     // Redirección a perfil
-                    header("Location: ./index.php");
+                    header("Location: ./profile.php");
                     exit;
                 } else {
                     $error = "Email o contraseña incorrectos.";

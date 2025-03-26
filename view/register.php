@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <header>
-        <a href="dashboard.php">
+        <a href="index.php">
             <img src="img/interfaces/logo.png" alt="Logo Tickets Now">
         </a>
     </header>
