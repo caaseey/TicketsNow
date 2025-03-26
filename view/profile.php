@@ -6,10 +6,10 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 // Verifica si el user ha iniciado sesión
-//if (!isset($_SESSION['user'])) {
-//    header('Location: loginUser.php');
-//    exit();
-//}
+if (!isset($_SESSION['user'])) {
+    header('Location: loginUser.php');
+    exit();
+}
 $user = $_SESSION['user'];
 
 ?>
