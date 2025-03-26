@@ -52,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="links">
                     <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                    <!-- Elimina el div de botones extra -->
+                    <!--
                     <div class="extra-buttons">
                         <button type="button" class="button" onclick="window.location.href='loginAdmin.php'">
                             Login como administrador
@@ -60,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             Login como artista
                         </button>
                     </div>
+                    -->
                 </div>
             </form>
         </div>
