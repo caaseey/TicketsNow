@@ -49,7 +49,7 @@ class UserController
                     $_SESSION['user_surname'] = $user['surname'];
 
                     // Redirección a perfil
-                    header("Location: /Dam/TicketsNow/TicketsNow/view/index.php");
+                    header("Location: ./index.php");
                     exit;
                 } else {
                     $error = "Email o contraseña incorrectos.";
