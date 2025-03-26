@@ -22,49 +22,48 @@ class UserController
         }
     }
 
-    /**
-     * Método de login usando archivo "users.dat"
-     * Retorna un string con el mensaje de error, o vacío si no hay error.
-     */
     public function login(): string
     {
         $error = "";
-
+    
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $email = $_POST["email"] ?? "";
             $password = $_POST["password"] ?? "";
-
+    
             if (empty($email) || empty($password)) {
                 $error = "Todos los campos son obligatorios.";
             } else {
-                // Buscar usuario en archivo
-                $users = @file('users.dat', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [];
-
-                foreach ($users as $user) {
-                    $data = explode('||', $user);
-                    // data[0] = email
-                    // data[1] = password hash (BCRYPT u otro) -- no texto plano
-                    // data[2] = nombre
-                    // data[3] = apellido (opcional)
-
-                    // Verificamos que coincida el email y la contraseña (password_verify con hash)
-                    if ($data[0] === $email && password_verify($password, $data[1])) {
-                        // Usuario válido
+                // Consulta a la base de datos
+                $stmt = $this->conn->prepare("SELECT id_user, name, surname, password FROM users WHERE email = ?");
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+    
+                if ($result->num_rows === 1) {
+                    $user = $result->fetch_assoc();
+    
+                    // Comparar contraseñas (si usas password_hash en el registro)
+                    if (password_verify($password, $user['password'])) {
+                        // Inicio de sesión exitoso
                         $_SESSION['logged_in'] = true;
-                        $_SESSION['user_name'] = $data[2];
-
-                        // Redirigimos al index o a donde gustes
-                        header("Location: index.php");
+                        $_SESSION['user_id'] = $user['id_user'];
+                        $_SESSION['user_name'] = $user['name'];
+                        $_SESSION['user_surname'] = $user['surname'];
+    
+                        // Redirigir a perfil
+                        header("Location: INTRODUCIR AQUI LA DIRECCIÓN");
                         exit;
                     }
                 }
-
-                // Si llega aquí, es que no coincidió con ningún registro del archivo
+    
+                // Si no encuentra o la contraseña es incorrecta
                 $error = "Email o contraseña incorrectos.";
             }
         }
+    
         return $error;
     }
+    
 
     // Método de logout (por implementar)
     public function logout(): void
