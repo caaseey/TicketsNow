@@ -43,6 +43,14 @@
         </div>        
     </nav>
 
+    <div id="floating-search" class="floating-search-container">
+        <a href="#featured-concerts">Artistas</a>
+        <span class="divider">|</span>
+        <a href="#recommended-concerts">Conciertos</a>
+        <span class="divider">|</span>
+        <a href="paginadeayuda.php">Ayuda</a>
+    </div>
+
     <header class="main-concert-banner">
         <h1>Michael Jackson - World Tour</h1>
         <a href="">
@@ -247,5 +255,18 @@
             © 1939-2024 TicketsNow. Todos los derechos reservados.
         </div>
     </footer>
+    <script>
+    const floatingSearch = document.getElementById('floating-search');
+    const triggerOffset = 1080;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > triggerOffset) {
+        floatingSearch.classList.add('visible');
+        } else {
+        floatingSearch.classList.remove('visible');
+        }
+    });
+    </script>
+
 </body>
 </html>
