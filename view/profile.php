@@ -16,9 +16,6 @@ $surname = $_SESSION['user_surname'] ?? '';
 $email = $_SESSION['user_email'] ?? ''; // Solo si decides guardarlo también
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
