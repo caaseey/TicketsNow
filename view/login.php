@@ -1,5 +1,5 @@
 <?php
-// Inicia la sesión **solo** si no está iniciada
+// Inicia la sesión solo si no está iniciada
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
     <header>
         <a href="index.php">
@@ -35,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h2>Iniciar Sesión</h2>
             <p>¿Nuevo en Tickets Now? <a href="register.php">Crear cuenta</a></p>
 
-            <!-- Aquí mostramos el error (si existe) -->
             <?php if (!empty($error)): ?>
                 <div class="error"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
@@ -49,13 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <span class="show-password" onclick="togglePassword()">MOSTRAR</span>
                 </div>
                 <button type="submit" class="button">Acceder</button>
-
                 <div class="links">
                     <p><a href="#">¿Olvidaste tu contraseña?</a></p>
                 </div>
             </form>
         </div>
-
         <div class="image-container">
             <img src="img/Interfaces/concierto.png" alt="Experiencia musical">
         </div>
@@ -64,12 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script>
     function togglePassword() {
         var passwordInput = document.getElementById("password");
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-        } else {
-            passwordInput.type = "password";
-        }
+        passwordInput.type = passwordInput.type === "password" ? "text" : "password";
     }
 </script>
-
 </html>
