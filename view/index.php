@@ -37,9 +37,9 @@
                     <li><a href="login.php">Iniciar sesión</a></li>
                     <li><a href="register.php">Regístrate</a></li>
                     <hr>
-                    <li><a href="paginadeayuda.php">Ayuda</a></li>
-                    <li><a href="#">Configuración</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="help.php">Ayuda</a></li>
+                    <li><a href="about.php">Sobre nosotros</a></li>
+                    <li><a href="index.php">Contacto</a></li>
                 </ul>
             </div>
         </div>        
