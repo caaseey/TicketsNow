@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>TicketsNow</title>
 </head>
 <body>
@@ -34,12 +34,19 @@
                 <?php
                 ?>
                 <ul>
-                    <li><a href="login.php">Iniciar sesión</a></li>
-                    <li><a href="register.php">Regístrate</a></li>
+                    <?php
+                        if (isset($_SESSION['logged_in'])) {
+                            echo "<li><a href='profile.php'>Mi perfil</a></li>";
+                            
+                        } else {
+                            echo "<li><a href='login.php'>Iniciar sesión</a></li>";
+                            echo "<li><a href='register.php'>Regístrate</a></li>";
+                        }
+                    ?>
                     <hr>
-                    <li><a href="paginadeayuda.php">Ayuda</a></li>
-                    <li><a href="#">Configuración</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="help.php">Ayuda</a></li>
+                    <li><a href="about.php">Sobre nosotros</a></li>
+                    <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
         </div>        
@@ -60,7 +67,7 @@
         </a>
     </header>
 
-    <div id="featured-concerts" class="featured-concerts-titles">
+    <div class="featured-concerts-titles">
         <div class="section-title">
             <h2>Conciertos destacados</h2>
             <hr>
@@ -70,7 +77,7 @@
             <hr>
         </div>
     </div>
-    <section class="featured-concerts">
+    <section id="featured-concerts" class="featured-concerts">
         <a href="#" class="concert-banner most-featured-concert">
             <img src="img/Banners/twice.png" alt="TWICE">
             <div class="concert-info">
@@ -115,7 +122,7 @@
         </a>
     </section>  
     
-    <div id="recommended-concerts-title" class="section-title">
+    <div class="section-title">
         <h2>Conciertos recomendados</h2>
         <hr>
     </div>
@@ -146,11 +153,11 @@
         </div>
     </section>
 
-    <div id="discover-concerts" class="section-title">
+    <div class="section-title">
         <h2>Descubre</h2>
         <hr>
     </div>
-    <section class="discover-concerts">
+    <section id="discover-concerts" class="discover-concerts">
         <a href="#" class="concert-banner">
             <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
             <div class="concert-info">
@@ -195,7 +202,7 @@
         </a>
     </section>
     
-    <footer>
+    <footer id="footer">
         <h2>Vivencias en Primera Fila</h2>
         <div class="reviews-cards">
             <div class="review-card">
@@ -236,11 +243,11 @@
         <div class="footer-links">
             <div class="footer-column">
                 <h3>Escríbenos</h3>
-                <a href="mailto:caseycleto@gmail.com">caseycleto@gmail.com</a>
+                <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
             </div>
             <div class="footer-column">
-                <h3>Consúltanos</h3>
-                <a href="#">Contacto</a>
+                <h3>Sobre nosotros</h3>
+                <a href="about.php">Clica aquí</a>
             </div>
             <div class="footer-column">
                 <h3>Llámanos</h3>
@@ -249,18 +256,17 @@
             <div class="footer-column">
                 <h3>¿Buscas ayuda?</h3>
                 <a href="paginadeayuda.php">Página de ayuda</a><br>
-                <a href="#">FAQ</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            © 1939-2024 TicketsNow. Todos los derechos reservados.
+            © 1999-2024 TicketsNow. Todos los derechos reservados.
         </div>
     </footer>
     <script>
     // Floating search bar script
     const floatingSearch = document.getElementById('floating-search');
-    const triggerOffset = 660;
+    const triggerOffset = 50;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > triggerOffset) {
@@ -271,6 +277,7 @@
     });
     </script>
     <script>
+    // Recommended concerts invert colors effect script
     const section = document.querySelector('#recommended-concerts');
 
     const observer = new IntersectionObserver(
