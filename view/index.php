@@ -259,7 +259,7 @@
     <script>
     // Floating search bar script
     const floatingSearch = document.getElementById('floating-search');
-    const triggerOffset = 100;
+    const triggerOffset = 50;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > triggerOffset) {
