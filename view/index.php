@@ -60,7 +60,7 @@
         </a>
     </header>
 
-    <div id="featured-concerts" class="featured-concerts-titles">
+    <div class="featured-concerts-titles">
         <div class="section-title">
             <h2>Conciertos destacados</h2>
             <hr>
@@ -70,7 +70,7 @@
             <hr>
         </div>
     </div>
-    <section class="featured-concerts">
+    <section id="featured-concerts" class="featured-concerts">
         <a href="#" class="concert-banner most-featured-concert">
             <img src="img/Banners/twice.png" alt="TWICE">
             <div class="concert-info">
@@ -115,7 +115,7 @@
         </a>
     </section>  
     
-    <div id="recommended-concerts-title" class="section-title">
+    <div class="section-title">
         <h2>Conciertos recomendados</h2>
         <hr>
     </div>
@@ -146,11 +146,11 @@
         </div>
     </section>
 
-    <div id="discover-concerts" class="section-title">
+    <div class="section-title">
         <h2>Descubre</h2>
         <hr>
     </div>
-    <section class="discover-concerts">
+    <section id="discover-concerts" class="discover-concerts">
         <a href="#" class="concert-banner">
             <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
             <div class="concert-info">
@@ -260,7 +260,7 @@
     <script>
     // Floating search bar script
     const floatingSearch = document.getElementById('floating-search');
-    const triggerOffset = 660;
+    const triggerOffset = 100;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > triggerOffset) {

@@ -99,7 +99,6 @@ body {
     box-sizing: border-box;
     background: white;
     border: none;
-    padding: 0 1rem;
     height: 3rem;
     border-radius: 2rem;
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.15);
@@ -118,11 +117,11 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 0.3rem;
-    margin-right: 1rem;
     min-height: 0;
 }
 .account-icon hr {
     margin: 0;
+    margin-left: 1rem;
     width: 1.6rem;
     height: 0.2rem;
     background-color: var(--blue);
@@ -132,15 +131,15 @@ body {
 }
 
 .account-picture {
-    width: 2.2rem; 
-    height: 2.2rem;
+    margin: 0;
+    margin-right: 0.5rem;
+    width: 2.5rem; 
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
     border-radius: 50%;
-    border: 0.1rem solid var(--blue);
-    padding: 0.2rem;
     overflow: hidden;
 }
 .account-picture img {
@@ -154,14 +153,16 @@ body {
     top: 110%;
     right: 0;
     background: white;
-    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-    border-radius: 1.5em;
-    display: none;
-    width: 12em;
+    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.15);
+    border-radius: 1em;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: 14rem;
     min-width: 150px;
     z-index: 100;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .account-dropdown-menu ul {
     list-style: none;
@@ -182,8 +183,10 @@ body {
     color: var(--blue);
 }
 .account-menu:focus-within .account-dropdown-menu {
-    display: block;
+    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 /* NAVBAR */
@@ -222,7 +225,6 @@ body {
     color: var(--blue);  
     transition: color 0.2s ease-in-out;
 }
-
 .floating-search-container span {
     cursor: default;
 }
