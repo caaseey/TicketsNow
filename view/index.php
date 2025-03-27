@@ -113,7 +113,7 @@
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/eladioCarrion.png" alt="Eladio Carrión">
+            <img src="img/Banners/eladioCarrion.jpg" alt="Eladio Carrión">
             <div class="concert-info">
                 <p>México | 20 de agosto de 2025</p>
                 <h3>Eladio Carrión</h3>
@@ -127,24 +127,24 @@
     </div>
     <section id="recommended-concerts" class="recommended-concerts">
         <a href="#" class="concert-banner">
-            <img src="img/Banners/twice.png" alt="TWICE">
+            <img src="img/Banners/marcaRegistrada.jpg" alt="Marca Registrada">
             <div class="concert-info">
                 <p>Madrid, España | 15 de marzo de 2025</p>
-                <h3>TWICE - World Tour Ready To Be</h3>
+                <h3>Marca Registrada - America Tour</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/aespa.png" alt="aespa">
+            <img src="img/Banners/aurora.jpg" alt="aurora">
             <div class="concert-info">
                 <p>Nueva York, EE.UU. | 8 de junio de 2025</p>
-                <h3>aespa - LIVE TOUR</h3>
+                <h3>aurora - LIVE TOUR</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/ado.png" alt="Ado">
+            <img src="img/Banners/omarCourtz.png" alt="Omar Courtz">
             <div class="concert-info">
                 <p>Tokyo, Japón | 22 de abril de 2025</p>
-                <h3>Ado - Kyougen Tour</h3>
+                <h3>Omar Courtz - Asia Tour 2025</h3>
             </div>
         </a>
         <div class="concert-banner empty-concert">
@@ -158,45 +158,45 @@
     </div>
     <section id="discover-concerts" class="discover-concerts">
         <a href="#" class="concert-banner">
-            <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
+            <img src="img/Banners/kendrickLamar.jpg" alt="Kendrick Lamar">
             <div class="concert-info">
                 <p>EE.UU. | 3 de julio de 2025</p>
-                <h3>Imagine Dragons</h3>
+                <h3>Kendrick Lamar</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/ksi.png" alt="KSI">
+            <img src="img/Banners/yoasobi.jpg" alt="YOASOBI">
             <div class="concert-info">
-                <p>Reino Unido | 10 de mayo de 2025</p>
-                <h3>KSI</h3>
+                <p>Osaka, Japón | 15 de agosto de 2025</p>
+                <h3>YOASOBI</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/eladioCarrion.png" alt="Eladio Carrión">
+            <img src="img/Banners/swingrowers.jpg" alt="Swingrowers">
             <div class="concert-info">
-                <p>México | 20 de agosto de 2025</p>
-                <h3>Eladio Carrión</h3>
+                <p>París, Francia | 30 de junio de 2025</p>
+                <h3>Swingrowers</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
+            <img src="img/Banners/keshi.jpg" alt="Keshi">
             <div class="concert-info">
-                <p>EE.UU. | 3 de julio de 2025</p>
-                <h3>Imagine Dragons</h3>
+                <p>Seúl, Corea del Sur | 18 de septiembre de 2025</p>
+                <h3>Keshi</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/ksi.png" alt="KSI">
+            <img src="img/Banners/laufey.png" alt="Laufey">
             <div class="concert-info">
-                <p>Reino Unido | 10 de mayo de 2025</p>
-                <h3>KSI</h3>
+                <p>Londres, Reino Unido | 12 de octubre de 2025</p>
+                <h3>Laufey</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/eladioCarrion.png" alt="Eladio Carrión">
+            <img src="img/Banners/waveToEarth.jpg" alt="Wave to Earth">
             <div class="concert-info">
-                <p>México | 20 de agosto de 2025</p>
-                <h3>Eladio Carrión</h3>
+                <p>Bangkok, Tailandia | 5 de noviembre de 2025</p>
+                <h3>Wave to Earth</h3>
             </div>
         </a>
     </section>
