@@ -34,8 +34,15 @@
                 <?php
                 ?>
                 <ul>
-                    <li><a href="login.php">Iniciar sesión</a></li>
-                    <li><a href="register.php">Regístrate</a></li>
+                    <?php
+                        if (isset($_SESSION['logged_in'])) {
+                            echo "<li><a href='profile.php'>Mi perfil</a></li>";
+                            
+                        } else {
+                            echo "<li><a href='login.php'>Iniciar sesión</a></li>";
+                            echo "<li><a href='register.php'>Regístrate</a></li>";
+                        }
+                    ?>
                     <hr>
                     <li><a href="help.php">Ayuda</a></li>
                     <li><a href="about.php">Sobre nosotros</a></li>
@@ -270,6 +277,7 @@
     });
     </script>
     <script>
+    // Recommended concerts invert colors effect script
     const section = document.querySelector('#recommended-concerts');
 
     const observer = new IntersectionObserver(
