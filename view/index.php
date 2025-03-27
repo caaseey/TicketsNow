@@ -37,7 +37,6 @@
                     <?php
                         if (isset($_SESSION['logged_in'])) {
                             echo "<li><a href='profile.php'>Mi perfil</a></li>";
-                            
                         } else {
                             echo "<li><a href='login.php'>Iniciar sesión</a></li>";
                             echo "<li><a href='register.php'>Regístrate</a></li>";
@@ -61,7 +60,7 @@
     </div>
 
     <header class="main-concert-banner">
-        <h1>Michael Jackson - World Tour</h1>
+        <h1>Bruno Mars - World Tour</h1>
         <a href="">
             <button>ENTRADAS</button>
         </a>
@@ -79,7 +78,7 @@
     </div>
     <section id="featured-concerts" class="featured-concerts">
         <a href="#" class="concert-banner most-featured-concert">
-            <img src="img/Banners/twice.png" alt="TWICE">
+            <img src="img/Banners/twice.jpg" alt="TWICE">
             <div class="concert-info">
                 <p>Madrid, España | 15 de marzo de 2025</p>
                 <h3>TWICE - World Tour Ready To Be</h3>
@@ -93,7 +92,7 @@
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/imagineDragons.png" alt="Imagine Dragons">
+            <img src="img/Banners/imagineDragons.jpg" alt="Imagine Dragons">
             <div class="concert-info">
                 <p>EE.UU. | 3 de julio de 2025</p>
                 <h3>Imagine Dragons</h3>
@@ -107,7 +106,7 @@
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/ksi.png" alt="KSI">
+            <img src="img/Banners/ksi.jpg" alt="KSI">
             <div class="concert-info">
                 <p>Reino Unido | 10 de mayo de 2025</p>
                 <h3>KSI</h3>
