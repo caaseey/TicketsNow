@@ -39,7 +39,7 @@
                     <hr>
                     <li><a href="help.php">Ayuda</a></li>
                     <li><a href="about.php">Sobre nosotros</a></li>
-                    <li><a href="index.php">Contacto</a></li>
+                    <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
         </div>        
@@ -195,7 +195,7 @@
         </a>
     </section>
     
-    <footer>
+    <footer id="footer">
         <h2>Vivencias en Primera Fila</h2>
         <div class="reviews-cards">
             <div class="review-card">
@@ -236,11 +236,11 @@
         <div class="footer-links">
             <div class="footer-column">
                 <h3>Escríbenos</h3>
-                <a href="mailto:caseycleto@gmail.com">caseycleto@gmail.com</a>
+                <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
             </div>
             <div class="footer-column">
-                <h3>Consúltanos</h3>
-                <a href="#">Contacto</a>
+                <h3>Sobre nosotros</h3>
+                <a href="about.php">Clica aquí</a>
             </div>
             <div class="footer-column">
                 <h3>Llámanos</h3>
@@ -249,12 +249,11 @@
             <div class="footer-column">
                 <h3>¿Buscas ayuda?</h3>
                 <a href="paginadeayuda.php">Página de ayuda</a><br>
-                <a href="#">FAQ</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            © 1939-2024 TicketsNow. Todos los derechos reservados.
+            © 1999-2024 TicketsNow. Todos los derechos reservados.
         </div>
     </footer>
     <script>
