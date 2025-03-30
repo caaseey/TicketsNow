@@ -51,6 +51,39 @@
         </div>        
     </nav>
 
+    <div class="carousel-container">
+        <div class="carousel-track">
+        <div class="main-concert-banner active" style="background-image: url('img/Banners/twice.jpg');">
+            <video autoplay muted loop playsinline></video>
+            <div class="carousel-text">
+                <h1>TWICE - Ready To Be</h1>
+                <a href=""><button>ENTRADAS</button></a>
+            </div>
+            </div>
+            <div class="main-concert-banner" style="background-image: url('img/Banners/brunoMars.jpg');">
+            <video autoplay muted loop playsinline></video>
+            <div class="carousel-text">
+                <h1>Bruno Mars - World Tour</h1>
+                <a href=""><button>ENTRADAS</button></a>
+            </div>
+            </div>
+            <div class="main-concert-banner" style="background-image: url('img/Banners/twice.jpg');">
+            <video autoplay muted loop playsinline></video>
+            <div class="carousel-text">
+                <h1>TWICE - Ready To Be</h1>
+                <a href=""><button>ENTRADAS</button></a>
+            </div>
+            </div>
+        </div>
+        <button class="carousel-button prev">
+            <img src="img/Interfaces/previous_button.png" alt="Anterior">
+        </button>
+        <button class="carousel-button next">
+            <img src="img/Interfaces/next_button.png" alt="Siguiente">
+        </button>
+    </div>
+
+    
     <div id="floating-search" class="floating-search-container">
         <a href="#featured-concerts">Destacado</a>
         <span class="divider">|</span>
@@ -58,13 +91,7 @@
         <span class="divider">|</span>
         <a href="#discover-concerts">Descubre</a>
     </div>
-
-    <header class="main-concert-banner">
-        <h1>Bruno Mars - World Tour</h1>
-        <a href="">
-            <button>ENTRADAS</button>
-        </a>
-    </header>
+    
 
     <div class="featured-concerts-titles">
         <div class="section-title">
@@ -262,39 +289,115 @@
             © 1999-2024 TicketsNow. Todos los derechos reservados.
         </div>
     </footer>
+
+    <!-- Floating search bar script -->
     <script>
-    // Floating search bar script
+    // Detect floating search bar position
     const floatingSearch = document.getElementById('floating-search');
+
+    // How many pixels to scroll before the floating search bar appears
     const triggerOffset = 50;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > triggerOffset) {
-        floatingSearch.classList.add('visible');
+        // Show the floating search bar if the user has scrolled down more than the trigger offset
+        floatingSearch.classList.add('visible');  
         } else {
+        // Hide the floating search bar if the user scrolls back up    
         floatingSearch.classList.remove('visible');
         }
     });
     </script>
+
+    <!-- Recommended concerts invert colors effect script -->
     <script>
-    // Recommended concerts invert colors effect script
+    // Section to detect
     const section = document.querySelector('#recommended-concerts');
 
     const observer = new IntersectionObserver(
         entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                // When the section is visible more than 20%, activate the invert effect
                 section.classList.add('active');
             } else {
+                // If not, remove the invert effect
                 section.classList.remove('active');
             }
         });
         },
+        // Detect when the section is 0% visible or 20% visible
         {
-        threshold: [0, 0.2, 1.0]
+        threshold: [0, 0.2]
         }
     );
 
     observer.observe(section);
+    </script>
+
+    <!-- Carousel script -->
+    <script>
+    // Container of the banners
+    const track = document.querySelector('.carousel-track');
+    // The array of banners
+    const banners = Array.from(track.children);
+
+    // Hears the buttons
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+
+    // Index of the banner
+    let currentSlide = 0;
+
+    // To detect if the user made a click
+    let userIsActive = false;
+
+    // To know the inactivity of the user
+    let resetTimer;
+
+
+    function showSlide() {
+    // Move the track to the next slide
+    track.style.transform = `translateX(calc(-${currentSlide * 80}vw - ${currentSlide * 2}rem))`;
+    // Makes the current slide active
+    banners.forEach((banner, i) => {
+        banner.classList.toggle('active', i === currentSlide);
+    });
+    }
+
+    function setUserActive() {
+    // When user clicks, make the user active
+    userIsActive = true;
+    // After 10 seconds of inactivity, make the user inactive
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+        userIsActive = false;
+    }, 10000);
+    }
+
+    // When the next button is clicked, move to the next slide
+    // If the slide is the last one, go back to the first slide
+    nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % banners.length;
+    showSlide();
+    setUserActive();
+    });
+
+    // When the previous button is clicked, move to the previous slide
+    // If the slide is the first one, go back to the last slide
+    prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + banners.length) % banners.length;
+    showSlide();
+    setUserActive();
+    });
+
+    // When user is inactive, move automatically to the next slide every 10 seconds
+    setInterval(() => {
+    if (!userIsActive) {
+        currentSlide = (currentSlide + 1) % banners.length;
+        showSlide();
+    }
+    }, 10000);
     </script>
 </body>
 </html>
