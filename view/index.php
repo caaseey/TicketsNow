@@ -53,28 +53,36 @@
 
     <div class="carousel-container">
         <div class="carousel-track">
-        <div class="main-concert-banner active" style="background-image: url('img/Banners/twice.jpg');">
-            <video autoplay muted loop playsinline></video>
-            <div class="carousel-text">
-                <h1>TWICE - Ready To Be</h1>
-                <a href=""><button>ENTRADAS</button></a>
-            </div>
-            </div>
-            <div class="main-concert-banner" style="background-image: url('img/Banners/brunoMars.jpg');">
-            <video autoplay muted loop playsinline></video>
+        <div class="main-concert-banner active" style="background-image: url('img/Banners/brunoMars.jpg');">
+            <video autoplay muted loop playsinline>
+                <source src="video/brunoMars.mp4" type="video/mp4">
+            </video>
             <div class="carousel-text">
                 <h1>Bruno Mars - World Tour</h1>
                 <a href=""><button>ENTRADAS</button></a>
             </div>
-            </div>
-            <div class="main-concert-banner" style="background-image: url('img/Banners/twice.jpg');">
-            <video autoplay muted loop playsinline></video>
+        </div>
+
+        <div class="main-concert-banner" style="background-image: url('img/Banners/twice.jpg');">
+            <video autoplay muted loop playsinline>
+                <source src="video/twice.mp4" type="video/mp4">
+            </video>
             <div class="carousel-text">
                 <h1>TWICE - Ready To Be</h1>
                 <a href=""><button>ENTRADAS</button></a>
             </div>
+        </div>
+        
+        <div class="main-concert-banner" style="background-image: url('img/Banners/theweeknd.jpg');">
+            <video autoplay muted loop playsinline>
+                <source src="video/theWeeknd.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-text">
+                <h1>The Weeknd - After Hours Til Dawn Tour</h1>
+                <a href=""><button>ENTRADAS</button></a>
             </div>
         </div>
+    </div>
         <button class="carousel-button prev">
             <img src="img/Interfaces/previous_button.png" alt="Anterior">
         </button>
@@ -105,10 +113,10 @@
     </div>
     <section id="featured-concerts" class="featured-concerts">
         <a href="#" class="concert-banner most-featured-concert">
-            <img src="img/Banners/twice.jpg" alt="TWICE">
+            <img src="img/Banners/sza.jpg" alt="SZA">
             <div class="concert-info">
-                <p>Madrid, España | 15 de marzo de 2025</p>
-                <h3>TWICE - World Tour Ready To Be</h3>
+                <p>Los Ángeles, EE.UU. | 20 de junio de 2025</p>
+                <h3>SZA - SOS Tour</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
