@@ -319,11 +319,11 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   }
   
-  .carousel-text a button:hover {
+.carousel-text a button:hover {
     background-color: var(--blue);
     color: white;
     transform: scale(1.05);
-  }
+}
 
 .carousel-button {
     position: absolute;

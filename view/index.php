@@ -53,36 +53,36 @@
 
     <div class="carousel-container">
         <div class="carousel-track">
-        <div class="main-concert-banner active" style="background-image: url('img/Banners/brunoMars.jpg');">
-            <video autoplay muted loop playsinline>
-                <source src="video/brunoMars.mp4" type="video/mp4">
-            </video>
-            <div class="carousel-text">
-                <h1>Bruno Mars - World Tour</h1>
-                <a href=""><button>ENTRADAS</button></a>
+            <div class="main-concert-banner active" style="background-image: url('img/Banners/brunoMars.jpg');">
+                <video autoplay muted loop playsinline>
+                    <source src="video/brunoMars.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-text">
+                    <h1>Bruno Mars - World Tour</h1>
+                    <a href=""><button>ENTRADAS</button></a>
+                </div>
             </div>
-        </div>
 
-        <div class="main-concert-banner" style="background-image: url('img/Banners/twice.jpg');">
-            <video autoplay muted loop playsinline>
-                <source src="video/twice.mp4" type="video/mp4">
-            </video>
-            <div class="carousel-text">
-                <h1>TWICE - Ready To Be</h1>
-                <a href=""><button>ENTRADAS</button></a>
+            <div class="main-concert-banner" style="background-image: url('img/Banners/twice.jpg');">
+                <video autoplay muted loop playsinline>
+                    <source src="video/twice.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-text">
+                    <h1>TWICE - Ready To Be</h1>
+                    <a href=""><button>ENTRADAS</button></a>
+                </div>
+            </div>
+            
+            <div class="main-concert-banner" style="background-image: url('img/Banners/theweeknd.jpg');">
+                <video autoplay muted loop playsinline>
+                    <source src="video/theWeeknd.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-text">
+                    <h1>The Weeknd - After Hours Til Dawn Tour</h1>
+                    <a href=""><button>ENTRADAS</button></a>
+                </div>
             </div>
         </div>
-        
-        <div class="main-concert-banner" style="background-image: url('img/Banners/theweeknd.jpg');">
-            <video autoplay muted loop playsinline>
-                <source src="video/theWeeknd.mp4" type="video/mp4">
-            </video>
-            <div class="carousel-text">
-                <h1>The Weeknd - After Hours Til Dawn Tour</h1>
-                <a href=""><button>ENTRADAS</button></a>
-            </div>
-        </div>
-    </div>
         <button class="carousel-button prev">
             <img src="img/Interfaces/previous_button.png" alt="Anterior">
         </button>
@@ -91,7 +91,6 @@
         </button>
     </div>
 
-    
     <div id="floating-search" class="floating-search-container">
         <a href="#featured-concerts">Destacado</a>
         <span class="divider">|</span>
@@ -366,7 +365,15 @@
 
     function showSlide() {
     // Move the track to the next slide
-    track.style.transform = `translateX(calc(-${currentSlide * 80}vw - ${currentSlide * 2}rem))`;
+    const banner = banners[0];
+  const bannerStyles = getComputedStyle(banner);
+  const bannerWidth = banner.offsetWidth;
+  const bannerMarginRight = parseFloat(bannerStyles.marginRight) || 0;
+
+  const totalOffset = (bannerWidth + bannerMarginRight) * currentSlide;
+  track.style.transform = `translateX(-${totalOffset}px)`;
+
+  track.style.transform = `translateX(-${currentSlide * bannerWidth}px)`;
     // Makes the current slide active
     banners.forEach((banner, i) => {
         banner.classList.toggle('active', i === currentSlide);

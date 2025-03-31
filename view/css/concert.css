@@ -1,0 +1,213 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --blue: rgba(80, 118, 135, 1);
+    --light: rgba(248, 245, 231, 1);
+    --dark: rgba(51, 51, 51, 1);
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--light);
+    color: var(--dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+  
+/* NAVBAR */
+.navbar-background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6rem;
+    backdrop-filter: blur(12px); 
+    z-index: 1; 
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 10; 
+    background: transparent;
+}
+
+
+/* BANNER */
+.banner-header {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    background-image: url('../img/Banners/twice.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 3rem;
+    transition: height 0.5s ease-in-out;
+}
+  
+.banner-header:hover {
+    height: 50vh;
+}
+
+.banner-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(80, 118, 135, 0.4); 
+    z-index: 1;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 70%;
+}
+
+.banner-text p {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+  
+.banner-text h1 {
+    margin: 0;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* SECTION TITLES */
+.section-title {
+    padding-bottom: 4vh;
+}
+
+.main-section-title {
+    padding-top: 2vh;
+    padding-inline: 5vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.main-section-title h2{
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+}
+
+.main-section-title hr {
+    width: 100%;
+    height: 5px;
+    background-color: var(--blue); 
+    border: none;
+}
+
+/* TICKETS */
+.ticket {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto 1rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: 1.2rem;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 0;
+    transition: all 0.4s ease;
+    color: white;
+    font-family: inherit;
+    min-height: 7rem;
+}
+  
+.ticket::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 1.2rem;
+    z-index: -1;
+}
+  
+.ticket-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+  
+.ticket-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+  
+.ticket-date p {
+    margin: 0.2rem 0;
+}
+  
+.ticket-date p:nth-child(2) {
+    font-weight: bold; 
+}
+  
+.ticket-details {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+  
+.ticket-details p {
+    margin: 0;
+}
+  
+.ticket-details p:nth-child(2) {
+    font-weight: bold; 
+    font-size: 2.5rem;
+}
+  
+.ticket button {
+    background: white;
+    color: var(--blue);
+    font-weight: bold;
+    padding: 0.6rem 1.6rem; 
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; 
+    transition: transform 0.4s ease;
+    transform: scale(1);
+  }
+  
+.ticket:hover button {
+    transform: scale(1.05);
+}
+  
+/* FOOTER */
+footer {
+    margin-top: 20vh;
+}
