@@ -164,15 +164,15 @@
         <a href="#" class="concert-banner">
             <img src="img/Banners/marcaRegistrada.jpg" alt="Marca Registrada">
             <div class="concert-info">
-                <p>Madrid, España | 15 de marzo de 2025</p>
+                <p>Madrid, España | 7 de junio de 2025</p>
                 <h3>Marca Registrada - America Tour</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
             <img src="img/Banners/aurora.jpg" alt="aurora">
             <div class="concert-info">
-                <p>Nueva York, EE.UU. | 8 de junio de 2025</p>
-                <h3>aurora - LIVE TOUR</h3>
+                <p>Oviedo, España | 30 de marzo de 2025</p>
+                <h3>AURORA - LIVE TOUR</h3>
             </div>
         </a>
         <a href="#" class="concert-banner">
@@ -228,10 +228,10 @@
             </div>
         </a>
         <a href="#" class="concert-banner">
-            <img src="img/Banners/waveToEarth.jpg" alt="Wave to Earth">
+            <img src="img/Banners/cuartetoDeNos.png" alt="Cuarteto de Nos">
             <div class="concert-info">
-                <p>Bangkok, Tailandia | 5 de noviembre de 2025</p>
-                <h3>Wave to Earth</h3>
+                <p>Buenos Aires, Argentina | 24 de noviembre de 2025</p>
+                <h3>Cuarteto de Nos</h3>
             </div>
         </a>
     </section>
@@ -289,12 +289,12 @@
             </div>
             <div class="footer-column">
                 <h3>¿Buscas ayuda?</h3>
-                <a href="paginadeayuda.php">Página de ayuda</a><br>
+                <a href="help.php">Página de ayuda</a><br>
             </div>
         </div>
 
         <div class="footer-bottom">
-            © 1999-2024 TicketsNow. Todos los derechos reservados.
+            © 2024-2025 TicketsNow. Todos los derechos reservados.
         </div>
     </footer>
 
