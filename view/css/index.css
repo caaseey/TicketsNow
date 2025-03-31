@@ -670,11 +670,12 @@ PC: 1920 × 1080 px
 /* MEDIA QUERIES */
 /* MOBILE */
 @media screen and (max-width: 480px) {
-    /*
-    body {
-        background: red !important;
+    
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
     }
-    */
+    
   
     /* NAVBAR */
     .navbar {
@@ -687,7 +688,7 @@ PC: 1920 × 1080 px
     }
   
     .search-container {
-        width: 100%;
+        width: 60%;
     }
   
     /* CAROUSEL */
@@ -710,6 +711,22 @@ PC: 1920 × 1080 px
         justify-content: flex-start;
         padding-inline: 5vw;
         padding-left: 0;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+        width: 100%; 
+        padding-inline: 1rem; 
+        box-sizing: border-box;
+        align-items: center; 
+        text-align: center;
+      }
+    .section-title h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 600;
+        color: var(--blue);
+        margin-bottom: 0.5rem;
     }
       
     /* CONCERT SECTIONS CONTAINERS */
@@ -785,11 +802,12 @@ PC: 1920 × 1080 px
 }
   
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-    /*
-    body {
-        background: blue !important;
+    
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
     }
-    */
+    
   
     /* CAROUSEL */
     .carousel-text h1 {
@@ -869,11 +887,12 @@ PC: 1920 × 1080 px
     }   
 }
   
-  
+/*  
 @media screen and (min-width: 1025px) {
-    /*
+    
     body {
         background: green !important;
     }
-    */
+    
 }
+*/
