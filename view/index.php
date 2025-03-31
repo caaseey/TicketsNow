@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,8 @@
 </head>
 
 <body>
-<nav class="navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar">
         <div>
             <a href="#" class="logo">
                 <img src="img/Interfaces/logo.png" alt="Tickets Now">
@@ -33,8 +34,6 @@
                 </div>
             </button>
             <div class="account-dropdown-menu">
-                <?php
-                ?>
                 <ul>
                     <?php
                     if (isset($_SESSION['logged_in'])) {
@@ -53,6 +52,7 @@
         </div>
     </nav>
 
+    <!-- CARROUSEL -->
     <div class="carousel-container">
         <div class="carousel-track">
             <div class="main-concert-banner active" style="background-image: url('img/Banners/brunoMars.jpg');">
@@ -93,7 +93,7 @@
         </button>
     </div>
 
-
+    <!-- FLOATING SECTION BAR -->
     <div id="floating-search" class="floating-search-container">
         <a href="#featured-concerts">Destacado</a>
         <span class="divider">|</span>
@@ -102,7 +102,7 @@
         <a href="#discover-concerts">Descubre</a>
     </div>
 
-
+    <!-- SECTION FEATURED CONCERTS -->
     <div class="featured-concerts-titles">
         <div class="section-title">
             <h2>Conciertos destacados</h2>
@@ -158,6 +158,7 @@
         </a>
     </section>
 
+    <!-- SECTION RECOMMENDED CONCERTS -->
     <div class="section-title">
         <h2>Conciertos recomendados</h2>
         <hr>
@@ -189,6 +190,7 @@
         </div>
     </section>
 
+    <!-- SECTION DISCOVER CONCERTS -->
     <div class="section-title">
         <h2>Descubre</h2>
         <hr>
@@ -238,6 +240,7 @@
         </a>
     </section>
 
+    <!-- FOOTER -->
     <footer id="footer">
         <h2>Vivencias en Primera Fila</h2>
         <div class="reviews-cards">
@@ -413,6 +416,7 @@
             }
         }, 10000);
     </script>
+    
     <script>
         function toggleTranslation(button) {
             const p = button.previousElementSibling;
@@ -428,7 +432,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>

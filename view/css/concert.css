@@ -1,0 +1,208 @@
+/* BANNER */
+.banner-text h2 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+  
+.banner-text p {
+    margin: 0.5rem;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+
+
+/* CONCERT NAVBAR */
+.concert-navbar {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+}
+  
+.concert-navbar-group {
+    display: flex;
+    background-color: var(--blue);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+  
+.concert-navbar-option {
+    position: relative;
+    color: white;
+    padding: 0.5rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.concert-navbar-option span {
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    z-index: 1;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    gap: 0.5rem; 
+}
+  
+.concert-navbar-option span::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    border-radius: 2px;
+    z-index: 0;
+    transition: width 0.3s ease; 
+}
+  
+.concert-navbar-option:hover span::after {
+    animation: underline-slide 0.3s ease both;
+}
+  
+@keyframes underline-slide {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+}
+
+.concert-navbar-option span img {
+    height: 1.4rem;
+    width: auto;
+}
+
+/* SEAT MAP */
+.seat-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    background-color: var(--blue);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: fit-content;
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.seat-map img {
+    width: 60rem;
+    max-width: 90vw;
+    border: 3px solid #3d5c64;
+    border-radius: 12px;
+}
+
+/* SEAT FILTER */
+.filters-container {
+    display: flex;
+    margin-top: 2rem;
+    gap: 5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+.filter-box {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 1rem;
+    width: 280px;
+}
+  
+.filter-title {
+    background-color: var(--blue);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+  
+.filter-title img {
+    height: 1.5rem;
+    width: auto;
+}
+  
+.filter-box h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+  
+/* TYPE */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+  
+.filter-options label {
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    line-height: 1.2;
+}
+  
+.filter-options input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: var(--blue);
+}  
+
+.filter-box hr {
+    border: none;
+    border-top: 1px solid #dce1e7;
+    margin: 1rem 0;
+}
+  
+/* PRICE */
+.filter-box:last-child {
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    height: auto;
+}
+
+.filter-price {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    max-width: 100%;
+}
+  
+.filter-price input[type="range"] {
+    width: 100%;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.price-tag {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--blue);
+    border-radius: 0.4rem;
+    font-weight: 500;
+}
+  
+  
+  

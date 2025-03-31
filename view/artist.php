@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TWICE - Eventos</title>
-  <link rel="stylesheet" href="css/index.css"/>
-  <link rel="stylesheet" href="css/artist.css"/> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/artist.css"/> 
+    <title>TWICE - Artista</title>
 </head>
+
 <body>
-
   <!-- NAVBAR -->
-  <nav class="navbar-background"></nav>
-
   <nav class="navbar">
     <a href="index.php" class="logo">
       <img src="img/Interfaces/logo.png" alt="Tickets Now" />
     </a>
     <div class="account-menu">
-      <button class="account-button">
-        <div class="account-icon">
-          <hr /><hr /><hr />
+        <button class="account-button">
+            <div class="account-icon">
+                <hr>
+                <hr>
+                <hr>
+            </div>
+            <div class="account-picture">
+                <img src="img/Interfaces/user_icon.png" alt="Usuario">
+            </div>
+        </button>
+        <div class="account-dropdown-menu">
+            <ul>
+                <?php
+                if (isset($_SESSION['logged_in'])) {
+                    echo "<li><a href='profile.php'>Mi perfil</a></li>";
+                } else {
+                    echo "<li><a href='login.php'>Iniciar sesión</a></li>";
+                    echo "<li><a href='register.php'>Regístrate</a></li>";
+                }
+                ?>
+                <hr>
+                <li><a href="help.php">Ayuda</a></li>
+                <li><a href="about.php">Sobre nosotros</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
         </div>
-        <div class="account-picture">
-          <img src="img/Interfaces/user_icon.png" alt="Usuario" />
-        </div>
-      </button>
     </div>
   </nav>
 
@@ -41,12 +58,11 @@
     <hr>
   </div>
 
-
+  <!-- NATIONAL TICKETS -->
   <div class="section-title">
     <h2>Conciertos en España</h2>
   </div>
 
-  <!-- TICKETS -->
   <div class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
@@ -61,11 +77,11 @@
           <p>Barcelona - Palau Sant Jordi</p>
         </div>
       </div>
-      <button>ENTRADAS</button>
+      <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
   </div>
 
-    <div class="ticket-container">
+  <div class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
         <div class="ticket-date">
@@ -79,10 +95,11 @@
           <p>Madrid - WiZink Center</p>
         </div>
       </div>
-      <button>ENTRADAS</button>
+      <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
   </div>
 
+  <!-- INTERNATIONAL TICKETS -->
   <div class="section-title">
     <h2>Conciertos Internacionales</h2>
   </div>
@@ -101,7 +118,7 @@
           <p>Seúl - KSPO Dome</p>
         </div>
       </div>
-      <button>ENTRADAS</button>
+      <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
   </div>
 
@@ -119,7 +136,7 @@
           <p>Nueva York - Madison Square Garden</p>
         </div>
       </div>
-      <button>ENTRADAS</button>
+      <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
   </div>
 
@@ -137,10 +154,11 @@
           <p>París - Accor Arena</p>
         </div>
       </div>
-      <button>ENTRADAS</button>
+      <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <div class="footer-column">
