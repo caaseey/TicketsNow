@@ -43,6 +43,53 @@ $photo   = $user['profile_photo'] ?: 'img/interfaces/user_icon.png';
     <a href="index.php">
         <img src="img/Interfaces/logo.png" alt="Logo Tickets Now">
     </a>
+
+    <!-- Boton de cerrar sesion -->
+    <div class="account-menu">
+        <button class="account-button">
+            <div class="account-icon">
+                <hr>
+                <hr>
+                <hr>
+            </div>
+            <div class="account-picture">
+                <img src="img/Interfaces/user_icon.png" alt="Usuario">
+            </div>
+        </button>
+        <div class="account-dropdown-menu">
+            <ul>
+                <?php
+                if (session_status() !== PHP_SESSION_ACTIVE) {
+                    session_start();
+                }
+
+                if (isset($_SESSION['logged_in'])) {
+                    echo "<li><a href='profile.php'>Mi perfil</a></li>";
+                    echo "
+                        <li>
+                            <form action='logout.php' method='post' style='margin: 0;'>
+                                <button type='submit' style='
+                                    background: none;
+                                    border: none;
+                                    color: inherit;
+                                    font: inherit;
+                                    cursor: pointer;
+                                    padding: 0.75em;
+                                    width: 100%;
+                                    text-align: left;
+                                '>Cerrar sesión</button>
+                            </form>
+                        </li>
+                    ";
+                }
+                ?>
+                <hr>
+                <li><a href="help.php">Ayuda</a></li>
+                <li><a href="about.php">Sobre nosotros</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
 </header>
 <div class="profile-container">
     <div class="profile-sidebar">
