@@ -896,3 +896,29 @@ PC: 1920 × 1080 px
     
 }
 */
+
+.review-card {
+    position: relative;
+    padding-bottom: 50px; /* espacio para el botón */
+}
+
+.translate-wrapper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.translate-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: #4f73df;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.translate-btn:hover {
+    background-color: #3d5bb5;
+}
