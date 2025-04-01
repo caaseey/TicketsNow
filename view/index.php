@@ -53,7 +53,7 @@
     </nav>
 
     <!-- CARROUSEL -->
-    <div class="carousel-container">
+    <header class="carousel-container">
         <div class="carousel-track">
             <div class="main-concert-banner active" style="background-image: url('img/Banners/brunoMars.jpg');">
                 <video autoplay muted loop playsinline>
@@ -91,16 +91,16 @@
         <button class="carousel-button next">
             <img src="img/Interfaces/next_button.png" alt="Siguiente">
         </button>
-    </div>
+    </header>
 
     <!-- FLOATING SECTION BAR -->
-    <div id="floating-search" class="floating-search-container">
+    <nav id="floating-search" class="floating-search-container">
         <a href="#featured-concerts">Destacado</a>
         <span class="divider">|</span>
         <a href="#recommended-concerts">Recomendados</a>
         <span class="divider">|</span>
         <a href="#discover-concerts">Descubre</a>
-    </div>
+    </nav>
 
     <!-- SECTION FEATURED CONCERTS -->
     <div class="featured-concerts-titles">
@@ -266,11 +266,6 @@
             </div>
             <div class="review-card">
                 <p id="review-text">KENDRICK LAMAR THE BEST ARTIST THIS DAMN CENTURY</p>
-
-                <div class="translate-wrapper">
-                    <button class="translate-btn" onclick="toggleTranslation(this)">Traducir</button>
-                </div>
-
                 <div class="review-user">
                     <img src="img/Interfaces/users/user3.png" alt="User foto">
                     <div>
@@ -415,22 +410,6 @@
                 showSlide();
             }
         }, 10000);
-    </script>
-    
-    <script>
-        function toggleTranslation(button) {
-            const p = button.previousElementSibling;
-            const original = "KENDRICK LAMAR THE BEST ARTIST THIS DAMN CENTURY";
-            const translated = "KENDRICK LAMAR ES EL MEJOR ARTISTA DE TODO ESTE MALDITO SIGLO";
-
-            if (p.textContent === original) {
-                p.textContent = translated;
-                button.textContent = "Ver original";
-            } else {
-                p.textContent = original;
-                button.textContent = "Traducir";
-            }
-        }
     </script>
 </body>
 
