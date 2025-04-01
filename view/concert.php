@@ -54,7 +54,7 @@
     </header>
 
     <!-- CONCERT NAVBAR -->
-    <div class="concert-navbar">
+    <navbar class="concert-navbar">
         <div class="concert-navbar-group">
             <a href="#" class="concert-navbar-option">
             <span>
@@ -69,21 +69,20 @@
             </span>
             </a>
         </div>
-    </div>
+    </navbar>
 
     <!-- SEAT MAP -->
-    <div class="seat-map">
-        <img src="./img/Interfaces/seat_map.jpg" alt="Seat Map">
-    </div>
+    <section class="seat-map">
+        <img src="./img/Interfaces/seat_map.png" alt="Seat Map">
+    </section>
 
-    <!-- SEAT MAP -->
+    <!-- SEAT FILTER -->
     <div class="main-section-title">
         <h2>FILTRAR POR</h2>
         <hr>
     </div>
 
-    <!-- SEAT FILTER -->
-    <div class="filters-container">
+    <section class="filters-container">
         <!-- TYPE -->
         <div class="filter-box">
             <div class="filter-title">
@@ -123,7 +122,7 @@
                 <span class="price-tag">€425</span>
             </div>
         </div>
-    </div>
+    </section>
 
  
 

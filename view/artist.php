@@ -63,7 +63,7 @@
     <h2>Conciertos en España</h2>
   </div>
 
-  <div class="ticket-container">
+  <section class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
         <div class="ticket-date">
@@ -79,9 +79,9 @@
       </div>
       <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
-  </div>
+  </section>
 
-  <div class="ticket-container">
+  <section class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
         <div class="ticket-date">
@@ -97,14 +97,14 @@
       </div>
       <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
-  </div>
+  </section>
 
   <!-- INTERNATIONAL TICKETS -->
   <div class="section-title">
     <h2>Conciertos Internacionales</h2>
   </div>
 
-  <div class="ticket-container">
+  <section class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
         <div class="ticket-date">
@@ -120,9 +120,9 @@
       </div>
       <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
-  </div>
+  </section>
 
-  <div class="ticket-container">
+  <section class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
         <div class="ticket-date">
@@ -138,9 +138,9 @@
       </div>
       <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
-  </div>
+  </section>
 
-  <div class="ticket-container">
+  <section class="ticket-container">
     <div class="ticket">
       <div class="ticket-info">
         <div class="ticket-date">
@@ -156,7 +156,7 @@
       </div>
       <a href="concert.php"><button>ENTRADAS</button></a>
     </div>
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
