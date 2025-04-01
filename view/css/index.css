@@ -692,19 +692,90 @@ PC: 1920 × 1080 px
     }
   
     /* CAROUSEL */
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        margin: 2rem auto;
+        margin-top: 5rem;
+        padding-inline: 0;
+    }
+    
+    .carousel-track {
+        display: flex;
+        gap: 1rem;
+        transition: transform 0.8s ease-in-out;
+    }
+    
     .main-concert-banner {
-        width: 90vw;
-        height: 28rem;
+        flex: 0 0 100vw;
+        height: 22rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .main-concert-banner video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .carousel-button {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+    
+    .carousel-button img {
+        width: 60%;
+        height: auto;
+    }
+    
+    .carousel-button.prev {
+        left: 0.5rem;
+    }
+    
+    .carousel-button.next {
+        right: 0.5rem;
+    }
+    
+    .carousel-text {
+        padding: 1rem;
+        z-index: 1;
+        position: relative;
+    }
+    
+    .carousel-text h1 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+    
+    .carousel-text a button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
   
     /* FLOATIN SEARCH */
     .floating-search-container {
-        font-size: 0.6em;
+        font-size: 0.8em;
     }
 
     /* FEATURED CONCERTS TITLE */
     .featured-concerts-titles .section-title:nth-child(2) {
         display: none;
+    }
+
+    .featured-concerts-titles {
+        padding-top: 0; 
+        padding-bottom: 2rem;
     }
 
     .featured-concerts-titles {
@@ -810,6 +881,14 @@ PC: 1920 × 1080 px
     
   
     /* CAROUSEL */
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        margin: 2rem auto;
+        margin-top: 5rem;
+        padding-inline: 0;
+    }
+    
     .carousel-text h1 {
         font-size: 2rem;
     }
@@ -823,6 +902,11 @@ PC: 1920 × 1080 px
         height: 3rem;
     }
   
+    /* FLOATIN SEARCH */
+    .floating-search-container {
+        font-size: 1.3em;
+    }
+
     /* FEATURED CONCERTS TITLE */
     .featured-concerts-titles .section-title:nth-child(2) {
         display: none;
@@ -850,7 +934,7 @@ PC: 1920 × 1080 px
     }
   
     .concert-info h3 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
   
     .concert-info p {
@@ -868,6 +952,11 @@ PC: 1920 × 1080 px
     }
   
     /* MOST FEATURED CONCERT */
+    .featured-concerts-titles {
+        padding-top: 0; 
+        padding-bottom: 2rem;
+    }
+
     .most-featured-concert img {
         height: 20rem; 
     }
