@@ -166,7 +166,7 @@
 
 .filter-box hr {
     border: none;
-    border-top: 1px solid #dce1e7;
+    border-top: 1px solid var(--light);
     margin: 1rem 0;
 }
   
@@ -205,7 +205,7 @@
 @media screen and (max-width: 480px) {
     /* BANNER */
     .banner-text h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.3;
     }
   
