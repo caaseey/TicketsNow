@@ -96,6 +96,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.8rem;
     box-sizing: border-box;
     background: white;
     border: none;
@@ -103,7 +104,6 @@ body {
     border-radius: 2rem;
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    gap: 0.8rem;
     transition: all 0.3s ease-in-out;
     transform: scale(1);
 }
@@ -444,6 +444,7 @@ body {
     font-size: 1rem;
 }
 
+/* FEATURED CONCERTS */
 .most-featured-concert {
     grid-column: span 2;
     grid-row: span 2;
@@ -466,6 +467,7 @@ body {
     padding-top: 9vh;
     padding-bottom: 5vh;
 }
+
 .featured-concerts {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -480,15 +482,14 @@ body {
 
 /* RECOMMENDED CONCERTS */
 .recommended-concerts {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 3rem;
     margin-top: 1rem;
     padding-top: 3rem;
     padding-left: 10rem;
     padding-right: 10rem;
     padding-bottom: 3rem;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 3rem;
     width: 100%;
     box-sizing: border-box;
 }
@@ -552,11 +553,11 @@ body {
 
 /* DISCOVER CONCERTS */
 .discover-concerts {
-    margin-bottom: 5rem;
-    padding: 5vh 5vw 10vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+    margin-bottom: 5rem;
+    padding: 5vh 5vw 10vh;
     width: 100%;
     box-sizing: border-box;
 }

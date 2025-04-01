@@ -105,9 +105,9 @@
 /* SEAT FILTER */
 .filters-container {
     display: flex;
-    margin-top: 2rem;
     gap: 5rem;
     justify-content: center;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
   
