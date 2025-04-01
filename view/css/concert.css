@@ -13,8 +13,6 @@
     line-height: 1.5;
 }
 
-
-
 /* CONCERT NAVBAR */
 .concert-navbar {
     position: relative;
@@ -202,6 +200,138 @@
     border: 1px solid var(--blue);
     border-radius: 0.4rem;
     font-weight: 500;
+}
+  
+@media screen and (max-width: 480px) {
+    /* BANNER */
+    .banner-text h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+  
+    .banner-text p {
+        font-size: 0.9rem;
+        margin: 0.3rem;
+    }
+  
+    /* CONCERT NAVBAR */
+    .concert-navbar {
+        margin: 2rem auto;
+    }
+  
+    .concert-navbar-group {
+        flex-direction: column;
+    }
+  
+    .concert-navbar-option span {
+        font-size: 1.1rem;
+        padding: 0.5rem 2rem;
+    }
+  
+    .concert-navbar-option span img {
+        height: 1.2rem;
+    }
+  
+    /* SEAT MAP */
+    .seat-map {
+        padding: 0.5rem;
+        margin: 1.5rem auto;
+    }
+  
+    .seat-map img {
+        width: 90vw;
+    }
+  
+    /* FILTERS */
+    .filters-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+  
+    .filter-box {
+        width: 90%;
+        padding: 1rem;
+    }
+  
+    .filter-title h3 {
+        font-size: 1.2rem;
+    }
+  
+    .filter-options label {
+        font-size: 0.9rem;
+    }
+  
+    .price-tag {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+
+    /* BANNER */
+    .banner-text h2 {
+        font-size: 2.5rem;
+    }
+  
+    .banner-text p {
+        font-size: 1.1rem;
+    }
+  
+    /* CONCERT NAVBAR */
+    .concert-navbar {
+        margin: 2.5rem auto;
+    }
+  
+    .concert-navbar-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  
+    .concert-navbar-option span {
+        font-size: 1.3rem;
+    }
+  
+    .concert-navbar-option span img {
+        height: 1.3rem;
+    }
+  
+    /* SEAT MAP */
+    .seat-map {
+        padding: 1rem;
+        margin: 2rem auto;
+    }
+  
+    .seat-map img {
+        width: 100%;
+        max-width: 38rem;
+    }
+  
+    /* FILTERS */
+    .filters-container {
+        gap: 3rem;
+        padding: 0 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  
+    .filter-box {
+        width: 300px;
+        padding: 1.2rem;
+    }
+  
+    .filter-title h3 {
+        font-size: 1.3rem;
+    }
+  
+    .filter-options label {
+        font-size: 1rem;
+    }
+  
+    .price-tag {
+        font-size: 1rem;
+    }
 }
   
   
