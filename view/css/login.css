@@ -82,6 +82,7 @@ input {
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 1rem;
+    transition: all var(--transition-speed) ease;
     background: #f8f9fa;
 }
 
@@ -103,6 +104,8 @@ input:focus {
     font-size: 1rem;
     font-weight: 600;
     transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .button:hover {
@@ -124,8 +127,7 @@ input:focus {
 
 @keyframes shake {
 
-    0%,
-    100% {
+    0%,100% {
         transform: translateX(0);
     }
 
@@ -172,7 +174,7 @@ a:hover {
 }
 
 .extra-buttons {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -186,6 +188,7 @@ a:hover {
     }
 
     .image-container {
-        max-height: 200px;
+        max-width: 80%;
+        margin: 1rem auto 0 auto;
     }
 }

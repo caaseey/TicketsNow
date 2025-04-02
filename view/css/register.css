@@ -131,6 +131,7 @@ input:focus {
 }
 
 .button {
+    font-family: 'Poppins', sans-serif;
     background: var(--primary-color);
     color: white;
     padding: 14px;
