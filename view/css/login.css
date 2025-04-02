@@ -71,6 +71,15 @@ h2 {
     position: relative;
 }
 
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+}
 .input-group {
     position: relative;
     margin: 1.5rem 0;
@@ -108,11 +117,6 @@ input:focus {
     overflow: hidden;
 }
 
-.button:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
-}
 
 .error {
     background: #fee;
