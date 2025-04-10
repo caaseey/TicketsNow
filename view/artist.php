@@ -33,7 +33,7 @@
                     echo "<li><a href='profile.php'>Mi perfil</a></li>";
                 } else {
                     echo "<li><a href='login.php'>Iniciar sesión</a></li>";
-                    echo "<li><a href='register.php'>Regístrate</a></li>";
+                    echo "<li><a href='registerUser.php'>Regístrate</a></li>";
                 }
                 ?>
                 <hr>

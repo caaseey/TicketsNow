@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <section class="container">
         <div class="form-container">
-            <h2>Regístrate</h2>
+            <h2>Regístrate como Usuario</h2>
             <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
 
             <?php if ($error): ?>

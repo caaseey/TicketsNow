@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <section class="container">
         <div class="form-container">
             <h2>Iniciar Sesión</h2>
-            <p>¿Nuevo en Tickets Now? <a href="register.php">Crear cuenta</a></p>
+            <p>¿Nuevo en Tickets Now? <a href="registerUser.php">Crear cuenta</a></p>
 
             <?php if (!empty($error)): ?>
                 <div class="error"><?= htmlspecialchars($error) ?></div>
