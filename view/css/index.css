@@ -64,6 +64,7 @@ body {
     box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
     transform: scale(1.01);
 }
+
 .search-bar {
     width: 100%;
     border: none;
@@ -275,7 +276,7 @@ body {
     background-color: rgba(80, 118, 135, 0); 
 }
 
-.main-concert-banner video {
+.main-concert-banner video {    
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
     position: absolute;
@@ -299,7 +300,7 @@ body {
     padding: 0 2rem 3rem;
     color: white;
 }
-
+    
 .carousel-text h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -367,7 +368,6 @@ body {
 
 /* SECTION TITLES */
 .section-title {
-    padding-top: 8vh;
     padding-inline: 5vw;
     display: flex;
     flex-direction: column; 
@@ -464,7 +464,6 @@ body {
     justify-content: space-between; 
     align-items: center;
     width: 100%; 
-    padding-top: 9vh;
     padding-bottom: 5vh;
 }
 
