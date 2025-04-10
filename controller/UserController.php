@@ -10,7 +10,7 @@ class UserController
             die("Connection failed: " . $this->conn->connect_error);
         }
     }
-
+     
     public function login(): string
     {
         $error = "";
@@ -50,7 +50,24 @@ class UserController
         return $error;
     }
 
-    public function logout(): void {}
-    public function register(): void {}
+    public function logout(): void 
+    {
+
+    }
+    
+    public function registerUser(): void 
+    {
+
+    }
+
+    public function registerArtist(): void 
+    {
+
+    }
+
+    public function registerAdmin(): void 
+    {
+
+    }
 }
 ?>
