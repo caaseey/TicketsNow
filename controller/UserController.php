@@ -51,6 +51,29 @@ class UserController
     }
 
     public function logout(): void {}
-    public function register(): void {}
+    public function register()
+    {
+        if (
+            empty($_POST['email']) || empty($_POST['password']) ||
+            empty($_POST['nombre']) || empty($_POST['apellido'])
+        ) {
+            return "Todos los campos son obligatorios.";
+        }
+
+        $email = $_POST['email'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+
+        // Aquí conecta a la base de datos y guarda al nuevo usuario
+        $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
+        $stmt = $db->prepare("INSERT INTO users (email, password, nombre, apellido) VALUES (?, ?, ?, ?)");
+
+        try {
+            $stmt->execute([$email, $password, $nombre, $apellido]);
+            return true;
+        } catch (PDOException $e) {
+            return "Error al registrar: " . $e->getMessage();
+        }
+    }
 }
-?>

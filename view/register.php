@@ -1,56 +1,28 @@
 <?php
-session_start();
-$error = '';
-$success = '';
+// Inicia la sesión solo si no está iniciada
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+require_once __DIR__ . '/../controller/UserController.php';
+
+$error = "";
+$success = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']);
-    $password = $_POST['password'];
-    $nombre = trim($_POST['nombre']);
-    $apellido = trim($_POST['apellido']);
+    $UserController = new UserController();
+    $result = $UserController->register();
 
-    // Validación de campos vacíos y formato
-    if (empty($email) || empty($password) || empty($nombre) || empty($apellido)) {
-        $error = 'Todos los campos son obligatorios.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = 'Formato de email inválido.';
+    // Si register() devuelve un mensaje de éxito o error
+    if ($result === true) {
+        $success = "Registro exitoso. ¡Ya puedes iniciar sesión!";
     } else {
-        // Comprobamos que el email NO esté ya registrado
-        $users = @file('users.dat', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [];
-        foreach ($users as $user) {
-            $data = explode('||', $user);
-            // $data[0] es el email guardado
-            if ($data[0] === $email) {
-                $error = 'El email ya está registrado.';
-                break;
-            }
-        }
-
-        // Si no hay error después de la comprobación, guardamos el nuevo usuario
-        if (empty($error)) {
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            $user_data = implode('||', [
-                $email,
-                $hashed_password,
-                $nombre,
-                $apellido
-            ]) . "\n";
-
-            if (file_put_contents('users.dat', $user_data, FILE_APPEND | LOCK_EX)) {
-                $_SESSION['registered'] = true;
-                $success = '¡Registro exitoso! Redirigiendo...';
-                // Redirigir tras 2 segundos
-                header('Refresh: 2; URL=login.php');
-            } else {
-                $error = 'Error al guardar los datos.';
-            }
-        }
+        $error = $result; // en caso de que devuelva un string con error
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/register.css">
 </head>
-
 <body>
     <header>
         <a href="index.php">
@@ -97,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="button">Registrar</button>
             </form>
 
-            <!-- Botones adicionales -->
             <div class="extra-buttons">
                 <button type="button" class="button" 
                         onclick="window.location.href='registroArtista.php'">
@@ -115,5 +85,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 </body>
-
 </html>
