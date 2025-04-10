@@ -36,9 +36,9 @@
                     }
                     ?>
                     <hr>
-                    <li><a href="help.php">Ayuda</a></li>
-                    <li><a href="about.php">Sobre nosotros</a></li>
-                    <li><a href="#footer">Contacto</a></li>
+                    <li><a href="workinprogress.html">Ayuda</a></li>
+                    <li><a href="workinprogress.html">Sobre nosotros</a></li>
+                    <li><a href="workinprogress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>

@@ -2,11 +2,11 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/artist.css"/> 
-    <title>TWICE - Artista</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/artist.css" />
+  <title>TWICE - Artista</title>
 </head>
 
 <body>
@@ -16,32 +16,32 @@
       <img src="img/Interfaces/logo.png" alt="Tickets Now" />
     </a>
     <div class="account-menu">
-        <button class="account-button">
-            <div class="account-icon">
-                <hr>
-                <hr>
-                <hr>
-            </div>
-            <div class="account-picture">
-                <img src="img/Interfaces/user_icon.png" alt="Usuario">
-            </div>
-        </button>
-        <div class="account-dropdown-menu">
-            <ul>
-                <?php
-                if (isset($_SESSION['logged_in'])) {
-                    echo "<li><a href='profile.php'>Mi perfil</a></li>";
-                } else {
-                    echo "<li><a href='login.php'>Iniciar sesión</a></li>";
-                    echo "<li><a href='registerUser.php'>Regístrate</a></li>";
-                }
-                ?>
-                <hr>
-                <li><a href="help.php">Ayuda</a></li>
-                <li><a href="about.php">Sobre nosotros</a></li>
-                <li><a href="#footer">Contacto</a></li>
-            </ul>
+      <button class="account-button">
+        <div class="account-icon">
+          <hr>
+          <hr>
+          <hr>
         </div>
+        <div class="account-picture">
+          <img src="img/Interfaces/user_icon.png" alt="Usuario">
+        </div>
+      </button>
+      <div class="account-dropdown-menu">
+        <ul>
+          <?php
+          if (isset($_SESSION['logged_in'])) {
+            echo "<li><a href='profile.php'>Mi perfil</a></li>";
+          } else {
+            echo "<li><a href='login.php'>Iniciar sesión</a></li>";
+            echo "<li><a href='registerUser.php'>Regístrate</a></li>";
+          }
+          ?>
+          <hr>
+          <li><a href="workinprogress.html">Ayuda</a></li>
+          <li><a href="workinprogress.html">Sobre nosotros</a></li>
+          <li><a href="workinprogress.html">Contacto</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -181,4 +181,5 @@
     </div>
   </footer>
 </body>
+
 </html>
