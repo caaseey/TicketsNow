@@ -32,13 +32,13 @@
                         echo "<li><a href='profile.php'>Mi perfil</a></li>";
                     } else {
                         echo "<li><a href='login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='register.php'>Regístrate</a></li>";
+                        echo "<li><a href='registerUser.php'>Regístrate</a></li>";
                     }
                     ?>
                     <hr>
-                    <li><a href="help.php">Ayuda</a></li>
-                    <li><a href="about.php">Sobre nosotros</a></li>
-                    <li><a href="#footer">Contacto</a></li>
+                    <li><a href="workinprogress.html">Ayuda</a></li>
+                    <li><a href="workinprogress.html">Sobre nosotros</a></li>
+                    <li><a href="workinprogress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
