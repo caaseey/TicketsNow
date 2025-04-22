@@ -10,7 +10,7 @@ class UserController
             die("Connection failed: " . $this->conn->connect_error);
         }
     }
-
+     
     public function login(): string
     {
         $error = "";
