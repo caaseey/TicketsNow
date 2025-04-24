@@ -40,13 +40,13 @@
                         echo "<li><a href='profile.php'>Mi perfil</a></li>";
                     } else {
                         echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='../view/src/php/registerUser.php'>Regístrate</a></li>";
+                        echo "<li><a href='../view/src/php/register_user.php'>Regístrate</a></li>";
                     }
                     ?>
                     <hr>
-                    <li><a href="workinprogress.html">Ayuda</a></li>
-                    <li><a href="workinprogress.html">Sobre nosotros</a></li>
-                    <li><a href="workinprogress.html">Contacto</a></li>
+                    <li><a href="../view/src/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="../view/src/work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="../view/src/work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -289,7 +289,7 @@
             </div>
             <div class="footer-column">
                 <h3>Sobre nosotros</h3>
-                <a href="about.php">Haz click aquí</a>
+                <a href="../view/src/php/about.php">Haz click aquí</a>
             </div>
             <div class="footer-column">
                 <h3>Llámanos</h3>
@@ -297,7 +297,7 @@
             </div>
             <div class="footer-column">
                 <h3>¿Buscas ayuda?</h3>
-                <a href="help.php">Página de ayuda</a><br>
+                <a href="../view/src/php/help.php">Página de ayuda</a><br>
             </div>
         </div>
 
