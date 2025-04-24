@@ -1,338 +1,394 @@
-/* BANNER */
-.banner-text h2 {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: bold;
-    line-height: 1.5;
-}
-  
-.banner-text p {
-    margin: 0.5rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.5;
+html {
+    scroll-behavior: smooth;
 }
 
-/* CONCERT NAVBAR */
-.concert-navbar {
-    position: relative;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-    margin: 3rem auto;
+:root {
+    --blue: rgba(80, 118, 135, 1);
+    --light: rgba(248, 245, 231, 1);
+    --dark: rgba(51, 51, 51, 1);
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--light);
+    color: var(--dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
 }
   
-.concert-navbar-group {
-    display: flex;
-    background-color: var(--blue);
-    border-radius: 0.5rem;
-    overflow: hidden;
+/* NAVBAR */
+.navbar-background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6rem;
+    backdrop-filter: blur(12px); 
+    z-index: 1; 
 }
-  
-.concert-navbar-option {
-    position: relative;
-    color: white;
-    padding: 0.5rem 3rem;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 0 1rem;
+    z-index: 100; 
+    background: transparent;
 }
-  
-.concert-navbar-option span {
+
+
+/* BANNER */
+.banner-header {
     position: relative;
-    display: flex; 
-    align-items: center; 
-    z-index: 1;
-    color: white;
-    font-weight: 500;
-    font-size: 1.5rem;
-    gap: 0.5rem; 
+    width: 100%;
+    height: 40vh;
+    background-image: url('../../media/img/concert_banners/twice.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 3rem;
+    transition: height 0.5s ease-in-out;
 }
   
-.concert-navbar-option span::after {
+.banner-header:hover {
+    height: 50vh;
+}
+
+.banner-header::before {
     content: "";
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: white;
-    border-radius: 2px;
-    z-index: 0;
-    transition: width 0.3s ease; 
-}
-  
-.concert-navbar-option:hover span::after {
-    animation: underline-slide 0.3s ease both;
-}
-  
-@keyframes underline-slide {
-    from {
-      width: 0%;
-    }
-    to {
-      width: 100%;
-    }
+    inset: 0;
+    background-color: rgba(80, 118, 135, 0.4); 
+    z-index: 1;
 }
 
-.concert-navbar-option span img {
-    height: 1.4rem;
-    width: auto;
-}
-
-/* SEAT MAP */
-.seat-map {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem auto;
-    background-color: var(--blue);
-    padding: 1rem;
-    border-radius: 1rem;
-    width: fit-content;
-    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
-}
-
-.seat-map img {
-    width: 40rem;
-    max-width: 90vw;
-    border: 3px solid #3d5c64;
-    border-radius: 12px;
-}
-
-/* SEAT FILTER */
-.filters-container {
-    display: flex;
-    gap: 5rem;
-    justify-content: center;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-  
-.filter-box {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    padding: 1rem;
-    width: 280px;
-}
-  
-.filter-title {
-    background-color: var(--blue);
+.banner-text {
+    position: relative;
+    z-index: 2;
     color: white;
-    border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-  
-.filter-title img {
-    height: 1.5rem;
-    width: auto;
-}
-  
-.filter-box h3 {
-    margin: 0;
-    font-size: 1.3rem;
-}
-  
-/* TYPE */
-.filter-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-  
-.filter-options label {
-    font-size: 1rem;
-    color: black;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    line-height: 1.2;
-}
-  
-.filter-options input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-    accent-color: var(--blue);
-}  
-
-.filter-box hr {
-    border: none;
-    border-top: 1px solid var(--light);
-    margin: 1rem 0;
-}
-  
-/* PRICE */
-.filter-box:last-child {
-    padding: 1rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    height: auto;
+    max-width: 70%;
 }
 
-.filter-price {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 0.5rem;
+.banner-text p {
     margin: 0;
-    max-width: 100%;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.5;
 }
   
-.filter-price input[type="range"] {
+.banner-text h1 {
+    margin: 0;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* SECTION TITLES */
+.section-title {
+    padding-bottom: 4vh;
+}
+
+.main-section-title {
+    padding-top: 2vh;
+    padding-inline: 5vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.main-section-title h2{
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--blue);
+    margin-bottom: 0;
+}
+
+.main-section-title hr {
     width: 100%;
-    accent-color: var(--blue);
+    height: 5px;
+    background-color: var(--blue); 
+    border: none;
+}
+
+/* TICKETS */
+.ticket {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto 1rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: 1.2rem;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 0;
+    transition: all 0.4s ease;
+    color: white;
+    font-family: inherit;
+    min-height: 7rem;
+}
+  
+.ticket::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 1.2rem;
+    z-index: -1;
+}
+  
+.ticket-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+  
+.ticket-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+  
+.ticket-date p {
+    margin: 0.2rem 0;
+}
+  
+.ticket-date p:nth-child(2) {
+    font-weight: bold; 
+}
+  
+.ticket-details {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+  
+.ticket-details p {
+    margin: 0;
+}
+  
+.ticket-details p:nth-child(2) {
+    font-weight: bold; 
+    font-size: 2.5rem;
+}
+  
+.ticket button {
+    background: white;
+    color: var(--blue);
+    font-weight: bold;
+    padding: 0.6rem 1.6rem; 
+    border-radius: 1rem;
+    border: none;
     cursor: pointer;
-}
-
-.price-tag {
-    padding: 0.4rem 0.7rem;
-    border: 1px solid var(--blue);
-    border-radius: 0.4rem;
-    font-weight: 500;
+    font-size: 1.5rem; 
+    transition: transform 0.4s ease;
+    transform: scale(1);
 }
   
+.ticket:hover button {
+    transform: scale(1.05);
+}
+  
+/* FOOTER */
+footer {
+    margin-top: 20vh;
+}
+
+/*
+MOBILE: 414 × 896 px 
+TABLET: 800 × 1280 px 
+PC: 1920 × 1080 px 
+*/
+/* MOBILE */
 @media screen and (max-width: 480px) {
-    /* BANNER */
-    .banner-text h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
-  
-    .banner-text p {
-        font-size: 0.9rem;
-        margin: 0.3rem;
-    }
-  
-    /* CONCERT NAVBAR */
-    .concert-navbar {
-        margin: 2rem auto;
-    }
-  
-    .concert-navbar-group {
-        flex-direction: column;
-    }
-  
-    .concert-navbar-option span {
-        font-size: 1.1rem;
-        padding: 0.5rem 2rem;
-    }
-  
-    .concert-navbar-option span img {
-        height: 1.2rem;
-    }
-  
-    /* SEAT MAP */
-    .seat-map {
-        padding: 0.5rem;
-        margin: 1.5rem auto;
-    }
-  
-    .seat-map img {
-        width: 90vw;
-    }
-  
-    /* FILTERS */
-    .filters-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-  
-    .filter-box {
-        width: 90%;
-        padding: 1rem;
-    }
-  
-    .filter-title h3 {
-        font-size: 1.2rem;
-    }
-  
-    .filter-options label {
-        font-size: 0.9rem;
-    }
-  
-    .price-tag {
-        font-size: 0.9rem;
-    }
-}
+  * {
+    box-sizing: border-box;
+  }
 
+  body {
+    /*
+    background-color: red;
+    */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    height: auto;
+  }
+
+  .logo img {
+    width: 6rem; 
+    height: auto;
+  }
+
+  .account-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .account-button {
+    padding: 0.3rem 0.8rem;
+    height: 2.5rem;
+  }
+  
+  /* BANNER */
+  .banner-header {
+    height: 28vh;
+    padding: 1rem;
+  }
+
+  .banner-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .banner-text p {
+    font-size: 1.2rem;
+  }
+
+  .main-section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  /* TICKETS */
+  .ticket {
+    flex-direction: column;
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+  }
+
+  .ticket-date {
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .ticket-details {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .ticket-details p:nth-child(2) {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .ticket button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    margin-top: 1rem;
+    align-self: center;
+  }
+}
+  
+
+/* TABLET */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
 
-    /* BANNER */
-    .banner-text h2 {
-        font-size: 2.5rem;
-    }
-  
-    .banner-text p {
-        font-size: 1.1rem;
-    }
-  
-    /* CONCERT NAVBAR */
-    .concert-navbar {
-        margin: 2.5rem auto;
-    }
-  
-    .concert-navbar-group {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-  
-    .concert-navbar-option span {
-        font-size: 1.3rem;
-    }
-  
-    .concert-navbar-option span img {
-        height: 1.3rem;
-    }
-  
-    /* SEAT MAP */
-    .seat-map {
-        padding: 1rem;
-        margin: 2rem auto;
-    }
-  
-    .seat-map img {
-        width: 100%;
-        max-width: 38rem;
-    }
-  
-    /* FILTERS */
-    .filters-container {
-        gap: 3rem;
-        padding: 0 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-  
-    .filter-box {
-        width: 300px;
-        padding: 1.2rem;
-    }
-  
-    .filter-title h3 {
-        font-size: 1.3rem;
-    }
-  
-    .filter-options label {
-        font-size: 1rem;
-    }
-  
-    .price-tag {
-        font-size: 1rem;
-    }
+  body {
+    /*
+    background-color: green;
+    */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* BANNER */
+  .banner-text h1 {
+    font-size: 4rem; 
+    line-height: 1.1;
+  }
+
+  .banner-text p {
+    font-size: 2rem;
+  }
+
+  /* MAIN TITLES */
+  .main-section-title {
+    padding-top: 1rem; 
+    padding-bottom: 0.5rem;
+  }
+
+  .main-section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .main-section-title hr {
+    margin-top: 0; 
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  /* TICKETS */
+  .ticket {
+    padding: 1rem 1.5rem;
+    margin: 0.8rem auto;
+  }
+
+  .ticket-date {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    min-width: 4rem; 
+  }
+
+  .ticket-details {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .ticket-details p:nth-child(2) {
+    font-size: 2.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .ticket-details p:not(:nth-child(2)) {
+    margin: 0;
+  }
+
+  .ticket button {
+    margin-left: 2rem; 
+  }
 }
-  
-  
+
   

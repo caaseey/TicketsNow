@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/artist.css"/> 
-    <link rel="stylesheet" href="css/concert.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/concert.css"/> 
+    <link rel="stylesheet" href="../css/tickets.css"/>
     <title>TWICE - Artista</title>
 </head>
 <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <a href="index.php" class="logo">
-            <img src="img/Interfaces/logo.png" alt="Tickets Now" />
+        <a href="../../index.php" class="logo">
+            <img src="../../media/img/interfaces/logo.png" alt="Tickets Now" />
         </a>
         <div class="account-menu">
             <button class="account-button">
@@ -22,7 +22,7 @@
                     <hr>
                 </div>
                 <div class="account-picture">
-                    <img src="img/Interfaces/user_icon.png" alt="Usuario">
+                    <img src="../../media/img/interfaces/user_icon.png" alt="Usuario">
                 </div>
             </button>
             <div class="account-dropdown-menu">
@@ -32,7 +32,7 @@
                         echo "<li><a href='profile.php'>Mi perfil</a></li>";
                     } else {
                         echo "<li><a href='login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='registerUser.php'>Regístrate</a></li>";
+                        echo "<li><a href='register_user.php'>Regístrate</a></li>";
                     }
                     ?>
                     <hr>
@@ -58,13 +58,13 @@
         <div class="concert-navbar-group">
             <a href="#" class="concert-navbar-option">
             <span>
-                <img src="img/Interfaces/seat_icon.png" alt="Elegir asientos">
+                <img src="../../media/img/interfaces/seat_icon.png" alt="Elegir asientos">
                 Elegir mis asientos
             </span>
             </a>
             <a href="#" class="concert-navbar-option">
             <span>
-                <img src="img/Interfaces/chat_icon.png" alt="Chat en vivo">
+                <img src="../../media/img/interfaces/chat_icon.png" alt="Chat en vivo">
                 Chat en vivo
             </span>
             </a>
@@ -73,7 +73,7 @@
 
     <!-- SEAT MAP -->
     <section class="seat-map">
-        <img src="./img/Interfaces/seat_map.png" alt="Seat Map">
+        <img src="../../media/img/interfaces/seat_map.png" alt="Seat Map">
     </section>
 
     <!-- SEAT FILTER -->
@@ -86,7 +86,7 @@
         <!-- TYPE -->
         <div class="filter-box">
             <div class="filter-title">
-                <img src="img/Interfaces/seat_type_icon.png" alt="Icono entradas">
+                <img src="../../media/img/interfaces/seat_type_icon.png" alt="Icono entradas">
                 <h3>Tipos de entradas</h3>
             </div>
             <div class="filter-options">
@@ -113,7 +113,7 @@
         <!-- PRICE -->
         <div class="filter-box">
             <div class="filter-title">
-                <img src="img/Interfaces/seat_price_icon.png" alt="Icono precio">
+                <img src="../../media/img/interfaces/seat_price_icon.png" alt="Icono precio">
                 <h3>Precio</h3>
             </div>
                 <div class="filter-price">

@@ -23,17 +23,18 @@
           <hr>
         </div>
         <div class="account-picture">
-          <img src="img/Interfaces/user_icon.png" alt="Usuario">
+          <img src="../../media/img/interfaces/user_icon.png" alt="Usuario">
         </div>
       </button>
       <div class="account-dropdown-menu">
         <ul>
           <?php
-          if (isset($_SESSION['logged_in'])) {
+          if (isset($_SESSION['logged_in'])) 
+          {
             echo "<li><a href='profile.php'>Mi perfil</a></li>";
           } else {
             echo "<li><a href='login.php'>Iniciar sesión</a></li>";
-            echo "<li><a href='registerUser.php'>Regístrate</a></li>";
+            echo "<li><a href='register.php'>Regístrate</a></li>";
           }
           ?>
           <hr>
@@ -77,7 +78,7 @@
           <p>Barcelona - Palau Sant Jordi</p>
         </div>
       </div>
-      <a href="concert.php"><button>ENTRADAS</button></a>
+      <a href="tickets.php"><button>ENTRADAS</button></a>
     </div>
   </section>
 
