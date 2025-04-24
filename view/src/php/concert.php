@@ -38,9 +38,9 @@
           }
           ?>
           <hr>
-          <li><a href="workinprogress.html">Ayuda</a></li>
-          <li><a href="workinprogress.html">Sobre nosotros</a></li>
-          <li><a href="workinprogress.html">Contacto</a></li>
+          <li><a href="../html/work_in_progress.html">Ayuda</a></li>
+          <li><a href="../html/work_in_progress.html">Sobre nosotros</a></li>
+          <li><a href="../html/work_in_progress.html">Contacto</a></li>
         </ul>
       </div>
     </div>
