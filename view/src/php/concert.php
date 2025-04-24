@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="css/artist.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/concert.css" />
   <title>TWICE - Artista</title>
 </head>
 
 <body>
   <!-- NAVBAR -->
   <nav class="navbar">
-    <a href="index.php" class="logo">
-      <img src="img/Interfaces/logo.png" alt="Tickets Now" />
+    <a href="../../index.php" class="logo">
+      <img src="../../media/img/interfaces/logo.png" alt="Tickets Now" />
     </a>
     <div class="account-menu">
       <button class="account-button">
