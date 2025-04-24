@@ -27,19 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/register.css"> <!-- ✅ correcta -->
+    <link rel="stylesheet" href="../css/register.css"> 
 </head>
 <body>
     <header>
-        <a href="../../../index.php"> <!-- 🔁 Ruta al index corregida -->
-            <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now"> <!-- ✅ ruta corregida -->
+        <a href="../../../index.php"> 
+            <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now"> 
         </a>
     </header>
 
     <section class="container">
         <div class="form-container">
             <h2>Regístrate como Usuario</h2>
-            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p> <!-- ✅ ya está bien -->
+            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p> 
 
             <?php if ($error): ?>
                 <div class="error"><?= $error ?></div>
