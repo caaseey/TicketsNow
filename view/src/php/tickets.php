@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/artist.css"/> 
-    <link rel="stylesheet" href="css/concert.css"/>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/artist.css" />
+    <link rel="stylesheet" href="css/concert.css" />
     <title>TWICE - Artista</title>
 </head>
+
 <body>
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -36,9 +38,10 @@
                     }
                     ?>
                     <hr>
-                    <li><a href="workinprogress.html">Ayuda</a></li>
-                    <li><a href="workinprogress.html">Sobre nosotros</a></li>
-                    <li><a href="workinprogress.html">Contacto</a></li>
+                    <!-- Enlaces en mantenimiento -->
+                    <li><a href="../view/src/html/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -57,16 +60,16 @@
     <navbar class="concert-navbar">
         <div class="concert-navbar-group">
             <a href="#" class="concert-navbar-option">
-            <span>
-                <img src="img/Interfaces/seat_icon.png" alt="Elegir asientos">
-                Elegir mis asientos
-            </span>
+                <span>
+                    <img src="img/Interfaces/seat_icon.png" alt="Elegir asientos">
+                    Elegir mis asientos
+                </span>
             </a>
             <a href="#" class="concert-navbar-option">
-            <span>
-                <img src="img/Interfaces/chat_icon.png" alt="Chat en vivo">
-                Chat en vivo
-            </span>
+                <span>
+                    <img src="img/Interfaces/chat_icon.png" alt="Chat en vivo">
+                    Chat en vivo
+                </span>
             </a>
         </div>
     </navbar>
@@ -116,7 +119,7 @@
                 <img src="img/Interfaces/seat_price_icon.png" alt="Icono precio">
                 <h3>Precio</h3>
             </div>
-                <div class="filter-price">
+            <div class="filter-price">
                 <span class="price-tag">€39</span>
                 <input type="range" min="39" max="425" value="100">
                 <span class="price-tag">€425</span>
@@ -124,30 +127,28 @@
         </div>
     </section>
 
- 
-
-
     <!-- FOOTER -->
     <footer>
-    <div class="footer-links">
-      <div class="footer-column">
-        <h3>Tickets Now</h3>
-        <a href="help.php">Ayuda</a>
-      </div>
-      <div class="footer-column">
-        <h3>Contacto</h3>
-        <a href="mailto:contacto@ticketsnow.com">contacto@ticketsnow.com</a>
-        <p>+34 666 88 99 66</p>
-      </div>
-      <div class="footer-column">
-        <h3>Legal</h3>
-        <a href="#">Términos</a>
-        <a href="#">Privacidad</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 TicketsNow. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Tickets Now</h3>
+                <a href="help.php">Ayuda</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <a href="mailto:contacto@ticketsnow.com">contacto@ticketsnow.com</a>
+                <p>+34 666 88 99 66</p>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TicketsNow. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

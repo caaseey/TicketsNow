@@ -44,9 +44,9 @@
                     }
                     ?>
                     <hr>
-                    <li><a href="../view/src/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="../view/src/work_in_progress.html">Sobre nosotros</a></li>
-                    <li><a href="../view/src/work_in_progress.html">Contacto</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
