@@ -11,7 +11,7 @@ $success = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $UserController = new UserController();
-    $result = $UserController->register();
+    $result = $UserController->register(1);
 
     if ($result === true) {
         $success = "Registro exitoso. ¡Ya puedes iniciar sesión!";

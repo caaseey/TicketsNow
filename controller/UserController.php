@@ -51,7 +51,7 @@ class UserController
     }
 
     public function logout(): void {}
-    public function register()
+    public function register($id_role = 1) 
     {
         if (
             empty($_POST['email']) || empty($_POST['password']) ||
@@ -65,12 +65,11 @@ class UserController
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
 
-        // Aquí conecta a la base de datos y guarda al nuevo usuario
         $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
-        $stmt = $db->prepare("INSERT INTO users (email, password, nombre, apellido) VALUES (?, ?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO users (email, password, nombre, apellido, id_role) VALUES (?, ?, ?, ?, ?)");
 
         try {
-            $stmt->execute([$email, $password, $nombre, $apellido]);
+            $stmt->execute([$email, $password, $nombre, $apellido, $id_role]);
             return true;
         } catch (PDOException $e) {
             return "Error al registrar: " . $e->getMessage();
