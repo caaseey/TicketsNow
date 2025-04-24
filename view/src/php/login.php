@@ -4,7 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-require_once __DIR__ . '/../controller/UserController.php';
+require_once __DIR__ . '/../../../controller/UserController.php';
 
 $error = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,17 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
+
 <body>
     <header>
         <a href="index.php">
-            <img src="img/Interfaces/logo.png" alt="Logo Tickets Now">
+            <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now">
         </a>
     </header>
 
@@ -52,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
         <div class="image-container">
-            <img src="img/Interfaces/concierto.png" alt="Experiencia musical">
+            <img src="../../media/img/interfaces/concierto.png" alt="Experiencia musical">
         </div>
     </section>
 </body>
@@ -62,4 +64,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         passwordInput.type = passwordInput.type === "password" ? "text" : "password";
     }
 </script>
+
 </html>
