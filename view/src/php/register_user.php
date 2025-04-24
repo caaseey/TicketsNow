@@ -4,7 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-require_once __DIR__ . '/../controller/UserController.php';
+require_once __DIR__ . '/../../../controller/UserController.php';
 
 $error = "";
 $success = "";
@@ -13,11 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $UserController = new UserController();
     $result = $UserController->register();
 
-    // Si register() devuelve un mensaje de éxito o error
     if ($result === true) {
         $success = "Registro exitoso. ¡Ya puedes iniciar sesión!";
     } else {
-        $error = $result; // en caso de que devuelva un string con error
+        $error = $result;
     }
 }
 ?>
@@ -28,19 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="../css/register.css"> <!-- ✅ correcta -->
 </head>
 <body>
     <header>
-        <a href="index.php">
-            <img src="img/interfaces/logo.png" alt="Logo Tickets Now">
+        <a href="../../../index.php"> <!-- 🔁 Ruta al index corregida -->
+            <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now"> <!-- ✅ ruta corregida -->
         </a>
     </header>
 
     <section class="container">
         <div class="form-container">
             <h2>Regístrate como Usuario</h2>
-            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
+            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p> <!-- ✅ ya está bien -->
 
             <?php if ($error): ?>
                 <div class="error"><?= $error ?></div>
@@ -70,18 +69,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="extra-buttons">
                 <button type="button" class="button" 
-                        onclick="window.location.href='registroArtista.php'">
+                        onclick="window.location.href='register_artist.php'"> 
                     ¿Eres artista? ¡Regístrate aquí!
                 </button>
                 <button type="button" class="button" 
-                        onclick="window.location.href='loginAdmin.php'">
+                        onclick="window.location.href='register_admin.php'"> 
                     Entrar como administrador
                 </button>
             </div>
         </div>
 
         <div class="image-container">
-            <img src="img/interfaces/concierto.png" alt="Experiencia musical">
+            <img src="../../media/img/interfaces/concierto.png" alt="Experiencia musical"> 
         </div>
     </section>
 </body>
