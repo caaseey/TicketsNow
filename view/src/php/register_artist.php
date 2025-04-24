@@ -6,7 +6,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $UserController = new UserController();
-    $result = $UserController->register();
+    $result = $UserController->register(2);
 
     // Si register() devuelve un mensaje de éxito o error
     if ($result === true) {
