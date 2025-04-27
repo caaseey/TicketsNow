@@ -61,13 +61,13 @@
         <div class="concert-navbar-group">
             <a href="#" class="concert-navbar-option">
             <span>
-                <img src="img/Interfaces/seat_icon.png" alt="Elegir asientos">
+                <img src="../../media/img/Interfaces/seat_icon.png" alt="Elegir asientos">
                 Elegir mis asientos
             </span>
             </a>
             <a href="#" class="concert-navbar-option">
             <span>
-                <img src="img/Interfaces/chat_icon.png" alt="Chat en vivo">
+                <img src="../../media/img/Interfaces/chat_icon.png" alt="Chat en vivo">
                 Chat en vivo
             </span>
             </a>
