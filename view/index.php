@@ -44,9 +44,9 @@
                     }
                     ?>
                     <hr>
-                    <li><a href="../view/src/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="../view/src/work_in_progress.html">Sobre nosotros</a></li>
-                    <li><a href="../view/src/work_in_progress.html">Contacto</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="../view/src/html/work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 </video>
                 <div class="carousel-text">
                     <h1>Bruno Mars - World Tour</h1>
-                    <a href="../view/src/php/concert.php"><button>ENTRADAS</button></a>
+                    <a href="../view/src/php/concerts/bruno_mars.php"><button>ENTRADAS</button></a>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                 </video>
                 <div class="carousel-text">
                     <h1>TWICE - Ready To Be</h1>
-                    <a href="../view/src/php/concert.php"><button>ENTRADAS</button></a>
+                    <a href="../view/src/php/concerts/twice.php"><button>ENTRADAS</button></a>
                 </div>
             </div>
 
@@ -81,7 +81,7 @@
                 </video>
                 <div class="carousel-text">
                     <h1>The Weeknd - After Hours Til Dawn Tour</h1>
-                    <a href="../view/src/php/concert.php"><button>ENTRADAS</button></a>
+                    <a href="../view/src/php/concerts/the_weeknd.php"><button>ENTRADAS</button></a>
                 </div>
             </div>
         </div>
@@ -114,42 +114,42 @@
         </div>
     </div>
     <section id="featured-concerts" class="featured-concerts">
-        <a href="../view/src/php/concert.php" class="concert-banner most-featured-concert">
+        <a href="../view/src/php/concerts/sza.php" class="concert-banner most-featured-concert">
             <img src="../view/media/img/concert_banners/sza.jpg" alt="SZA">
             <div class="concert-info">
                 <p>Madrid, España | 20 de junio de 2025</p>
                 <h3>SZA - SOS Tour</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/aespa.png" alt="aespa">
+        <a href="../view/src/php/concerts/aespa.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/aespa.jpg" alt="aespa">
             <div class="concert-info">
                 <p>Barcelona, España | 21 de noviembre de 2025</p>
                 <h3>aespa</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/imagine_dragons.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/imagine_dragons.jpg" alt="Imagine Dragons">
             <div class="concert-info">
                 <p>Cantabria, España | 18 de mayo de 2025</p>
                 <h3>Imagine Dragons</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/ado.png" alt="Ado">
+        <a href="../view/src/php/concerts/ado.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/ado.jpg" alt="Ado">
             <div class="concert-info">
                 <p>Bilbao, España | 22 de abril de 2025</p>
                 <h3>Ado</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/ksi.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/ksi.jpg" alt="KSI">
             <div class="concert-info">
                 <p>Sevilla, España | 10 de mayo de 2025</p>
                 <h3>KSI</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/eladio_carrion.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/eladio_carrion.jpg" alt="Eladio Carrión">
             <div class="concert-info">
                 <p>Madrid, España | 20 de agosto de 2025</p>
@@ -164,29 +164,29 @@
         <hr>
     </div>
     <section id="recommended-concerts" class="recommended-concerts">
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/marca_registrada.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/marca_registrada.jpg" alt="Marca Registrada">
             <div class="concert-info">
                 <p>Navarra, España | 7 de junio de 2025</p>
                 <h3>Marca Registrada - America Tour</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/aurora.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/aurora.jpg" alt="aurora">
             <div class="concert-info">
                 <p>Oviedo, España | 30 de marzo de 2025</p>
                 <h3>AURORA - LIVE TOUR</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/omar_courtz.png" alt="Omar Courtz">
+        <a href="../view/src/php/concerts/omar_courtz.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/omar_courtz.jpg" alt="Omar Courtz">
             <div class="concert-info">
                 <p>Lugo, España | 22 de abril de 2025</p>
                 <h3>Omar Courtz - Asia Tour 2025</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/acdc.png" alt="acdc">
+        <a href="../view/src/php/concerts/acdc.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/acdc.jpg" alt="acdc">
             <div class="concert-info">
                 <p>Madrid, España | 22 de abril de 2025</p>
                 <h3>ACDC - Europe Tour 2025</h3>
@@ -200,43 +200,43 @@
         <hr>
     </div>
     <section id="discover-concerts" class="discover-concerts">
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/kendrick_lamar.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/kendrick_lamar.jpg" alt="Kendrick Lamar">
             <div class="concert-info">
                 <p>Ibiza, España | 3 de julio de 2025</p>
                 <h3>Kendrick Lamar</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/yoasobi.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/yoasobi.jpg" alt="YOASOBI">
             <div class="concert-info">
                 <p>Valencia, España | 15 de agosto de 2025</p>
                 <h3>YOASOBI</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
+        <a href="../view/src/php/concerts/swingrowers.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/swingrowers.jpg" alt="Swingrowers">
             <div class="concert-info">
                 <p>Andalucía, España | 1 de enero de 2025</p>
                 <h3>Swingrowers</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/keshi.jpg" alt="Keshi">
+        <a href="../view/src/php/concerts/kenshi.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/kenshi.jpg" alt="Keshi">
             <div class="concert-info">
                 <p>Murcia, España | 18 de septiembre de 2025</p>
                 <h3>Keshi</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/laufey.png" alt="Laufey">
+        <a href="../view/src/php/concerts/laufey.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/laufey.jpg" alt="Laufey">
             <div class="concert-info">
                 <p>La Rioja, España | 12 de octubre de 2025</p>
                 <h3>Laufey</h3>
             </div>
         </a>
-        <a href="../view/src/php/concert.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/cuarteto_de_nos.png" alt="Cuarteto de Nos">
+        <a href="../view/src/php/concerts/cuarteto_de_nos.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/cuarteto_de_nos.jpg" alt="Cuarteto de Nos">
             <div class="concert-info">
                 <p>Barcelona, España | 24 de noviembre de 2025</p>
                 <h3>Cuarteto de Nos</h3>
@@ -251,7 +251,7 @@
             <div class="review-card">
                 <p>活力与激情的爆发，乐队的演奏让场地的每个角落都震动起来；与观众的联系无与伦比</p>
                 <div class="review-user">
-                    <img src="../../media/img/interfaces/users/user1.png" alt="User foto">
+                    <img src="../view/media/img/interfaces/users/user1.png" alt="user1">
                     <div>
                         <h4>Zeng</h4>
                         <p>Aespa - Beijing, China</p>
@@ -261,7 +261,7 @@
             <div class="review-card">
                 <p>A spectacular sound journey, with an impressive lighting set and an atmosphere that never stopped moving. Incredible!</p>
                 <div class="review-user">
-                    <img src="../view/media/img/interfaces/users/user2.png" alt="User foto">
+                    <img src="../view/media/img/interfaces/users/user2.png" alt="user2">
                     <div>
                         <h4>Charles</h4>
                         <p>Ado - Londres, Reino Unido</p>
@@ -271,7 +271,7 @@
             <div class="review-card">
                 <p id="review-text">KENDRICK LAMAR THE BEST ARTIST THIS DAMN CENTURY</p>
                 <div class="review-user">
-                    <img src="../view/media/img/interfaces/users/user3.png" alt="User foto">
+                    <img src="../view/media/img/interfaces/users/user3.png" alt="user3">
                     <div>
                         <h4>Tyrell</h4>
                         <p>Kendrick Lamar - Londres, Reino Unido</p>
