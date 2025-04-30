@@ -28,12 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Registro | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/register.css"> 
+    <link rel="stylesheet" href="../css/index.css"> 
 </head>
 <body>
-    <header>
-        <a href="../../../view"> 
-            <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now"> 
-        </a>
+    <header class="navbar logo-only">
+        <div class="logo">
+            <a href="../../../view">
+                <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now">
+            </a>
+        </div>
     </header>
 
     <section class="container">
