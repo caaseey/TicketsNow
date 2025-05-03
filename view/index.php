@@ -221,8 +221,8 @@
                 <h3>Swingrowers</h3>
             </div>
         </a>
-        <a href="../view/src/php/concerts/kenshi.php" class="concert-banner">
-            <img src="../view/media/img/concert_banners/kenshi.jpg" alt="Keshi">
+        <a href="../view/src/php/concerts/keshi.php" class="concert-banner">
+            <img src="../view/media/img/concert_banners/keshi.jpg" alt="Keshi">
             <div class="concert-info">
                 <p>Murcia, España | 18 de septiembre de 2025</p>
                 <h3>Keshi</h3>

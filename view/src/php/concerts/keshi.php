@@ -50,7 +50,7 @@
   <header class="banner-header" style="background-image: url('../../../media/img/concert_banners/kenshi.jpg');">
     <div class="banner-text">
       <p>Lo-fi</p>
-      <h1>Kenshi</h1>
+      <h1>Keshi</h1>
     </div>
   </header>
 

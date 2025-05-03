@@ -15,15 +15,20 @@ try {
 
 $id_user = $_SESSION['id_user'];
 
-// 👇 Procesar la foto si se ha enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profile_photo"])) {
-    $targetDir = "img";
-    $fileName = basename($_FILES["profile_photo"]["name"]);
+    $targetDir = __DIR__ . '/../../media/img/profile_pictures/';
+    $fileName = time() . '_' . basename($_FILES["profile_photo"]["name"]);
     $targetFile = $targetDir . $fileName;
 
+    if (!file_exists($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
+
     if (move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $targetFile)) {
+        $relativePath = '../../media/img/profile_pictures/' . $fileName;
         $stmt = $pdo->prepare("UPDATE users SET profile_photo = :photo WHERE id_user = :id");
-        $stmt->execute([':photo' => $targetFile, ':id' => $id_user]);
+        $stmt->execute([':photo' => $relativePath, ':id' => $id_user]);
+        $photo = $relativePath; // Actualizar variable por si se recarga la página
     }
 }
 
@@ -38,7 +43,7 @@ if (!$user) {
 $name = $user['name'];
 $surname = $user['surname'];
 $email = $user['email'];
-$photo = $user['profile_photo'] ?: 'img/Interfaces/user_icon.png';
+$photo = $user['profile_photo'] ?: '../../media/img/Interfaces/user_icon.png';
 $role = $user['id_role'];
 ?>
 
@@ -51,14 +56,14 @@ $role = $user['id_role'];
     <title>Mi perfil | Tickets Now</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/profileuser.css">
+    <link rel="stylesheet" href="../css/profileuser.css">
 </head>
 
 <body>
 
     <header class="main-header">
-        <a href="index.php" class="logo">
-            <img src="img/Interfaces/logo.png" alt="Logo Tickets Now">
+        <a href="../../" class="logo">
+            <img src="../../media/img/Interfaces/logo.png" alt="Logo Tickets Now">
         </a>
 
         <div class="profile-dropdown">
@@ -66,7 +71,7 @@ $role = $user['id_role'];
                 <div class="menu-icon">
                     <span></span><span></span><span></span>
                 </div>
-                <img src="img/Interfaces/user_icon.png" alt="Usuario">
+                <img src="../../media/img/Interfaces/user_icon.png" alt="Usuario">
             </button>
 
             <div class="profile-menu" id="profileMenu">

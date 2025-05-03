@@ -10,7 +10,7 @@ class UserController
             die("Connection failed: " . $this->conn->connect_error);
         }
     }
-     
+
     public function login(): string
     {
         $error = "";
@@ -30,7 +30,6 @@ class UserController
 
             if ($result->num_rows === 1) {
                 $user = $result->fetch_assoc();
-
                 $_SESSION['logged_in'] = true;
                 $_SESSION['id_user'] = $user['id_user'];
                 $_SESSION['user_name'] = $user['name'];
@@ -51,25 +50,38 @@ class UserController
     }
 
     public function logout(): void {}
-    public function register($id_role = 1) 
+
+    public function registerUser($data) {
+        return $this->register($data, 1);
+    }
+
+    public function registerArtist($data) {
+        return $this->register($data, 2);
+    }
+
+    public function registerAdmin($data) {
+        return $this->register($data, 3);
+    }
+
+    private function register($data, $role_id)
     {
         if (
-            empty($_POST['email']) || empty($_POST['password']) ||
-            empty($_POST['nombre']) || empty($_POST['apellido'])
+            empty($data['email']) || empty($data['password']) ||
+            empty($data['nombre']) || empty($data['apellido'])
         ) {
             return "Todos los campos son obligatorios.";
         }
-
-        $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-
-        $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
-        $stmt = $db->prepare("INSERT INTO users (email, password, nombre, apellido, id_role) VALUES (?, ?, ?, ?, ?)");
-
+    
+        $email = $data['email'];
+        $password = $data['password']; // Guardar como texto plano
+        $name = $data['nombre'];
+        $surname = $data['apellido'];
+        $profilePhoto = '';
+    
         try {
-            $stmt->execute([$email, $password, $nombre, $apellido, $id_role]);
+            $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
+            $stmt = $db->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
             return true;
         } catch (PDOException $e) {
             return "Error al registrar: " . $e->getMessage();

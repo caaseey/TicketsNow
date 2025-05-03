@@ -1,22 +1,18 @@
 <?php
-// Inicia la sesión solo si no está iniciada
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+require_once __DIR__ . '/../../../controller/UserController.php';
+
+$error = "";
+$success = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $UserController = new UserController();
-    $result = $UserController->register(2);
+    $userController = new UserController();
+    $result = $userController->registerArtist($_POST);
 
-    // Si register() devuelve un mensaje de éxito o error
-    if ($result === true) {
-        $success = "Registro exitoso. ¡Ya puedes iniciar sesión!";
-    } else {
-        $error = $result; // en caso de que devuelva un string con error
-    }
+    $success = $result === true ? "Registro exitoso. ¡Ya puedes iniciar sesión!" : "";
+    $error = $result !== true ? $result : "";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,18 +20,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Artista | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <header>
-        <a href="index.php">
-            <img src="img/interfaces/logo.png" alt="Logo Tickets Now">
-        </a>
+    <header class="navbar logo-only">
+        <div class="logo">
+            <a href="../../../view">
+                <img src="../../media/img/interfaces/logo.png" alt="Logo Tickets Now">
+            </a>
+        </div>
     </header>
 
     <section class="container">
         <div class="form-container">
-            <h2>Regístrate como Artist</h2>
+            <h2>Regístrate como Artista</h2>
             <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
 
             <?php if ($error): ?>
@@ -52,32 +51,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" name="password" placeholder="Contraseña" required>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="nombre" placeholder="Nombre" 
-                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
-                           title="Solo se permiten letras y espacios" required>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="apellido" placeholder="Apellido" 
-                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
-                           title="Solo se permiten letras y espacios" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
                 </div>
                 <button type="submit" class="button">Registrar</button>
             </form>
 
-            <div class="extra-buttons">
-                <button type="button" class="button" 
-                        onclick="window.location.href='registroArtista.php'">
-                    ¿Eres artista? ¡Regístrate aquí!
+            <div class="extra-buttons" style="display: flex; gap: 10px; justify-content: center;">
+                <button type="button" class="button" onclick="window.location.href='register_user.php'">
+                    ¿Eres usuario? ¡Regístrate aquí!
                 </button>
-                <button type="button" class="button" 
-                        onclick="window.location.href='loginAdmin.php'">
-                    Entrar como administrador
+                <button type="button" class="button" onclick="window.location.href='register_admin.php'">
+                    ¿Eres administrador? ¡Regístrate aquí!
                 </button>
             </div>
         </div>
 
         <div class="image-container">
-            <img src="img/interfaces/concierto.png" alt="Experiencia musical">
+            <img src="../../media/img/interfaces/concierto.png" alt="Experiencia musical">
         </div>
     </section>
 </body>

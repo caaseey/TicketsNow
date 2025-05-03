@@ -1,23 +1,16 @@
 <?php
-// Inicia la sesión solo si no está iniciada
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
-
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once __DIR__ . '/../../../controller/UserController.php';
 
 $error = "";
 $success = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $UserController = new UserController();
-    $result = $UserController->register(1);
+    $userController = new UserController();
+    $result = $userController->registerUser($_POST);
 
-    if ($result === true) {
-        $success = "Registro exitoso. ¡Ya puedes iniciar sesión!";
-    } else {
-        $error = $result;
-    }
+    $success = $result === true ? "Registro exitoso. ¡Ya puedes iniciar sesión!" : "";
+    $error = $result !== true ? $result : "";
 }
 ?>
 <!DOCTYPE html>
@@ -25,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | Tickets Now</title>
+    <title>Registro Usuario | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/register.css"> 
-    <link rel="stylesheet" href="../css/index.css"> 
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <header class="navbar logo-only">
@@ -42,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <section class="container">
         <div class="form-container">
             <h2>Regístrate como Usuario</h2>
-            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p> 
+            <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
 
             <?php if ($error): ?>
                 <div class="error"><?= $error ?></div>
@@ -58,32 +51,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" name="password" placeholder="Contraseña" required>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="nombre" placeholder="Nombre" 
-                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
-                           title="Solo se permiten letras y espacios" required>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="apellido" placeholder="Apellido" 
-                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
-                           title="Solo se permiten letras y espacios" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
                 </div>
                 <button type="submit" class="button">Registrar</button>
             </form>
 
-            <div class="extra-buttons">
-                <button type="button" class="button" 
-                        onclick="window.location.href='register_artist.php'"> 
+            <div class="extra-buttons" style="display: flex; gap: 10px; justify-content: center;">
+                <button type="button" class="button" onclick="window.location.href='register_artist.php'">
                     ¿Eres artista? ¡Regístrate aquí!
                 </button>
-                <button type="button" class="button" 
-                        onclick="window.location.href='register_admin.php'"> 
-                    Entrar como administrador
+                <button type="button" class="button" onclick="window.location.href='register_admin.php'">
+                    ¿Eres administrador? ¡Regístrate aquí!
                 </button>
             </div>
         </div>
 
         <div class="image-container">
-            <img src="../../media/img/interfaces/concierto.png" alt="Experiencia musical"> 
+            <img src="../../media/img/interfaces/concierto.png" alt="Experiencia musical">
         </div>
     </section>
 </body>
