@@ -20,8 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Usuario | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/register.css">
+    
 </head>
 <body>
     <header class="navbar logo-only">
@@ -56,10 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="input-group">
                     <input type="text" name="apellido" placeholder="Apellido" required>
                 </div>
-                <button type="submit" class="button">Registrar</button>
+
+                <div class="buttons">
+                    <button type="submit" class="button">Registrar</button>
+                </div>
             </form>
 
-            <div class="extra-buttons" style="display: flex; gap: 10px; justify-content: center;">
+            <div class="buttons">
                 <button type="button" class="button" onclick="window.location.href='register_artist.php'">
                     ¿Eres artista? ¡Regístrate aquí!
                 </button>
