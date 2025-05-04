@@ -55,7 +55,7 @@
     <!-- CARROUSEL -->
     <header class="carousel-container">
         <div class="carousel-track">
-            <div class="main-concert-banner active" style="background-image: url('img/Banners/brunoMars.jpg');">
+            <div class="main-concert-banner" style="background-image: url('img/Banners/brunoMars.jpg');">
                 <video autoplay muted loop playsinline>
                     <source src="../view/media/video/bruno_mars.mp4" type="video/mp4">
                 </video>
@@ -353,67 +353,70 @@
 
     <!-- Carousel script -->
     <script>
-        // Container of the banners
         const track = document.querySelector('.carousel-track');
-        // The array of banners
-        const banners = Array.from(track.children);
+        const banners = document.querySelectorAll('.main-concert-banner');
+        const nextBtn = document.querySelector('.carousel-button.next');
+        const prevBtn = document.querySelector('.carousel-button.prev');
+        let index = 0;
+        let userActive = false;
+        let timeout;
 
-        // Hears the buttons
-        const nextButton = document.querySelector('.carousel-button.next');
-        const prevButton = document.querySelector('.carousel-button.prev');
+        function updateSlide() {
+            const banner = banners[index];
+            track.scrollTo({
+                left: banner.offsetLeft,
+                behavior: 'smooth'
+            });
 
-        // Index of the banner
-        let currentSlide = 0;
-
-        // To detect if the user made a click
-        let userIsActive = false;
-
-        // To know the inactivity of the user
-        let resetTimer;
-
-
-        function showSlide() {
-            // Move the track to the next slide
-            track.style.transform = `translateX(calc(-${currentSlide * 80}vw - ${currentSlide * 2}rem))`;
-            // Makes the current slide active
             banners.forEach((banner, i) => {
-                banner.classList.toggle('active', i === currentSlide);
+                const video = banner.querySelector('video');
+                banner.classList.toggle('active', i === index);
+                if (video) {
+                    if (i === index) {
+                        video.currentTime = 0;
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                }
             });
         }
 
-        function setUserActive() {
-            // When user clicks, make the user active
-            userIsActive = true;
-            // After 10 seconds of inactivity, make the user inactive
-            clearTimeout(resetTimer);
-            resetTimer = setTimeout(() => {
-                userIsActive = false;
-            }, 10000);
+        function nextSlide() {
+            index = (index + 1) % banners.length;
+            updateSlide();
         }
 
-        // When the next button is clicked, move to the next slide
-        // If the slide is the last one, go back to the first slide
-        nextButton.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % banners.length;
-            showSlide();
+        function prevSlide() {
+            index = (index - 1 + banners.length) % banners.length;
+            updateSlide();
+        }
+
+        function setUserActive() {
+            userActive = true;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => userActive = false, 10000);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
             setUserActive();
         });
 
-        // When the previous button is clicked, move to the previous slide
-        // If the slide is the first one, go back to the last slide
-        prevButton.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + banners.length) % banners.length;
-            showSlide();
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
             setUserActive();
         });
 
-        // When user is inactive, move automatically to the next slide every 10 seconds
         setInterval(() => {
-            if (!userIsActive) {
-                currentSlide = (currentSlide + 1) % banners.length;
-                showSlide();
-            }
+            if (!userActive) nextSlide();
         }, 10000);
+
+        window.addEventListener('load', updateSlide);
+
+        window.addEventListener('resize', () => {
+            updateSlide(); 
+        });
     </script>
 </body>
 
