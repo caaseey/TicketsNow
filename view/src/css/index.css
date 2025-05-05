@@ -235,7 +235,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin: 5rem auto;
+    margin-bottom: 3rem;
     overflow: visible;
     display: flex;
     justify-content: center;
@@ -245,14 +245,12 @@ body {
     display: flex;
     overflow-x: hidden; 
     scroll-behavior: smooth;
-    gap: 2rem;
 }
 
 .main-concert-banner {
     flex: 0 0 100%; 
-    height: 29rem;
+    height: 32rem;
     position: relative;
-    border-radius: 1.5rem;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -266,15 +264,11 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(80, 118, 135, 0.5); 
+    background-color: var(--blue); 
     z-index: 0;
     transition: background-color 0.3s ease-in-out;
-    border-radius: 1.5rem;
 }
 
-.main-concert-banner.active::before {
-    background-color: rgba(80, 118, 135, 0); 
-}
 
 .main-concert-banner video {    
     opacity: 0;
@@ -284,7 +278,6 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    border-radius: 1.5rem;
     filter: brightness(0.8);
     pointer-events: none;
 }
