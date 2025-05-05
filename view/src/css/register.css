@@ -95,10 +95,6 @@ body {
     margin: auto;
 }
 
-.image-container:hover {
-    transform: scale(1.02);
-}
-
 .image-container img {
     width: 100%;
     height: 100%;
