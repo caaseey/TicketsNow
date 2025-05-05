@@ -49,7 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" name="password" id="password" placeholder="Contraseña" required>
                 <span class="show-password" onclick="togglePassword()">MOSTRAR</span>
             </div>
-            <button type="submit" class="button">Acceder</button>
+
+            <div class="buttons">
+                <button type="submit" class="button">Acceder</button>
+            </div>
 
             <div class="links">
                 <p><a href="#">¿Olvidaste tu contraseña?</a></p>

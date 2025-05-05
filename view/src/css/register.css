@@ -192,7 +192,7 @@ input:focus {
     margin-top: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    width: calc(100% - 2rem); /* Para compensar esos márgenes */
+    width: calc(100% - 2rem); 
 }
 
 .buttons .button {
