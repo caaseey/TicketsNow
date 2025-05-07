@@ -82,7 +82,8 @@ class UserController
             $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
             $stmt = $db->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
-            return true;
+            header("Location: login.php");
+            exit;
         } catch (PDOException $e) {
             return "Error al registrar: " . $e->getMessage();
         }
