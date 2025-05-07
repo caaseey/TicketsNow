@@ -47,7 +47,7 @@
   </nav>
 
   <!-- HEADER -->
-  <header class="banner-header" style="background-image: url('../../../media/img/concert_banners/kenshi.jpg');">
+  <header class="banner-header" style="background-image: url('../../../media/img/concert_banners/keshi.jpg');">
     <div class="banner-text">
       <p>Lo-fi</p>
       <h1>Keshi</h1>

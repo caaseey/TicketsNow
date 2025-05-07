@@ -20,15 +20,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profile_photo"])) {
     $fileName = time() . '_' . basename($_FILES["profile_photo"]["name"]);
     $targetFile = $targetDir . $fileName;
 
+    // Crear directorio si no existe
     if (!file_exists($targetDir)) {
         mkdir($targetDir, 0777, true);
     }
 
+    // Validación básica del tipo MIME (puedes mejorarla si quieres)
+    $validMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (!in_array($_FILES["profile_photo"]["type"], $validMimeTypes)) {
+        die("Tipo de archivo no permitido.");
+    }
+
     if (move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $targetFile)) {
+        // Obtener la ruta de la foto anterior
+        $stmt = $pdo->prepare("SELECT profile_photo FROM users WHERE id_user = :id");
+        $stmt->execute([':id' => $id_user]);
+        $oldPhoto = $stmt->fetchColumn();
+
+        // Eliminar si no es la imagen por defecto
+        $defaultPhoto = '../../media/img/Interfaces/user_icon.png';
+        if ($oldPhoto && $oldPhoto !== $defaultPhoto) {
+            $oldFilePath = __DIR__ . '/../../' . str_replace('../', '', $oldPhoto);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath);
+            }
+        }
+
+        // Guardar la nueva ruta relativa
         $relativePath = '../../media/img/profile_pictures/' . $fileName;
         $stmt = $pdo->prepare("UPDATE users SET profile_photo = :photo WHERE id_user = :id");
         $stmt->execute([':photo' => $relativePath, ':id' => $id_user]);
-        $photo = $relativePath; // Actualizar variable por si se recarga la página
+        $photo = $relativePath;
     }
 }
 
@@ -46,7 +68,6 @@ $email = $user['email'];
 $photo = $user['profile_photo'] ?: '../../media/img/Interfaces/user_icon.png';
 $role = $user['id_role'];
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -78,8 +99,7 @@ $role = $user['id_role'];
                 <ul>
                     <li><a href="profile.php">Mi perfil</a></li>
                     <li>
-                        <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Cerrar
-                            sesión</a>
+                        <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Cerrar sesión</a>
                         <form id="logoutForm" action="logout.php" method="post" style="display:none;"></form>
                     </li>
                     <hr>
