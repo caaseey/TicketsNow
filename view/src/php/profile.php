@@ -83,9 +83,9 @@ $role = $user['id_role'];
                         <form id="logoutForm" action="logout.php" method="post" style="display:none;"></form>
                     </li>
                     <hr>
-                    <li><a href="workinprogress.html">Ayuda</a></li>
-                    <li><a href="workinprogress.html">Sobre nosotros</a></li>
-                    <li><a href="workinprogress.html">Contacto</a></li>
+                    <li><a href="work_in_progress.html">Ayuda</a></li>
+                    <li><a href="work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
