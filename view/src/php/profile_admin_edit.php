@@ -31,6 +31,14 @@ if (isset($_FILES['profile_photo']) && $_FILES['profile_photo']['error'] === UPL
     $file_tmp = $_FILES['profile_photo']['tmp_name'];
     $file_name = basename($_FILES['profile_photo']['name']);
     $upload_dir = 'img/uploads/';
+
+    // Validación de tipo MIME
+    $allowed_types = ['image/jpeg', 'image/png', 'image/webp'];
+    $file_type = mime_content_type($file_tmp);
+
+    if (!in_array($file_type, $allowed_types)) {
+        die("Error: El archivo debe ser una imagen JPEG, PNG o WebP.");
+    }
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0755, true);
     }
