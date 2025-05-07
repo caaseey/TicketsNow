@@ -138,14 +138,15 @@
         <a href="../view/src/php/concerts/ado.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/ado.jpg" alt="Ado">
             <div class="concert-info">
-                <p>Bilbao, España | 22 de abril de 2025</p>
+                <p>Bilbao, España | 22 de abril de 2026
+                </p>
                 <h3>Ado</h3>
             </div>
         </a>
         <a href="../view/src/php/concerts/ksi.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/ksi.jpg" alt="KSI">
             <div class="concert-info">
-                <p>Sevilla, España | 10 de mayo de 2025</p>
+                <p>Sevilla, España | 10 de mayo de 2026</p>
                 <h3>KSI</h3>
             </div>
         </a>
@@ -174,22 +175,22 @@
         <a href="../view/src/php/concerts/aurora.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/aurora.jpg" alt="aurora">
             <div class="concert-info">
-                <p>Oviedo, España | 30 de marzo de 2025</p>
+                <p>Oviedo, España | 30 de marzo de 2026</p>
                 <h3>AURORA - LIVE TOUR</h3>
             </div>
         </a>
         <a href="../view/src/php/concerts/omar_courtz.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/omar_courtz.jpg" alt="Omar Courtz">
             <div class="concert-info">
-                <p>Lugo, España | 22 de abril de 2025</p>
-                <h3>Omar Courtz - Asia Tour 2025</h3>
+                <p>Lugo, España | 22 de abril de 2026</p>
+                <h3>Omar Courtz - Asia Tour</h3>
             </div>
         </a>
         <a href="../view/src/php/concerts/acdc.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/acdc.jpg" alt="acdc">
             <div class="concert-info">
-                <p>Madrid, España | 22 de abril de 2025</p>
-                <h3>ACDC - Europe Tour 2025</h3>
+                <p>Madrid, España | 22 de abril de 2026</p>
+                <h3>ACDC - Europe Tour</h3>
             </div>
         </a>
     </section>
@@ -217,7 +218,7 @@
         <a href="../view/src/php/concerts/swingrowers.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/swingrowers.jpg" alt="Swingrowers">
             <div class="concert-info">
-                <p>Andalucía, España | 1 de enero de 2025</p>
+                <p>Andalucía, España | 1 de enero de 2026</p>
                 <h3>Swingrowers</h3>
             </div>
         </a>
