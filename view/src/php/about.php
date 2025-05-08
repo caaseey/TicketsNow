@@ -20,7 +20,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <!-- NAVBAR -->
     <nav class="navbar">
         <div>
-            <a href="#" class="logo">
+            <a href="../../../view/index.php" class="logo">
                 <img src="../../media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
@@ -46,15 +46,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 <ul>
                     <?php
                     if (isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="../view/src/php/profile.php">Mi perfil</a></li>';
+                        echo '<li><a href="profile.php">Mi perfil</a></li>';
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
                     } else {
-                        echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='../view/src/php/register_user.php'>Regístrate</a></li>";
+                        echo "<li><a href='login.php'>Iniciar sesión</a></li>";
+                        echo "<li><a href='register_user.php'>Regístrate</a></li>";
                     }
                     ?>
+
                     <?php if (isset($_SESSION['logged_in'])): ?>
-                        <form id="logoutForm" action="../view/src/php/logout.php" method="post" style="display: none;"></form>
+                        <form id="logoutForm" action="logout.php" method="post" style="display: none;"></form>
                     <?php endif; ?>
                     <hr>
                     <li><a href="../../../html/work_in_progress.html">Ayuda</a></li>
@@ -151,21 +152,23 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 </div>
 
                 <div class="grid four-cols team">
-                    <?php
-                    $team = [
-                        ['img' => 'casey.jpg', 'name' => 'Casey', 'role' => 'Back-End'],
-                        ['img' => 'marc.jpg', 'name' => 'Marc', 'role' => 'Business'],
-                        ['img' => 'john.jpg', 'name' => 'John', 'role' => 'Front-End'],
-                        ['img' => 'wendy.jpg', 'name' => 'Wendy', 'role' => 'UI/UX'],
-                    ];
-                    foreach ($team as $member): ?>
-                        <article class="card team-card">
-                            <img src="../team/<?= $member['img']; ?>" alt="<?= $member['name']; ?>">
-                            <h3><?= $member['name']; ?></h3>
-                            <p class="role"><?= $member['role']; ?></p>
-                        </article>
-                    <?php endforeach; ?>
-                </div>
+    <?php
+    $team = [
+        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Back-End'],
+        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Business'],
+        ['img' => 'john.png',  'name' => 'John',  'role' => 'Front-End'],
+        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'UI/UX'],
+    ];
+    foreach ($team as $member): ?>
+        <article class="card team-card">
+            <img src="../../media/img/team/<?= $member['img']; ?>" 
+                 alt="<?= htmlspecialchars($member['name']); ?>">
+            <h3><?= htmlspecialchars($member['name']); ?></h3>
+            <p class="role"><?= htmlspecialchars($member['role']); ?></p>
+        </article>
+    <?php endforeach; ?>
+</div>
+
             </section>
         </main>
 
