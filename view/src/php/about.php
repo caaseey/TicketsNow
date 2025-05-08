@@ -82,14 +82,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <!-- HISTORIA ----------------------------------------------------->
             <section class="section">
                 <div class="section-title">
-                    <h2>Nuestra historia</h2>
+                    <h2>Our history</h2>
                     <hr>
                 </div>
 
                 <div class="grid two-cols">
                     <div class="text">
-                        <p>TicketsNow nació de una apuesta en 2014-15: «Si el Barça gana la Champions creamos una compañía». Ganaron… pero las entradas estaban agotadas. 😅</p>
-                        <p>En 2020 la pandemia nos dejó KO, pero volvimos más fuertes. Hoy nos enfocamos en conciertos y trabajamos para cubrir todo tipo de eventos.</p>
+                        <p>TicketsNow started with a fun bet in 2014-2015. We said, "If FC Barcelona wins the Champions League, we will create a company." They won. Sadly, we didn’t go to the final because the tickets were sold out. We had to watch it from home.
+                            That moment made us realize something important: many people wait months or even years for special events, and sometimes they miss them just because they couldn’t get a ticket. So we decided to do something about it. We created TicketsNow.
+                            In 2020, the pandemic hit us hard. We went bankrupt. But soon after, we came back stronger. Today, we only sell music concert tickets because we don’t yet have the licenses for football, esports, or other types of events. Still, our big dream is to become the best ticket-selling company in every category.
+                        </p>
                     </div>
 
                     <figure>
@@ -102,11 +104,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <section class="section section--blue">
                 <div class="grid two-cols cards">
                     <article class="card glass">
-                        <h3>Misión</h3>
+                        <h3>Mission</h3>
                         <ul>
-                            <li>Compra de tickets fácil y rápida</li>
-                            <li>Servir a fans de la música en todo el mundo</li>
-                            <li>Eliminar barreras de acceso</li>
+                            <li><b>What do we do today?</b> We sell tickets for music concerts online. Our platform is easy to use, fast, and safe.</li>
+                            <li><b>Who do we serve?</b> We help fans who want to enjoy live music and don’t want to miss their favorite artists.</li>
+                            <li><b>What are we trying to accomplish?</b> We want to make it simple for everyone to buy tickets and avoid missing events.</li>
+                            <li><b>What impact do we want to achieve?</b> We want people to live the moments they have been dreaming about, not miss them because tickets were sold out.</li>
                         </ul>
                     </article>
 
@@ -124,22 +127,34 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <!-- VALORES ------------------------------------------------------>
             <section class="section">
                 <div class="section-title">
-                    <h2>Nuestros valores</h2>
+                    <h2>Our values</h2>
                     <hr>
                 </div>
 
                 <div class="grid three-cols cards">
                     <article class="card">
-                        <h4>Confianza</h4>
-                        <p>Cumplimos lo que prometemos.</p>
+                        <h4>Trust</h4>
+                        <p>We always keep our promises.</p>
                     </article>
                     <article class="card">
-                        <h4>Pasión</h4>
-                        <p>Amamos los eventos en vivo.</p>
+                        <h4>Accessibility</h4>
+                        <p>Tickets should be easy and fair to get.</p>
                     </article>
                     <article class="card">
-                        <h4>Innovación</h4>
-                        <p>Mejoramos de forma constante.</p>
+                        <h4>Passion</h4>
+                        <p>We love live events just like our customers.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Resilience</h4>
+                        <p>We never give up, even when times are hard.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Integrity</h4>
+                        <p>We do what’s right, even if it’s not easy.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Innovation</h4>
+                        <p>We look for new ways to improve every day.</p>
                     </article>
                 </div>
             </section>
@@ -147,27 +162,27 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <!-- EQUIPO ------------------------------------------------------->
             <section class="section">
                 <div class="section-title">
-                    <h2>Conoce al equipo</h2>
+                    <h2>Meet the team</h2>
                     <hr>
                 </div>
 
                 <div class="grid four-cols team">
-    <?php
-    $team = [
-        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Back-End'],
-        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Business'],
-        ['img' => 'john.png',  'name' => 'John',  'role' => 'Front-End'],
-        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'UI/UX'],
-    ];
-    foreach ($team as $member): ?>
-        <article class="card team-card">
-            <img src="../../media/img/team/<?= $member['img']; ?>" 
-                 alt="<?= htmlspecialchars($member['name']); ?>">
-            <h3><?= htmlspecialchars($member['name']); ?></h3>
-            <p class="role"><?= htmlspecialchars($member['role']); ?></p>
-        </article>
-    <?php endforeach; ?>
-</div>
+                    <?php
+                    $team = [
+                        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Back-End'],
+                        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Business'],
+                        ['img' => 'john.png',  'name' => 'John',  'role' => 'Front-End'],
+                        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'UI/UX'],
+                    ];
+                    foreach ($team as $member): ?>
+                        <article class="card team-card">
+                            <img src="../../media/img/team/<?= $member['img']; ?>"
+                                alt="<?= htmlspecialchars($member['name']); ?>">
+                            <h3><?= htmlspecialchars($member['name']); ?></h3>
+                            <p class="role"><?= htmlspecialchars($member['role']); ?></p>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
 
             </section>
         </main>
