@@ -153,6 +153,7 @@ $role = $user['id_role'];
                 </form>
             <?php endif; ?>
 
+
         </div>
     </div>
 
@@ -162,7 +163,7 @@ $role = $user['id_role'];
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
 
-        document.addEventListener("click", function (e) {
+        document.addEventListener("click", function(e) {
             const dropdown = document.querySelector(".profile-dropdown");
             const menu = document.getElementById("profileMenu");
             if (!dropdown.contains(e.target)) {
