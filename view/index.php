@@ -136,7 +136,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <img src="../view/media/img/concert_banners/sza.jpg" alt="SZA">
             <div class="concert-info">
                 <p>Madrid, España | 20 de junio de 2025</p>
-                <h3>SZA - SOS Tour</h3>
+                <h3>SZA</h3>
             </div>
         </a>
         <a href="../view/src/php/concerts/aespa.php" class="concert-banner">
