@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f6fa;
+    background: url('../../media/img/interfaces/background.jpeg') no-repeat center center / cover;
     margin: 0;
     padding: 0;
     color: var(--dark);
@@ -22,7 +22,7 @@ body {
     height: 6rem;
     padding: 0 1rem;
     box-sizing: border-box;
-    background-color: var(--blue);
+    background-color: transparent;
 }
 
 .logo img {

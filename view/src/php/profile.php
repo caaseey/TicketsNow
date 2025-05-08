@@ -110,7 +110,7 @@ $role = $user['id_role'];
                 <?php endif; ?>
                 <hr>
                 <li><a href="../html/work_in_progress.html">Ayuda</a></li>
-                <li><a href="../html/work_in_progress.html">Sobre nosotros</a></li>
+                <li><a href="../php/about.php">Sobre nosotros</a></li>
                 <li><a href="../html/work_in_progress.html">Contacto</a></li>
             </ul>
         </div>
@@ -145,7 +145,7 @@ $role = $user['id_role'];
                     <label>Cambiar foto de perfil</label>
                     <input type="file" name="profile_photo" accept="image/*" required>
                 </div>
-                <button type="submit" class="profile-update-btn">Actualizar foto</button>
+                <button type="submit" class="profile-update-btn">Guardar cambios</button>
             </form>
         <?php endif; ?>
     </div>

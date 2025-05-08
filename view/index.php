@@ -129,9 +129,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <h2>Conciertos destacados</h2>
             <hr>
         </div>
-        <div class="section-title">
-            <h2>Otros conciertos</h2>
-            <hr>
         </div>
     </div>
     <section id="featured-concerts" class="featured-concerts">

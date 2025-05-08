@@ -59,7 +59,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     <?php endif; ?>
                     <hr>
                     <li><a href="../../../html/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="../../../html/work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
                     <li><a href="../../../html/work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
                 <div class="grid two-cols">
                     <div class="text">
-                        <p>TicketsNow started with a fun bet in 2014-2015. We said, "If FC Barcelona wins the Champions League, we will create a company." They won. Sadly, we didn’t go to the final because the tickets were sold out. We had to watch it from home.
+                        <p align="justify">TicketsNow started with a fun bet in 2014-2015. We said, "If FC Barcelona wins the Champions League, we will create a company." They won. Sadly, we didn’t go to the final because the tickets were sold out. We had to watch it from home.
                             That moment made us realize something important: many people wait months or even years for special events, and sometimes they miss them just because they couldn’t get a ticket. So we decided to do something about it. We created TicketsNow.
                             In 2020, the pandemic hit us hard. We went bankrupt. But soon after, we came back stronger. Today, we only sell music concert tickets because we don’t yet have the licenses for football, esports, or other types of events. Still, our big dream is to become the best ticket-selling company in every category.
                         </p>
@@ -187,66 +187,28 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             </section>
         </main>
 
-        <footer id="footer">
-            <h2>Vivencias en Primera Fila</h2>
-            <div class="reviews-cards">
-                <div class="review-card">
-                    <p>活力与激情的爆发，乐队的演奏让场地的每个角落都震动起来；与观众的联系无与伦比</p>
-                    <div class="review-user">
-                        <img src="../../media/img/interfaces/users/user1.png" alt="user1">
-                        <div>
-                            <h4>Zeng</h4>
-                            <p>Aespa - Beijing, China</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p>A spectacular sound journey, with an impressive lighting set and an atmosphere that never stopped moving. Incredible!</p>
-                    <div class="review-user">
-                        <img src="../../media/img/interfaces/users/user2.png" alt="user2">
-                        <div>
-                            <h4>Charles</h4>
-                            <p>Ado - Londres, Reino Unido</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <p id="review-text">KENDRICK LAMAR THE BEST ARTIST THIS DAMN CENTURY</p>
-                    <div class="review-user">
-                        <img src="../../media/img/interfaces/users/user3.png" alt="user3">
-                        <div>
-                            <h4>Tyrell</h4>
-                            <p>Kendrick Lamar - Londres, Reino Unido</p>
-                        </div>
-                    </div>
-                </div>
-
-
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Tickets Now</h3>
+                <a href="help.php">Ayuda</a>
             </div>
-
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>Escríbenos</h3>
-                    <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Sobre nosotros</h3>
-                    <a href="../../src/html/work_in_progress.html">Haz click aquí</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Llámanos</h3>
-                    <a href="tel:+34666666666">+34 666 66 66 66</a>
-                </div>
-                <div class="footer-column">
-                    <h3>¿Buscas ayuda?</h3>
-                    <a href="../../src/html/work_in_progress.html">Página de ayuda</a><br>
-                </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <a href="mailto:contacto@ticketsnow.com">contacto@ticketsnow.com</a>
+                <p>+34 666 88 99 66</p>
             </div>
-
-            <div class="footer-bottom">
-                © 2024-2025 TicketsNow. Todos los derechos reservados.
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
             </div>
-        </footer>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TicketsNow. Todos los derechos reservados.</p>
+        </div>
+    </footer>
     </body>
 
 </html>
