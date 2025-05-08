@@ -152,21 +152,23 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 </div>
 
                 <div class="grid four-cols team">
-                    <?php
-                    $team = [
-                        ['img' => 'casey.jpg', 'name' => 'Casey', 'role' => 'Back-End'],
-                        ['img' => 'marc.jpg', 'name' => 'Marc', 'role' => 'Business'],
-                        ['img' => 'john.jpg', 'name' => 'John', 'role' => 'Front-End'],
-                        ['img' => 'wendy.jpg', 'name' => 'Wendy', 'role' => 'UI/UX'],
-                    ];
-                    foreach ($team as $member): ?>
-                        <article class="card team-card">
-                            <img src="../../media/img/team/casey.png?= $member['img']; ?>" alt="<?= $member['name']; ?>">
-                            <h3><?= $member['name']; ?></h3>
-                            <p class="role"><?= $member['role']; ?></p>
-                        </article>
-                    <?php endforeach; ?>
-                </div>
+    <?php
+    $team = [
+        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Back-End'],
+        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Business'],
+        ['img' => 'john.png',  'name' => 'John',  'role' => 'Front-End'],
+        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'UI/UX'],
+    ];
+    foreach ($team as $member): ?>
+        <article class="card team-card">
+            <img src="../../media/img/team/<?= $member['img']; ?>" 
+                 alt="<?= htmlspecialchars($member['name']); ?>">
+            <h3><?= htmlspecialchars($member['name']); ?></h3>
+            <p class="role"><?= htmlspecialchars($member['role']); ?></p>
+        </article>
+    <?php endforeach; ?>
+</div>
+
             </section>
         </main>
 
