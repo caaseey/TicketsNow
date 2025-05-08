@@ -63,7 +63,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     <?php endif; ?>
                     <hr>
                     <li><a href="../view/src/html/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="../view/src/html/work_in_progress.html">Sobre nosotros</a></li>
+                    <li><a href="../view/src/php/about.html">Sobre nosotros</a></li>
                     <li><a href="../view/src/html/work_in_progress.html">Contacto</a></li>
                 </ul>
             </div>
@@ -309,7 +309,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             </div>
             <div class="footer-column">
                 <h3>Sobre nosotros</h3>
-                <a href="../view/src/html/work_in_progress.html">Haz click aquí</a>
+                <a href="../view/src/php/about.php">Haz click aquí</a>
             </div>
             <div class="footer-column">
                 <h3>Llámanos</h3>
