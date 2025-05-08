@@ -6,7 +6,6 @@ if (!isset($_GET['q']) || trim($_GET['q']) === '') {
 
 $busqueda = strtolower(trim($_GET['q']));
 
-// Aquí puedes usar un array como base simulada (o buscar en BBDD, XML o JSON si tienes)
 $conciertos = [
     'bruno mars' => 'bruno_mars.php',
     'twice' => 'twice.php',
@@ -108,7 +107,6 @@ if ($resultado) {
 
             .btn-volver:hover {
                 background-color: rgba(60, 95, 110, 1);
-                /* un azul más oscuro manual para hover */
             }
         </style>
     </head>
