@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET['q']) || trim($_GET['q']) === '') {
-    header("Location: ../../../../index.php");
+    header("Location: ../../");
     exit();
 }
 
