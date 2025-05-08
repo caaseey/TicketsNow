@@ -77,38 +77,48 @@ $role = $user['id_role'];
     <title>Mi perfil | Tickets Now</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/profileuser.css">
+    <link rel="stylesheet" href="../css/profile.css">
 </head>
 
 <body>
 
     <header class="main-header">
-        <a href="../../" class="logo">
-            <img src="../../media/img/Interfaces/logo.png" alt="Logo Tickets Now">
-        </a>
-
-        <div class="profile-dropdown">
-            <button class="profile-toggle" onclick="toggleProfileMenu()">
-                <div class="menu-icon">
-                    <span></span><span></span><span></span>
-                </div>
-                <img src="../../media/img/Interfaces/user_icon.png" alt="Usuario">
-            </button>
-
-            <div class="profile-menu" id="profileMenu">
-                <ul>
-                    <li><a href="profile.php">Mi perfil</a></li>
-                    <li>
-                        <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Cerrar sesión</a>
-                        <form id="logoutForm" action="logout.php" method="post" style="display:none;"></form>
-                    </li>
-                    <hr>
-                    <li><a href="work_in_progress.html">Ayuda</a></li>
-                    <li><a href="work_in_progress.html">Sobre nosotros</a></li>
-                    <li><a href="work_in_progress.html">Contacto</a></li>
-                </ul>
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div>
+                <a href="#" class="logo">
+                    <img src="../../media/img/interfaces/logo.png" alt="Tickets Now">
+                </a>
             </div>
-        </div>
+            <div class="account-menu">
+                <button class="account-button">
+                    <div class="account-icon">
+                        <hr>
+                        <hr>
+                        <hr>
+                    </div>
+                    <div class="account-picture">
+                        <img src="../view/media/img/interfaces/user_icon.png" alt="Usuario">
+                    </div>
+                </button>
+                <div class="account-dropdown-menu">
+                    <ul>
+                        <?php
+                        if (isset($_SESSION['logged_in'])) {
+                            echo "<li><a href='profile.php'>Mi perfil</a></li>";
+                        } else {
+                            echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
+                            echo "<li><a href='../view/src/php/register_user.php'>Regístrate</a></li>";
+                        }
+                        ?>
+                        <hr>
+                        <li><a href="../view/src/html/work_in_progress.html">Ayuda</a></li>
+                        <li><a href="../view/src/html/work_in_progress.html">Sobre nosotros</a></li>
+                        <li><a href="../view/src/html/work_in_progress.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="profile-container">

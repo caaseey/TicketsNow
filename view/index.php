@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div>
             <a href="#" class="logo">
-                <img src="..\view\media\img\interfaces\logo.png" alt="Tickets Now">
+                <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
         <div class="search-container">
