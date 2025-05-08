@@ -124,7 +124,6 @@ $role = $user['id_role'];
     </div>
     <div class="profile-info">
         <h2>👤 Mi perfil</h2>
-        <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
 
         <div class="info-group">
             <label>Nombre</label>
