@@ -114,11 +114,11 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     </article>
 
                     <article class="card glass">
-                        <h3>Visión</h3>
+                        <h3>Vision</h3>
                         <ul>
-                            <li>Liderar la ticketera global</li>
-                            <li>Cubrir todos los tipos de eventos</li>
-                            <li>Acceso sin estrés para cualquier persona</li>
+                            <li><b>Where are we going in the future?</b> We want to grow and sell tickets for all types of events: sports, esports, theatre, and more.</li>
+                            <li><b>What do we want to achieve in the long term? </b>To be the most trusted and complete ticket platform in the world.</li>
+                            <li><b>What kind of future society do we envision? </b>A world where everyone can go to events they love without stress or unfair systems.</li>
                         </ul>
                     </article>
                 </div>
@@ -169,10 +169,10 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 <div class="grid four-cols team">
                     <?php
                     $team = [
-                        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Back-End'],
-                        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Business'],
-                        ['img' => 'john.png',  'name' => 'John',  'role' => 'Front-End'],
-                        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'UI/UX'],
+                        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Backend Developer & Database Architect'],
+                        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Backend Developer & Business Analyst'],
+                        ['img' => 'john.png',  'name' => 'John',  'role' => 'Frontend Developer & Accessibility Champion'],
+                        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'Frontend Developer & UI/UX Strategist'],
                     ];
                     foreach ($team as $member): ?>
                         <article class="card team-card">
