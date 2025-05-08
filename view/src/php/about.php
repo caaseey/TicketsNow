@@ -20,7 +20,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <!-- NAVBAR -->
     <nav class="navbar">
         <div>
-            <a href="#" class="logo">
+            <a href="../../../view/index.php" class="logo">
                 <img src="../../media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
