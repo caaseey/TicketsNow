@@ -62,13 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </form>
 
-            <div class="buttons">
-                <button type="button" class="button" onclick="window.location.href='register_user.php'">
-                    ¿Eres usuario? ¡Regístrate aquí!
-                </button>
-                <button type="button" class="button" onclick="window.location.href='register_artist.php'">
-                    ¿Eres artista? ¡Regístrate aquí!
-                </button>
+            <div class="links">
+                <p><a href="register_artist.php">Registrarse como Artista</a></p>
+                <p><a href="register_admin.php">Registrarse como Admin</a></p>
             </div>
         </div>
 
