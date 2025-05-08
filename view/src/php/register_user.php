@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Registro Usuario | Tickets Now</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/register.css">
     
 </head>
@@ -62,12 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="buttons">
                     <button type="submit" class="button">Registrar</button>
                 </div>
-            </form>
 
-            <div class="links">
-                <p><a href="register_artist.php">Registrarse como Artista</a></p>
-                <p><a href="register_admin.php">Registrarse como Admin</a></p>
-            </div>
+                <div class="extra-buttons">
+                    <a href="register_artist.php">Registrarse como Artista</a>
+                    <a href="register_admin.php">Registrarse como Admin</a>
+                </div>
+            </form>  
         </div>
 
         <div class="image-container">

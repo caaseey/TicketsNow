@@ -8,10 +8,13 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: url('../../media/img/interfaces/background.jpeg') no-repeat center center / cover;
+    color: var(--dark);
     margin: 0;
     padding: 0;
-    color: var(--dark);
+    min-height: 100vh;
+    display: block;
 }
+  
 
 /* NAVBAR CON ESTILO DE INDEX */
 .navbar {

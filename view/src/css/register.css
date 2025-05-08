@@ -232,13 +232,19 @@ input:focus {
     }
 }
 
-/* Botones extra en el registro */
 .extra-buttons {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Ajusta el valor para más o menos espacio entre botones */
+    align-items: center;
+    gap: 0.5rem;
 }
+
+.extra-buttons a {
+    text-align: center;
+    width: auto; /* o 100% si quieres que ocupen el ancho del contenedor */
+}
+
 
 /* Adaptamos layout para pantallas más pequeñas */
 @media (max-width: 768px) {
