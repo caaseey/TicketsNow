@@ -309,7 +309,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             </div>
             <div class="footer-column">
                 <h3>Sobre nosotros</h3>
-                <a href="../view/src/html/work_in_progress.html">Haz click aquí</a>
+                <a href="../view/src/php/about.php">Haz click aquí</a>
             </div>
             <div class="footer-column">
                 <h3>Llámanos</h3>
