@@ -24,6 +24,8 @@ body {
 
 /* NAVBAR */
 /* LOGO */
+/* NAVBAR */
+/* LOGO */
 .logo img {
     width: 8rem;
     max-width: 100%;
@@ -384,23 +386,145 @@ h2 {
 
 /* HEADER AMPLIADO Y ESTÉTICO */
 
-.main-header {
+/* HEADER IGUAL QUE index.php */
+.navbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #4e7686;
-    padding: 20px 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    height: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgba(80, 118, 135, 1);
+    box-sizing: border-box;
 }
 
+/* NAVBAR */
+/* LOGO */
 .logo img {
-    height: 48px;
+    width: 8rem;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(1.05);
 }
 
-/* Logo más grande y con animación al pasar el cursor */
+.account-menu {
+    position: relative;
+}
+
+.account-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    background: white;
+    border: none;
+    height: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.account-button:hover {
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+}
+
+.account-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.account-icon hr {
+    margin: 0;
+    margin-left: 1rem;
+    width: 1.6rem;
+    height: 0.2rem;
+    background-color: rgba(80, 118, 135, 1);
+    border: none;
+    border-radius: 1rem;
+}
+
+.account-picture {
+    margin-right: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.account-picture img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.account-dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: white;
+    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.15);
+    border-radius: 1em;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: 14rem;
+    z-index: 100;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.account-dropdown-menu ul {
+    list-style: none;
+    padding: 1em;
+    margin: 0;
+}
+
+.account-dropdown-menu li {
+    padding: 0.75em;
+    font-size: 1rem;
+}
+
+.account-dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: color 0.2s;
+}
+
+.account-dropdown-menu li a:hover {
+    color: rgba(80, 118, 135, 1);
+}
+
+.account-menu:focus-within .account-dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* NAVBAR */
+/* LOGO */
 .logo img {
-    height: 56px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 8rem;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .logo img:hover {
