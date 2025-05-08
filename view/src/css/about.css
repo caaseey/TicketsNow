@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* hereda palette de :root (index.css) */
+
+.container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+
+/* Rejillas responsivas reutilizables */
+.grid { display:grid; gap:2rem; }
+.two-cols  { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+.three-cols{ grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+.four-cols { grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+
+/* Secciones genéricas */
+.section       { margin-bottom: 4rem; }
+.section--blue { background: var(--blue); color: var(--light); padding: 4rem 0; border-radius:1rem; }
+.section-title { text-align:center; margin-bottom:2rem; }
+.section-title hr { width:60px; border:1.5px solid var(--blue); margin:0.5rem auto; }
+
+/* Tarjetas */
+.card { background:#fff; padding:2rem; border-radius:1rem; box-shadow:0 5px 15px rgba(0,0,0,.08); }
+.card.glass { background: rgba(255,255,255,.1); color:#fff; backdrop-filter: blur(6px); }
+
+/* Equipo */
+.team-card img { width:140px; height:140px; border-radius:50%; object-fit:cover; margin-bottom:1rem; }
+.role{ color:var(--dark); font-size:.9rem; opacity:.7; }
+
+/* Responsive extra */
+@media (max-width:768px){
+  .section--blue{ padding:2rem 1rem; }
+}
