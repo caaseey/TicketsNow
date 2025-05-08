@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profile_photo"])) {
         mkdir($targetDir, 0777, true);
     }
 
-    // Validación básica del tipo MIME (puedes mejorarla si quieres)
+    // Validación básica del tipo MIME
     $validMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
     if (!in_array($_FILES["profile_photo"]["type"], $validMimeTypes)) {
         die("Tipo de archivo no permitido.");

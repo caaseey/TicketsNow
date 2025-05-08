@@ -26,15 +26,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <nav class="navbar">
         <div>
             <a href="#" class="logo">
-                <img src="..\view\media\img\interfaces\logo.png" alt="Tickets Now">
+            <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
-        <div class="search-container">
-            <input type="text" class="search-bar" placeholder="Buscar...">
-            <button class="search-button">
-                <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
-            </button>
-        </div>
+        <form class="search-container" action="../view/src/php/buscar.php" method="get">
+    <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
+    <button type="submit" class="search-button">
+        <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
+    </button>
+</form>
+
         <div class="account-menu">
             <button class="account-button">
                 <div class="account-icon">
