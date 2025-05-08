@@ -46,15 +46,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 <ul>
                     <?php
                     if (isset($_SESSION['logged_in'])) {
-                        echo '<li><a href="../view/src/php/profile.php">Mi perfil</a></li>';
+                        echo '<li><a href="profile.php">Mi perfil</a></li>';
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
                     } else {
-                        echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='../view/src/php/register_user.php'>Regístrate</a></li>";
+                        echo "<li><a href='login.php'>Iniciar sesión</a></li>";
+                        echo "<li><a href='register_user.php'>Regístrate</a></li>";
                     }
                     ?>
+
                     <?php if (isset($_SESSION['logged_in'])): ?>
-                        <form id="logoutForm" action="../view/src/php/logout.php" method="post" style="display: none;"></form>
+                        <form id="logoutForm" action="logout.php" method="post" style="display: none;"></form>
                     <?php endif; ?>
                     <hr>
                     <li><a href="../../../html/work_in_progress.html">Ayuda</a></li>
@@ -160,7 +161,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     ];
                     foreach ($team as $member): ?>
                         <article class="card team-card">
-                            <img src="../team/<?= $member['img']; ?>" alt="<?= $member['name']; ?>">
+                            <img src="../../media/img/team/casey.png?= $member['img']; ?>" alt="<?= $member['name']; ?>">
                             <h3><?= $member['name']; ?></h3>
                             <p class="role"><?= $member['role']; ?></p>
                         </article>
