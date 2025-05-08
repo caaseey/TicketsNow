@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $error = $result !== true ? $result : "";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

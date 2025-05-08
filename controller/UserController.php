@@ -73,19 +73,31 @@ class UserController
         }
     
         $email = $data['email'];
-        $password = $data['password']; // Guardar como texto plano
+        $password = $data['password']; 
         $name = $data['nombre'];
         $surname = $data['apellido'];
         $profilePhoto = '';
     
         try {
             $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            // Comprobar si el email ya existe
+            $check = $db->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
+            $check->execute([$email]);
+    
+            if ($check->fetchColumn() > 0) {
+                return "El correo electrónico ya está registrado.";
+            }
+    
+            // Insertar si el correo no existe
             $stmt = $db->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
+    
             header("Location: login.php");
             exit;
         } catch (PDOException $e) {
             return "Error al registrar: " . $e->getMessage();
         }
-    }
+    }    
 }
