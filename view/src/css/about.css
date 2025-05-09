@@ -23,8 +23,34 @@
 /* Equipo */
 .team-card img { width:140px; height:140px; border-radius:50%; object-fit:cover; margin-bottom:1rem; }
 .role{ color:var(--dark); font-size:.9rem; opacity:.7; }
+.team-card .role {
+    color: var(--dark);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: justify;
+}
 
 /* Responsive extra */
 @media (max-width:768px){
   .section--blue{ padding:2rem 1rem; }
 }
+.role {
+  text-align: justify;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+.role strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--blue);
+  font-weight: 600;
+}
+@media (max-width: 480px) {
+  .role {
+    font-size: 0.85rem;
+  }
+}
+

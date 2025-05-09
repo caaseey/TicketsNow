@@ -169,22 +169,44 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 <div class="grid four-cols team">
                     <?php
                     $team = [
-                        ['img' => 'casey.png', 'name' => 'Casey', 'role' => 'Backend Developer & Database Architect'],
-                        ['img' => 'marc.png',  'name' => 'Marc',  'role' => 'Backend Developer & Business Analyst'],
-                        ['img' => 'john.png',  'name' => 'John',  'role' => 'Frontend Developer & Accessibility Champion'],
-                        ['img' => 'wendy.png', 'name' => 'Wendy', 'role' => 'Frontend Developer & UI/UX Strategist'],
+                        [
+                            'img' => 'casey.png',
+                            'name' => 'Casey',
+                            'role_title' => 'Backend Developer & Database Architect',
+                            'role_desc' => 'I’m in charge of building and maintaining the structure behind our platform. From database design to server-side logic, I make sure everything runs smoothly and securely.'
+                        ],
+                        [
+                            'img' => 'marc.png',
+                            'name' => 'Marc',
+                            'role_title' => 'Backend Developer & Business Analyst',
+                            'role_desc' => 'I focus on the platform’s backend logic and also study market needs. My job is to align our technical development with real-world user requirements and business goals.'
+                        ],
+                        [
+                            'img' => 'john.png',
+                            'name' => 'John',
+                            'role_title' => 'Frontend Developer & Accessibility Champion',
+                            'role_desc' => 'I build the user interface of our platform and ensure that everything is accessible to everyone, including users with disabilities.'
+                        ],
+                        [
+                            'img' => 'wendy.png',
+                            'name' => 'Wendy',
+                            'role_title' => 'Frontend Developer & UI/UX Strategist',
+                            'role_desc' => 'I design and improve how our users experience the website, making sure it’s intuitive, beautiful, and responsive across all devices.'
+                        ]
                     ];
                     foreach ($team as $member): ?>
                         <article class="card team-card">
-                            <img src="../../media/img/team/<?= $member['img']; ?>"
-                                alt="<?= htmlspecialchars($member['name']); ?>">
+                            <img src="../../media/img/team/<?= $member['img']; ?>" alt="<?= htmlspecialchars($member['name']); ?>">
                             <h3><?= htmlspecialchars($member['name']); ?></h3>
-                            <p class="role"><?= htmlspecialchars($member['role']); ?></p>
+                            <p class="role" style="text-align: justify;">
+                                <strong><?= htmlspecialchars($member['role_title']); ?>.</strong><br>
+                                <?= htmlspecialchars($member['role_desc']); ?>
+                            </p>
                         </article>
                     <?php endforeach; ?>
                 </div>
-
             </section>
+
         </main>
 
         <!-- FOOTER -->
