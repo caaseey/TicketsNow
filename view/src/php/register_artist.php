@@ -60,11 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="buttons">
                     <button type="submit" class="button">Registrar</button>
                 </div>
-                <div class="links">
-                    <p><a href="register_artist.php">Registrarse como Artista</a></p>
-                    <p><a href="register_admin.php">Registrarse como Admin</a></p>
+
+                <div class="extra-buttons">
+                    <a href="register_user.php">Registrarse como Usuario</a>
+                    <a href="register_admin.php">Registrarse como Admin</a>
                 </div>
-            </form>
+            </form> 
         </div>
 
         <div class="image-container">

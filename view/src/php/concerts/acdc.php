@@ -169,25 +169,24 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-links">
-      <div class="footer-column">
-        <h3>Tickets Now</h3>
-        <a href="help.php">Ayuda</a>
-      </div>
-      <div class="footer-column">
-        <h3>Contacto</h3>
-        <a href="mailto:contacto@ticketsnow.com">contacto@ticketsnow.com</a>
-        <p>+34 666 88 99 66</p>
-      </div>
-      <div class="footer-column">
-        <h3>Legal</h3>
-        <a href="#">Términos</a>
-        <a href="#">Privacidad</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 TicketsNow. Todos los derechos reservados.</p>
-    </div>
+  <div class="footer-links">
+            <div class="footer-column">
+                <h3>Escríbenos</h3>
+                <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
+            </div>
+            <div class="footer-column">
+                <h3>Sobre nosotros</h3>
+                <a href="../about.php">Haz click aquí</a>
+            </div>
+            <div class="footer-column">
+                <h3>Llámanos</h3>
+                <a href="tel:+34666666666">+34 666 66 66 66</a>
+            </div>
+            <div class="footer-column">
+                <h3>¿Buscas ayuda?</h3>
+                <a href="../../html/work_in_progress.html">Página de ayuda</a><br>
+            </div>
+        </div>
   </footer>
 </body>
 
