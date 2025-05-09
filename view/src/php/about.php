@@ -102,7 +102,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
             <!-- MISIÓN / VISIÓN --------------------------------------------->
             <section class="section section--blue">
-                <div class="grid two-cols cards">
+                <div class="grid two-cols cards mission-vision">
                     <article class="card glass">
                         <h3>Mission</h3>
                         <ul>
@@ -124,6 +124,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 </div>
             </section>
 
+
             <!-- VALORES ------------------------------------------------------>
             <section class="section">
                 <div class="section-title">
@@ -131,28 +132,34 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     <hr>
                 </div>
 
-                <div class="grid three-cols cards">
-                    <article class="card">
+                <div class="grid three-cols cards values-cards">
+                    <article class="card value-card">
+                        <div class="icon">🤝</div>
                         <h4>Trust</h4>
                         <p>We always keep our promises.</p>
                     </article>
-                    <article class="card">
+                    <article class="card value-card">
+                        <div class="icon">🎟️</div>
                         <h4>Accessibility</h4>
                         <p>Tickets should be easy and fair to get.</p>
                     </article>
-                    <article class="card">
+                    <article class="card value-card">
+                        <div class="icon">🔥</div>
                         <h4>Passion</h4>
                         <p>We love live events just like our customers.</p>
                     </article>
-                    <article class="card">
+                    <article class="card value-card">
+                        <div class="icon">💪</div>
                         <h4>Resilience</h4>
                         <p>We never give up, even when times are hard.</p>
                     </article>
-                    <article class="card">
+                    <article class="card value-card">
+                        <div class="icon">🧭</div>
                         <h4>Integrity</h4>
                         <p>We do what’s right, even if it’s not easy.</p>
                     </article>
-                    <article class="card">
+                    <article class="card value-card">
+                        <div class="icon">🚀</div>
                         <h4>Innovation</h4>
                         <p>We look for new ways to improve every day.</p>
                     </article>

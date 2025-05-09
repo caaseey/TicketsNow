@@ -17,11 +17,65 @@
 .section-title hr { width:60px; border:1.5px solid var(--blue); margin:0.5rem auto; }
 
 /* Tarjetas */
-.card { background:#fff; padding:2rem; border-radius:1rem; box-shadow:0 5px 15px rgba(0,0,0,.08); }
+.card { background:#fff; padding:2rem; border-radius:1rem; box-shadow:0 5px 15px rgba(0,0,0,.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,.1); }
 .card.glass { background: rgba(255,255,255,.1); color:#fff; backdrop-filter: blur(6px); }
 
+/* Tarjetas de misión y visión */
+.mission-vision {
+    gap: 3rem;
+    padding: 0.5rem 1rem; 
+}
+
+.mission-vision .card {
+    padding: 2.5rem 2rem; 
+    border-radius: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-vision .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mission-vision h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.mission-vision ul {
+    padding-left: 1.2rem;
+}
+
+.mission-vision li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.section--blue {
+    padding: 5rem 2rem;
+}
+
+
+/* Tarjetas de valores */
+.value-card {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.value-card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
 /* Equipo */
-.team-card img { width:140px; height:140px; border-radius:50%; object-fit:cover; margin-bottom:1rem; }
+.team-card img { width:140px; height:140px; border-radius:50%; object-fit:cover; margin-bottom:1rem; transition: transform 0.3s ease; }
+.team-card:hover img { transform: scale(1.05); }
 .role{ color:var(--dark); font-size:.9rem; opacity:.7; }
 
 /* Responsive extra */
