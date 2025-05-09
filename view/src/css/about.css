@@ -21,6 +21,31 @@
 .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,.1); }
 .card.glass { background: rgba(255,255,255,.1); color:#fff; backdrop-filter: blur(6px); }
 
+/* Historia */
+.history-section {
+    align-items: center;
+}
+
+.history-text {
+    padding: 0 2rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.history-section figure img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.history-text h2 {
+    margin-bottom: 1rem; /* menos espacio entre título y párrafo */
+}
+
+.history-text p {
+    margin-bottom: 2rem; /* más espacio al final del texto */
+}
+
 /* Tarjetas de misión y visión */
 .mission-vision {
     gap: 3rem;

@@ -86,8 +86,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     <hr>
                 </div>
 
-                <div class="grid two-cols">
-                    <div class="text">
+                <div class="grid two-cols history-section">
+                    <div class="text history-text">
                         <p align="justify">TicketsNow started with a fun bet in 2014-2015. We said, "If FC Barcelona wins the Champions League, we will create a company." They won. Sadly, we didn’t go to the final because the tickets were sold out. We had to watch it from home.
                             That moment made us realize something important: many people wait months or even years for special events, and sometimes they miss them just because they couldn’t get a ticket. So we decided to do something about it. We created TicketsNow.
                             In 2020, the pandemic hit us hard. We went bankrupt. But soon after, we came back stronger. Today, we only sell music concert tickets because we don’t yet have the licenses for football, esports, or other types of events. Still, our big dream is to become the best ticket-selling company in every category.
