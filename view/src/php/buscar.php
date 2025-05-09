@@ -30,7 +30,7 @@ $conciertos = [
 
 $resultado = null;
 foreach ($conciertos as $nombre => $ruta) {
-    if (strpos($nombre, $busqueda) !== false) {
+    if (substr($nombre, 0, strlen($busqueda)) === $busqueda) {
         $resultado = $ruta;
         break;
     }

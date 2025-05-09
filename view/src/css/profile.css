@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
     display: block;
 }
-  
+
 
 /* NAVBAR CON ESTILO DE INDEX */
 .navbar {
@@ -265,5 +265,15 @@ h2 {
         width: 1rem;
         height: 0.1rem;
         margin-left: 0.5rem;
+    }
+
+    .error-msg {
+        background-color: #ffe0e0;
+        border-left: 5px solid #cc0000;
+        color: #900;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 5px;
+        font-weight: 500;
     }
 }
