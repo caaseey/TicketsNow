@@ -24,12 +24,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 <img src="../../media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
-        <form class="search-container" action="../../src/php/buscar.php" method="get">
-            <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
-            <button type="submit" class="search-button">
-                <img src="../../media/img/interfaces/lupa.png" alt="Buscar">
-            </button>
-        </form>
 
         <div class="account-menu">
             <button class="account-button">
@@ -94,9 +88,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                         </p>
                     </div>
 
-                    <figure>
-                        <img src="../view/media/img/about/history.jpg" alt="Nuestro camino">
-                    </figure>
+                <div class="youtube-container">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/vEFUXC6flUI?autoplay=1&mute=1&loop=1&playlist=vEFUXC6flUI"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
                 </div>
             </section>
 
