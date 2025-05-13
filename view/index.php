@@ -29,7 +29,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
-        <form class="search-container" action="../view/src/php/buscar.php" method="get">
+        <form class="search-container" action="../view/src/php/search.php" method="get">
     <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
     <button type="submit" class="search-button">
         <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
