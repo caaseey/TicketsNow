@@ -115,15 +115,20 @@
 
 
 /* Equipo */
-.team-card img { width:140px; height:140px; border-radius:50%; object-fit:cover; margin-bottom:1rem; transition: transform 0.3s ease; }
-.team-card:hover img { transform: scale(1.05); }
-.role{ color:var(--dark); font-size:.9rem; opacity:.7; }
-.team-card .role {
-    color: var(--dark);
-    font-size: 0.9rem;
-    opacity: 0.7;
-    text-align: justify;
+.team-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto 1rem auto;
+  transition: transform 0.3s ease;
 }
+
+
+
+
 
 /* Responsive extra */
 @media (max-width:768px){
