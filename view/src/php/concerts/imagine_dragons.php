@@ -60,104 +60,141 @@
   </div>
 
   <!-- NATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos en España</h2>
+<div class="section-title">
+  <h2>Conciertos en España</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>18</p>
+        <p>MAY</p>
+        <p>2025</p>
+      </div>
+      <div class="ticket-details">
+        <p>dom · 21:00</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Cantabria - Campos de Sport de El Sardinero</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>22</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mar · 20:30</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Barcelona - Palau Sant Jordi</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>21</p>
+        <p>MAY</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
-
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>25</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 21:00</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Madrid - WiZink Center</p>
-        </div>
+      <div class="ticket-details">
+        <p>mié · 20:30</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Valencia - Estadi Ciutat de València</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-  </section>
-
-  <!-- INTERNATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos Internacionales</h2>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>03</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>sáb · 19:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Seúl - KSPO Dome</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>24</p>
+        <p>MAY</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>sáb · 21:00</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Sevilla - Estadio La Cartuja</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>09</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 20:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Nueva York - Madison Square Garden</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>27</p>
+        <p>MAY</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>mar · 20:00</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Madrid - Cívitas Metropolitano</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>13</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mié · 20:30</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>París - Accor Arena</p>
-        </div>
+<!-- INTERNATIONAL TICKETS -->
+<div class="section-title">
+  <h2>Conciertos Internacionales</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>28</p>
+        <p>JUL</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>lun · 20:30</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Milán - Stadio San Siro</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>15</p>
+        <p>AGO</p>
+        <p>2025</p>
+      </div>
+      <div class="ticket-details">
+        <p>vie · 21:00</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Toronto - Rogers Centre</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>02</p>
+        <p>SEP</p>
+        <p>2025</p>
+      </div>
+      <div class="ticket-details">
+        <p>mar · 19:30</p>
+        <p>Imagine Dragons - Evolve Again Tour</p>
+        <p>Santiago de Chile - Estadio Nacional</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>

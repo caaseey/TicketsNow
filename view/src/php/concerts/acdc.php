@@ -68,104 +68,105 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
   </div>
 
   <!-- NATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos en España</h2>
+<div class="section-title">
+  <h2>Conciertos en España</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>22</p>
+        <p>ABR</p>
+        <p>2026</p>
+      </div>
+      <div class="ticket-details">
+        <p>mié · 21:30</p>
+        <p>ACDC - Europe Tour</p>
+        <p>Madrid - Estadio Cívitas Metropolitano</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>22</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mar · 20:30</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Barcelona - Palau Sant Jordi</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>24</p>
+        <p>ABR</p>
+        <p>2026</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
-
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>25</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 21:00</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Madrid - WiZink Center</p>
-        </div>
+      <div class="ticket-details">
+        <p>vie · 22:00</p>
+        <p>ACDC - Europe Tour</p>
+        <p>Sevilla - Estadio La Cartuja</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-  </section>
-
-  <!-- INTERNATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos Internacionales</h2>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>03</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>sáb · 19:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Seúl - KSPO Dome</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>27</p>
+        <p>ABR</p>
+        <p>2026</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>lun · 20:00</p>
+        <p>ACDC - Europe Tour</p>
+        <p>Bilbao - BEC! Arena</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>09</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 20:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Nueva York - Madison Square Garden</p>
-        </div>
-      </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
+<!-- INTERNATIONAL TICKETS -->
+<div class="section-title">
+  <h2>Conciertos Internacionales</h2>
+</div>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>13</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mié · 20:30</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>París - Accor Arena</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>03</p>
+        <p>MAY</p>
+        <p>2026</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>dom · 20:00</p>
+        <p>ACDC - Europe Tour</p>
+        <p>Londres - Wembley Stadium</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>07</p>
+        <p>MAY</p>
+        <p>2026</p>
+      </div>
+      <div class="ticket-details">
+        <p>jue · 20:30</p>
+        <p>ACDC - Europe Tour</p>
+        <p>Berlín - Olympiastadion</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>

@@ -60,104 +60,104 @@
   </div>
 
   <!-- NATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos en España</h2>
+<div class="section-title">
+  <h2>Conciertos en España</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>24</p>
+        <p>NOV</p>
+        <p>2025</p>
+      </div>
+      <div class="ticket-details">
+        <p>lun · 21:00</p>
+        <p>Cuarteto de Nos - Lámina Once Tour</p>
+        <p>Barcelona - Sala Apolo</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>22</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mar · 20:30</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Barcelona - Palau Sant Jordi</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>30</p>
+        <p>NOV</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
-
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>25</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 21:00</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Madrid - WiZink Center</p>
-        </div>
+      <div class="ticket-details">
+        <p>dom · 20:00</p>
+        <p>Cuarteto de Nos - Lámina Once Tour</p>
+        <p>Bilbao - Kafé Antzokia</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-  </section>
-
-  <!-- INTERNATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos Internacionales</h2>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>03</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>sáb · 19:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Seúl - KSPO Dome</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>02</p>
+        <p>DIC</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>mar · 20:00</p>
+        <p>Cuarteto de Nos - Lámina Once Tour</p>
+        <p>Sevilla - Sala Custom</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>09</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 20:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Nueva York - Madison Square Garden</p>
-        </div>
-      </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
+<!-- INTERNATIONAL TICKETS -->
+<div class="section-title">
+  <h2>Conciertos Internacionales</h2>
+</div>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>13</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mié · 20:30</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>París - Accor Arena</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>10</p>
+        <p>DIC</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>mié · 20:00</p>
+        <p>Cuarteto de Nos - Lámina Once Tour</p>
+        <p>Buenos Aires - Teatro Vorterix</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>13</p>
+        <p>DIC</p>
+        <p>2025</p>
+      </div>
+      <div class="ticket-details">
+        <p>sáb · 21:00</p>
+        <p>Cuarteto de Nos - Lámina Once Tour</p>
+        <p>Santiago - Teatro Coliseo</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>

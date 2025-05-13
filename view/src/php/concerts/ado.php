@@ -68,104 +68,123 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
   </div>
 
   <!-- NATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos en España</h2>
+<div class="section-title">
+  <h2>Conciertos en España</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>22</p>
+        <p>ABR</p>
+        <p>2026</p>
+      </div>
+      <div class="ticket-details">
+        <p>mié · 20:00</p>
+        <p>Ado - Shadows of Voice Tour</p>
+        <p>Bilbao - Bilbao Arena</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>22</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mar · 20:30</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Barcelona - Palau Sant Jordi</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>24</p>
+        <p>ABR</p>
+        <p>2026</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
-
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>25</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 21:00</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Madrid - WiZink Center</p>
-        </div>
+      <div class="ticket-details">
+        <p>vie · 20:30</p>
+        <p>Ado - Shadows of Voice Tour</p>
+        <p>Madrid - WiZink Center</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-  </section>
-
-  <!-- INTERNATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos Internacionales</h2>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>03</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>sáb · 19:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Seúl - KSPO Dome</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>27</p>
+        <p>ABR</p>
+        <p>2026</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>lun · 19:30</p>
+        <p>Ado - Shadows of Voice Tour</p>
+        <p>Barcelona - Sant Jordi Club</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>09</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 20:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Nueva York - Madison Square Garden</p>
-        </div>
-      </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
+<!-- INTERNATIONAL TICKETS -->
+<div class="section-title">
+  <h2>Conciertos Internacionales</h2>
+</div>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>13</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mié · 20:30</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>París - Accor Arena</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>31</p>
+        <p>MAY</p>
+        <p>2026</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>dom · 20:00</p>
+        <p>Ado - Shadows of Voice Tour</p>
+        <p>Seúl - Olympic Hall</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>15</p>
+        <p>JUN</p>
+        <p>2026</p>
+      </div>
+      <div class="ticket-details">
+        <p>lun · 19:00</p>
+        <p>Ado - Shadows of Voice Tour</p>
+        <p>Los Ángeles - The Greek Theatre</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>05</p>
+        <p>JUL</p>
+        <p>2026</p>
+      </div>
+      <div class="ticket-details">
+        <p>dom · 20:30</p>
+        <p>Ado - Shadows of Voice Tour</p>
+        <p>Sídney - Aware Super Theatre</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>

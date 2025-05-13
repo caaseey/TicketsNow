@@ -67,105 +67,88 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <hr>
   </div>
 
-  <!-- NATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos en España</h2>
+<!-- NATIONAL TICKETS -->
+<div class="section-title">
+  <h2>Conciertos en España</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>11</p>
+        <p>MAY</p>
+        <p>2025</p>
+      </div>
+      <div class="ticket-details">
+        <p>dom · 21:00</p>
+        <p>Bruno Mars - World Tour</p>
+        <p>Málaga - Auditorio Municipal</p>
+      </div>
+    </div>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>22</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mar · 20:30</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Barcelona - Palau Sant Jordi</p>
-        </div>
+<!-- INTERNATIONAL TICKETS -->
+<div class="section-title">
+  <h2>Conciertos Internacionales</h2>
+</div>
+
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>19</p>
+        <p>JUL</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
-
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>25</p>
-          <p>JUL</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 21:00</p>
-          <p>TWICE World Tour Ready To Be</p>
-          <p>Madrid - WiZink Center</p>
-        </div>
+      <div class="ticket-details">
+        <p>sáb · 20:00</p>
+        <p>Bruno Mars - World Tour</p>
+        <p>Toronto - Scotiabank Arena</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-  </section>
-
-  <!-- INTERNATIONAL TICKETS -->
-  <div class="section-title">
-    <h2>Conciertos Internacionales</h2>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
   </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>03</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>sáb · 19:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Seúl - KSPO Dome</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>17</p>
+        <p>AGO</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>dom · 21:00</p>
+        <p>Bruno Mars - World Tour</p>
+        <p>Buenos Aires - Movistar Arena</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>09</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>vie · 20:00</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>Nueva York - Madison Square Garden</p>
-        </div>
+<section class="ticket-container">
+  <div class="ticket">
+    <div class="ticket-info">
+      <div class="ticket-date">
+        <p>06</p>
+        <p>SEP</p>
+        <p>2025</p>
       </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
+      <div class="ticket-details">
+        <p>sáb · 19:30</p>
+        <p>Bruno Mars - World Tour</p>
+        <p>Sídney - Qudos Bank Arena</p>
+      </div>
     </div>
-  </section>
+    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  </div>
+</section>
 
-  <section class="ticket-container">
-    <div class="ticket">
-      <div class="ticket-info">
-        <div class="ticket-date">
-          <p>13</p>
-          <p>AGO</p>
-          <p>2025</p>
-        </div>
-        <div class="ticket-details">
-          <p>mié · 20:30</p>
-          <p>TWICE Global Encore Tour: With YOU-th</p>
-          <p>París - Accor Arena</p>
-        </div>
-      </div>
-      <a href="../tickets.php"><button>ENTRADAS</button></a>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer>

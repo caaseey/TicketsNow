@@ -190,7 +190,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <img src="../view/media/img/concert_banners/aurora.jpg" alt="aurora">
             <div class="concert-info">
                 <p>Oviedo, España | 30 de marzo de 2026</p>
-                <h3>AURORA - LIVE TOUR</h3>
+                <h3>AURORA - Celestial Path Tour</h3>
             </div>
         </a>
         <a href="../view/src/php/concerts/omar_courtz.php" class="concert-banner">
