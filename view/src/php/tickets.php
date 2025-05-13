@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/index.css"/>
     <link rel="stylesheet" href="../css/concert.css"/>
     <link rel="stylesheet" href="../css/tickets.css"/>
-    <title>TWICE - Artista</title>
+    <title>Entradas | Tickets Now</title>
 </head>
 
 <body>
@@ -39,22 +39,13 @@
                     ?>
                     <hr>
                     <!-- Enlaces en mantenimiento -->
-                    <li><a href="../view/src/html/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="../view/src/html/work_in_progress.html">Sobre nosotros</a></li>
-                    <li><a href="../view/src/html/work_in_progress.html">Contacto</a></li>
+                    <li><a href="../html/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="../php/about.php">Sobre nosotros</a></li>
+                    <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- HEADER -->
-    <header class="banner-header">
-        <div class="banner-text">
-            <h2>TWICE World Tour Ready To Be</h2>
-            <p>Mar - Jul 22 · 2024 · 20:30</p>
-            <p>Barcelona · Palau Sant Jordi</p>
-        </div>
-    </header>
 
     <!-- CONCERT NAVBAR -->
     <navbar class="concert-navbar">
@@ -128,7 +119,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer id = "footer">
     <div class="footer-links">
             <div class="footer-column">
                 <h3>Escríbenos</h3>

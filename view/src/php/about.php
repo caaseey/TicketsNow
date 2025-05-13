@@ -13,7 +13,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
-    <title>TicketsNow</title>
+    <title>Sobre nosotros | TicketsNow</title>
 </head>
 
 <body>
@@ -52,9 +52,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                         <form id="logoutForm" action="logout.php" method="post" style="display: none;"></form>
                     <?php endif; ?>
                     <hr>
-                    <li><a href="../../../html/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="#">Sobre nosotros</a></li>
-                    <li><a href="../../../html/work_in_progress.html">Contacto</a></li>
+                    <li><a href="../html/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="about.php">Sobre nosotros</a></li>
+                    <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
 
@@ -218,7 +218,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
         </main>
 
         <!-- FOOTER -->
-        <footer>
+        <footer id = "footer">
             <div class="footer-links">
                 <div class="footer-column">
                     <h3>Escríbenos</h3>

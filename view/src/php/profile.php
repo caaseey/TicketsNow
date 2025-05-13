@@ -119,7 +119,7 @@ $role = $user['id_role'];
                     <hr>
                     <li><a href="../html/work_in_progress.html">Ayuda</a></li>
                     <li><a href="../php/about.php">Sobre nosotros</a></li>
-                    <li><a href="../html/work_in_progress.html">Contacto</a></li>
+                    <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
         </div>

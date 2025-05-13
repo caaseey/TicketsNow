@@ -14,7 +14,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../css/index.css" />
   <link rel="stylesheet" href="../../css/concert.css" />
-  <title>TWICE - Artista</title>
+  <title>Ado | Tickets Now</title>
 </head>
 
 <body>
@@ -47,8 +47,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
           ?>
           <hr>
           <li><a href="../../html/work_in_progress.html">Ayuda</a></li>
-          <li><a href="../../html/work_in_progress.html">Sobre nosotros</a></li>
-          <li><a href="../../html/work_in_progress.html">Contacto</a></li>
+          <li><a href="../../php/about.php">Sobre nosotros</a></li>
+          <li><a href="#footer">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -187,7 +187,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
 
   <!-- FOOTER -->
-  <footer>
+  <footer id = "footer">
   <div class="footer-links">
             <div class="footer-column">
                 <h3>Escríbenos</h3>
