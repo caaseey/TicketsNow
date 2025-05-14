@@ -121,7 +121,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
     <!-- SECTION FEATURED CONCERTS -->
     <div class="featured-concerts-titles">
-        <div class="section-title">
+        <div class="main-section-title">
             <h2>Conciertos destacados</h2>
             <hr>
         </div>
@@ -174,7 +174,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     </section>
 
     <!-- SECTION RECOMMENDED CONCERTS -->
-    <div class="section-title">
+    <div class="main-section-title">
         <h2>Conciertos recomendados</h2>
         <hr>
     </div>
@@ -210,7 +210,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     </section>
 
     <!-- SECTION DISCOVER CONCERTS -->
-    <div class="section-title">
+    <div class="main-section-title">
         <h2>Descubre</h2>
         <hr>
     </div>

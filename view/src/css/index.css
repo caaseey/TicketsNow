@@ -1021,3 +1021,29 @@ PC: 1920 × 1080 px
     
 }
 */
+
+/*
+    Code by Marc
+*/
+.main-section-title {
+    padding-top: 2vh;
+    padding-inline: 5vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.main-section-title h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--blue);
+    margin-bottom: 0;
+}
+
+.main-section-title hr {
+    width: 100%;
+    height: 5px;
+    background-color: var(--blue); 
+    border: none;
+}
