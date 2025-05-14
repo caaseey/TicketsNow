@@ -10,41 +10,46 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <a href="../../../index.php" class="logo">
-      <img src="../../../media/img/interfaces/logo.png" alt="Tickets Now" />
-    </a>
-    <div class="account-menu">
-      <button class="account-button">
-        <div class="account-icon">
-          <hr>
-          <hr>
-          <hr>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div>
+            <a href="../../../" class="logo">
+            <img src="../../../media/img/interfaces/logo.png" alt="Tickets Now">
+            </a>
         </div>
-        <div class="account-picture">
-          <img src="../../../media/img/interfaces/user_icon.png" alt="Usuario">
-        </div>
-      </button>
-      <div class="account-dropdown-menu">
-        <ul>
-          <?php
-          if (isset($_SESSION['logged_in'])) 
-          {
-            echo "<li><a href='../profile.php'>Mi perfil</a></li>";
-          } else {
-            echo "<li><a href='../login.php'>Iniciar sesión</a></li>";
-            echo "<li><a href='../register_user.php'>Regístrate</a></li>";
-          }
-          ?>
-          <hr>
-          <li><a href="../../html/work_in_progress.html">Ayuda</a></li>
-          <li><a href="../../php/about.php">Sobre nosotros</a></li>
-          <li><a href="#footer">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+        <div class="account-menu">
+            <button class="account-button">
+                <div class="account-icon">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <div class="account-picture">
+                    <img src="../../../media/img/interfaces/user_icon.png" alt="Usuario">
+                </div>
+            </button>
+            <div class="account-dropdown-menu">
+                <ul>
+                    <?php
+                    if (isset($_SESSION['logged_in'])) {    
+                        echo '<li><a href="../profile.php">Mi perfil</a></li>';
+                        echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
+                    } else {
+                        echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
+                        echo "<li><a href='../view/src/php/register_user.php'>Regístrate</a></li>";
+                    }
+                    ?>
+                    <?php if (isset($_SESSION['logged_in'])): ?>
+                        <form id="logoutForm" action="../logout.php" method="post" style="display: none;"></form>
+                    <?php endif; ?>
+                    <hr>
+                    <li><a href="../../html/work_in_progress.html">Ayuda</a></li>
+                    <li><a href="../about.php">Sobre nosotros</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                </ul>
+            </div>
+    </nav>
 
   <!-- HEADER -->
   <header class="banner-header" style="background-image: url('../../../media/img/concert_banners/yoasobi.jpg');">
