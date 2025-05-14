@@ -1,3 +1,11 @@
+<?php
+/* ---------- SEGURIDAD / HTTPS ---------- */
+if ((!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') && strpos($_SERVER['HTTP_HOST'], 'localhost') === false) {
+    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+}
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,8 +44,8 @@
                         echo '<li><a href="../profile.php">Mi perfil</a></li>';
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
                     } else {
-                        echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='../view/src/php/register_user.php'>Regístrate</a></li>";
+                        echo "<li><a href='../login.php'>Iniciar sesión</a></li>";
+                        echo "<li><a href='../register_user.php'>Regístrate</a></li>";
                     }
                     ?>
                     <?php if (isset($_SESSION['logged_in'])): ?>
