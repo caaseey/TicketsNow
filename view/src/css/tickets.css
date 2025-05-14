@@ -67,6 +67,71 @@
 .concert-navbar-option:hover span::after {
     animation: underline-slide 0.3s ease both;
 }
+
+/* PRICE RANGE SLIDER */
+.filter-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 0;
+}
+
+.price-range-values {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--blue);
+    margin-bottom: 0.6rem; /* espacio debajo del texto */
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+/* noUiSlider personalizado */
+.noUi-target {
+    background: var(--light);
+    border-radius: 10px;
+    border: none;
+    height: 10px;
+}
+
+.noUi-connect {
+    background: var(--blue);
+}
+
+.noUi-handle {
+    background: white;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    top: -5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    cursor: grab;
+}
+
+.noUi-tooltip {
+    background: var(--blue);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border: none;
+}
+
+#price-range {
+    margin-top: 0.5rem;
+    width: 100%;
+    min-width: 200px;
+    height: 10px;
+}
+
+
   
 @keyframes underline-slide {
     from {
@@ -116,7 +181,7 @@
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     padding: 1rem;
-    width: 280px;
+    width: 700;
 }
   
 .filter-title {
@@ -334,5 +399,32 @@
     }
 }
   
+
+/* Color de la barra activa entre los dos handles */
+.noUi-connect {
+    background: var(--blue) !important;
+}
+
+/* Color de los handles (bordes azules) */
+.noUi-handle {
+    border: 2px solid var(--blue) !important;
+}
+
+/* Color de la barra de fondo */
+.noUi-target {
+    background: var(--light); /* o cambia a otro si quieres un contraste diferente */
+}
+
+/* Opcional: color del tooltip */
+.noUi-tooltip {
+    background: var(--blue);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border: none;
+}
+
   
   
