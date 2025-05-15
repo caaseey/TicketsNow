@@ -14,7 +14,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/concert.css">
     <link rel="stylesheet" href="../css/tickets.css">
-    <link rel="stylesheet" href="../../../assets/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../../../view/media/assets/nouislider/nouislider.min.css">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -155,7 +155,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
         </div>
     </footer>
 
-    <script src="../../../assets/nouislider/nouislider.min.js"></script>
+    <script src="../../../view/media/assets/nouislider/nouislider.min.js"></script>
     <script>
         const priceSlider = document.getElementById('price-range');
         const priceLower = document.getElementById('price-lower');
