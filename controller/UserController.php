@@ -49,17 +49,37 @@ class UserController
         return $error;
     }
 
+    public function emailExists($email): bool
+    {
+        $stmt = $this->conn->prepare("SELECT id_user FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
+        return $stmt->num_rows > 0;
+    }
+
+    public function updatePassword($email, $newPassword): void
+    {
+        $stmt = $this->conn->prepare("UPDATE users SET password = ? WHERE email = ?");
+        $stmt->bind_param("ss", $newPassword, $email);
+        $stmt->execute();
+    }
+
+
     public function logout(): void {}
 
-    public function registerUser($data) {
+    public function registerUser($data)
+    {
         return $this->register($data, 1);
     }
 
-    public function registerArtist($data) {
+    public function registerArtist($data)
+    {
         return $this->register($data, 2);
     }
 
-    public function registerAdmin($data) {
+    public function registerAdmin($data)
+    {
         return $this->register($data, 3);
     }
 
@@ -71,33 +91,33 @@ class UserController
         ) {
             return "Todos los campos son obligatorios.";
         }
-    
+
         $email = $data['email'];
-        $password = $data['password']; 
+        $password = $data['password'];
         $name = $data['nombre'];
         $surname = $data['apellido'];
         $profilePhoto = '';
-    
+
         try {
             $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+
             // Comprobar si el email ya existe
             $check = $db->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
             $check->execute([$email]);
-    
+
             if ($check->fetchColumn() > 0) {
                 return "El correo electrónico ya está registrado.";
             }
-    
+
             // Insertar si el correo no existe
             $stmt = $db->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
-    
+
             header("Location: login.php");
             exit;
         } catch (PDOException $e) {
             return "Error al registrar: " . $e->getMessage();
         }
-    }    
+    }
 }
