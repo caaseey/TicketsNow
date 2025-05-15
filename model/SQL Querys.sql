@@ -11,7 +11,7 @@ CREATE TABLE users (
     name VARCHAR(25),   
     surname VARCHAR(25),   
     email VARCHAR(100),   
-    password VARCHAR(25),   
+    password VARCHAR(255),   
     id_role INT,   
     profile_photo VARCHAR(255) NOT NULL,   
     FOREIGN KEY (id_role) REFERENCES roles(id_role)

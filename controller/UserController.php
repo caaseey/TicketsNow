@@ -41,12 +41,11 @@ class UserController
 
                     header("Location: ./profile.php");
                     exit;
-                } else {
-                    $error = "Email o contraseña incorrectos.";
                 }
             }
 
             $stmt->close();
+            $error = "Email o contraseña incorrectos.";
         }
 
         return $error;
@@ -68,7 +67,6 @@ class UserController
         $stmt->bind_param("ss", $hashed, $email);
         $stmt->execute();
     }
-
 
     public function logout(): void {}
 
@@ -106,7 +104,6 @@ class UserController
             $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // Comprobar si el email ya existe
             $check = $db->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
             $check->execute([$email]);
 
@@ -114,7 +111,6 @@ class UserController
                 return "El correo electrónico ya está registrado.";
             }
 
-            // Insertar si el correo no existe
             $stmt = $db->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
 
