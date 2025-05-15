@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="links">
-                <p><a href="../html/work_in_progress.html">¿Olvidaste tu contraseña?</a></p>
+                <p><a href="forgot_password.php">¿Olvidaste tu contraseña?</a></p>
             </div>
         </form>
     </div>
