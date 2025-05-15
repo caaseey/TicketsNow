@@ -23,24 +23,27 @@ class UserController
                 return "Todos los campos son obligatorios.";
             }
 
-            $stmt = $this->conn->prepare("SELECT id_user, name, surname, id_role FROM users WHERE email = ? AND password = ?");
-            $stmt->bind_param("ss", $email, $password);
+            $stmt = $this->conn->prepare("SELECT id_user, name, surname, id_role, password FROM users WHERE email = ?");
+            $stmt->bind_param("s", $email);
             $stmt->execute();
             $result = $stmt->get_result();
 
             if ($result->num_rows === 1) {
                 $user = $result->fetch_assoc();
-                $_SESSION['logged_in'] = true;
-                $_SESSION['id_user'] = $user['id_user'];
-                $_SESSION['user_name'] = $user['name'];
-                $_SESSION['user_surname'] = $user['surname'];
-                $_SESSION['user_email'] = $email;
-                $_SESSION['id_role'] = $user['id_role'];
 
-                header("Location: ./profile.php");
-                exit;
-            } else {
-                $error = "Email o contraseña incorrectos.";
+                if (password_verify($password, $user['password'])) {
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['id_user'] = $user['id_user'];
+                    $_SESSION['user_name'] = $user['name'];
+                    $_SESSION['user_surname'] = $user['surname'];
+                    $_SESSION['user_email'] = $email;
+                    $_SESSION['id_role'] = $user['id_role'];
+
+                    header("Location: ./profile.php");
+                    exit;
+                } else {
+                    $error = "Email o contraseña incorrectos.";
+                }
             }
 
             $stmt->close();
@@ -61,7 +64,8 @@ class UserController
     public function updatePassword($email, $newPassword): void
     {
         $stmt = $this->conn->prepare("UPDATE users SET password = ? WHERE email = ?");
-        $stmt->bind_param("ss", $newPassword, $email);
+        $hashed = password_hash($newPassword, PASSWORD_DEFAULT);
+        $stmt->bind_param("ss", $hashed, $email);
         $stmt->execute();
     }
 
@@ -93,7 +97,7 @@ class UserController
         }
 
         $email = $data['email'];
-        $password = $data['password'];
+        $password = password_hash($data['password'], PASSWORD_DEFAULT);
         $name = $data['nombre'];
         $surname = $data['apellido'];
         $profilePhoto = '';
