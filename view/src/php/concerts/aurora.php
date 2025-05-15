@@ -1,8 +1,8 @@
 <?php
 /* ---------- SEGURIDAD / HTTPS ---------- */
 if ((!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') && strpos($_SERVER['HTTP_HOST'], 'localhost') === false) {
-    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit();
+  header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+  exit();
 }
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 ?>
@@ -18,46 +18,46 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div>
-            <a href="../../../" class="logo">
-            <img src="../../../media/img/interfaces/logo.png" alt="Tickets Now">
-            </a>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div>
+      <a href="../../../" class="logo">
+        <img src="../../../media/img/interfaces/logo.png" alt="Tickets Now">
+      </a>
+    </div>
 
-        <div class="account-menu">
-            <button class="account-button">
-                <div class="account-icon">
-                    <hr>
-                    <hr>
-                    <hr>
-                </div>
-                <div class="account-picture">
-                    <img src="../../../media/img/interfaces/user_icon.png" alt="Usuario">
-                </div>
-            </button>
-            <div class="account-dropdown-menu">
-                <ul>
-                    <?php
-                    if (isset($_SESSION['logged_in'])) {    
-                        echo '<li><a href="../profile.php">Mi perfil</a></li>';
-                        echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
-                    } else {
-                        echo "<li><a href='../login.php'>Iniciar sesión</a></li>";
-                        echo "<li><a href='../register_user.php'>Regístrate</a></li>";
-                    }
-                    ?>
-                    <?php if (isset($_SESSION['logged_in'])): ?>
-                        <form id="logoutForm" action="../logout.php" method="post" style="display: none;"></form>
-                    <?php endif; ?>
-                    <hr>
-                    <li><a href="../../html/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="../about.php">Sobre nosotros</a></li>
-                    <li><a href="#footer">Contacto</a></li>
-                </ul>
-            </div>
-    </nav>
+    <div class="account-menu">
+      <button class="account-button">
+        <div class="account-icon">
+          <hr>
+          <hr>
+          <hr>
+        </div>
+        <div class="account-picture">
+          <img src="../../../media/img/interfaces/user_icon.png" alt="Usuario">
+        </div>
+      </button>
+      <div class="account-dropdown-menu">
+        <ul>
+          <?php
+          if (isset($_SESSION['logged_in'])) {
+            echo '<li><a href="../profile.php">Mi perfil</a></li>';
+            echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
+          } else {
+            echo "<li><a href='../login.php'>Iniciar sesión</a></li>";
+            echo "<li><a href='../register_user.php'>Regístrate</a></li>";
+          }
+          ?>
+          <?php if (isset($_SESSION['logged_in'])): ?>
+            <form id="logoutForm" action="../logout.php" method="post" style="display: none;"></form>
+          <?php endif; ?>
+          <hr>
+          <li><a href="../../html/work_in_progress.html">Ayuda</a></li>
+          <li><a href="../about.php">Sobre nosotros</a></li>
+          <li><a href="#footer">Contacto</a></li>
+        </ul>
+      </div>
+  </nav>
 
   <!-- HEADER -->
   <header class="banner-header" style="background-image: url('../../../media/img/concert_banners/aurora.jpg');">
@@ -73,126 +73,128 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
   </div>
 
   <!-- NATIONAL TICKETS -->
-<div class="section-title">
-  <h2>Conciertos en España</h2>
-</div>
-
-<section class="ticket-container">
-  <div class="ticket">
-    <div class="ticket-info">
-      <div class="ticket-date">
-        <p>30</p>
-        <p>MAR</p>
-        <p>2026</p>
-      </div>
-      <div class="ticket-details">
-        <p>lun · 20:00</p>
-        <p>AURORA - Celestial Path Tour</p>
-        <p>Oviedo - Recinto Ferial Luis Adaro</p>
-      </div>
-    </div>
-    <a href="../tickets.php"><button>ENTRADAS</button></a>
+  <div class="section-title">
+    <h2>Conciertos en España</h2>
   </div>
-</section>
 
-<section class="ticket-container">
-  <div class="ticket">
-    <div class="ticket-info">
-      <div class="ticket-date">
-        <p>01</p>
-        <p>ABR</p>
-        <p>2026</p>
+  <section class="ticket-container">
+    <div class="ticket">
+      <div class="ticket-info">
+        <div class="ticket-date">
+          <p>30</p>
+          <p>MAR</p>
+          <p>2026</p>
+        </div>
+        <div class="ticket-details">
+          <p>lun · 20:00</p>
+          <p>AURORA - Celestial Path Tour</p>
+          <p>Oviedo - Recinto Ferial Luis Adaro</p>
+        </div>
       </div>
-      <div class="ticket-details">
-        <p>mié · 21:00</p>
-        <p>AURORA - Celestial Path Tour</p>
-        <p>Valencia - Palau de les Arts</p>
-      </div>
+      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-    <a href="../tickets.php"><button>ENTRADAS</button></a>
-  </div>
-</section>
+  </section>
 
-<section class="ticket-container">
-  <div class="ticket">
-    <div class="ticket-info">
-      <div class="ticket-date">
-        <p>03</p>
-        <p>ABR</p>
-        <p>2026</p>
+  <section class="ticket-container">
+    <div class="ticket">
+      <div class="ticket-info">
+        <div class="ticket-date">
+          <p>01</p>
+          <p>ABR</p>
+          <p>2026</p>
+        </div>
+        <div class="ticket-details">
+          <p>mié · 21:00</p>
+          <p>AURORA - Celestial Path Tour</p>
+          <p>Valencia - Palau de les Arts</p>
+        </div>
       </div>
-      <div class="ticket-details">
-        <p>vie · 19:30</p>
-        <p>AURORA - Celestial Path Tour</p>
-        <p>Sevilla - Cartuja Center</p>
-      </div>
+      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-    <a href="../tickets.php"><button>ENTRADAS</button></a>
-  </div>
-</section>
+  </section>
 
-<!-- INTERNATIONAL TICKETS -->
-<div class="section-title">
-  <h2>Conciertos Internacionales</h2>
-</div>
-
-<section class="ticket-container">
-  <div class="ticket">
-    <div class="ticket-info">
-      <div class="ticket-date">
-        <p>18</p>
-        <p>JUL</p>
-        <p>2026</p>
+  <section class="ticket-container">
+    <div class="ticket">
+      <div class="ticket-info">
+        <div class="ticket-date">
+          <p>03</p>
+          <p>ABR</p>
+          <p>2026</p>
+        </div>
+        <div class="ticket-details">
+          <p>vie · 19:30</p>
+          <p>AURORA - Celestial Path Tour</p>
+          <p>Sevilla - Cartuja Center</p>
+        </div>
       </div>
-      <div class="ticket-details">
-        <p>sáb · 20:00</p>
-        <p>AURORA - Celestial Path Tour</p>
-        <p>Oslo - Spektrum Arena</p>
-      </div>
+      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-    <a href="../tickets.php"><button>ENTRADAS</button></a>
-  </div>
-</section>
+  </section>
 
-<section class="ticket-container">
-  <div class="ticket">
-    <div class="ticket-info">
-      <div class="ticket-date">
-        <p>25</p>
-        <p>JUL</p>
-        <p>2026</p>
+  <!-- INTERNATIONAL TICKETS -->
+  <div class="section-title">
+    <h2>Conciertos Internacionales</h2>
+  </div>
+
+  <section class="ticket-container">
+    <div class="ticket">
+      <div class="ticket-info">
+        <div class="ticket-date">
+          <p>18</p>
+          <p>JUL</p>
+          <p>2026</p>
+        </div>
+        <div class="ticket-details">
+          <p>sáb · 20:00</p>
+          <p>AURORA - Celestial Path Tour</p>
+          <p>Oslo - Spektrum Arena</p>
+        </div>
       </div>
-      <div class="ticket-details">
-        <p>vie · 21:00</p>
-        <p>AURORA - Celestial Path Tour</p>
-        <p>Ámsterdam - AFAS Live</p>
-      </div>
+      <a href="../tickets.php"><button>ENTRADAS</button></a>
     </div>
-    <a href="../tickets.php"><button>ENTRADAS</button></a>
-  </div>
-</section>
+  </section>
 
+  <section class="ticket-container">
+    <div class="ticket">
+      <div class="ticket-info">
+        <div class="ticket-date">
+          <p>25</p>
+          <p>JUL</p>
+          <p>2026</p>
+        </div>
+        <div class="ticket-details">
+          <p>vie · 21:00</p>
+          <p>AURORA - Celestial Path Tour</p>
+          <p>Ámsterdam - AFAS Live</p>
+        </div>
+      </div>
+      <a href="../tickets.php"><button>ENTRADAS</button></a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer id = "footer">
-  <div class="footer-links">
-            <div class="footer-column">
-                <h3>Escríbenos</h3>
-                <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
-            </div>
-            <div class="footer-column">
-                <h3>Sobre nosotros</h3>
-                <a href="../about.php">Haz click aquí</a>
-            </div>
-            <div class="footer-column">
-                <h3>Llámanos</h3>
-                <a href="tel:+34666666666">+34 666 66 66 66</a>
-            </div>
-            <div class="footer-column">
-                <h3>¿Buscas ayuda?</h3>
-                <a href="../../html/work_in_progress.html">Página de ayuda</a><br>
-            </div>
-        </div>
+  <footer id="footer">
+    <div class="footer-logo">
+      <img src="../../../media/img/interfaces/logo_footer.png" alt="TicketsNow logo footer">
+    </div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>Escríbenos</h3>
+        <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
+      </div>
+      <div class="footer-column">
+        <h3>Sobre nosotros</h3>
+        <a href="about.php">Haz click aquí</a>
+      </div>
+      <div class="footer-column">
+        <h3>Llámanos</h3>
+        <a href="tel:+34666666666">+34 666 66 66 66</a>
+      </div>
+      <div class="footer-column">
+        <h3>¿Buscas ayuda?</h3>
+        <a href="../html/work_in_progress.html">Página de ayuda</a><br>
+      </div>
+    </div>
   </footer>
 </body>
 

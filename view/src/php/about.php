@@ -219,6 +219,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
         <!-- FOOTER -->
         <footer id = "footer">
+            <div class="footer-logo">
+                <img src="../../media/img/interfaces/logo_footer.png" alt="TicketsNow logo footer">
+            </div>
             <div class="footer-links">
                 <div class="footer-column">
                     <h3>Escríbenos</h3>
