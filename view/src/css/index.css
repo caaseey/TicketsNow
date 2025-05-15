@@ -361,6 +361,29 @@ body {
 }
 
 /* SECTION TITLES */
+.main-section-title {
+    padding-top: 2vh;
+    padding-inline: 5vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.main-section-title h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--blue);
+    margin-bottom: 0;
+}
+
+.main-section-title hr {
+    width: 100%;
+    height: 5px;
+    background-color: var(--blue); 
+    border: none;
+}
+
 .section-title {
     padding-inline: 5vw;
     display: flex;
@@ -555,12 +578,15 @@ body {
     box-sizing: border-box;
 }
 
+/* FOOTER */
 footer {
     background-color: var(--blue);
     color: var(--light);
     padding: 1rem 1.5rem;
-    margin-left: -6%;
-    margin-right: -6%;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 footer h2 {
@@ -621,11 +647,22 @@ footer h2 {
     color: #777;
 }
 
+.footer-logo {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+
 .footer-links {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 1.5rem;
+    justify-content: center; 
+    gap: 8rem; 
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .footer-column {
@@ -646,6 +683,12 @@ footer h2 {
 
 .footer-column a:hover {
     text-decoration: underline;
+}
+
+.footer-column img {
+    width: 100px;
+    display: block;
+    margin: 0 auto; 
 }
 
 .footer-bottom {
@@ -1022,28 +1065,4 @@ PC: 1920 × 1080 px
 }
 */
 
-/*
-    Code by Marc
-*/
-.main-section-title {
-    padding-top: 2vh;
-    padding-inline: 5vw;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    width: fit-content;
-}
 
-.main-section-title h2 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: var(--blue);
-    margin-bottom: 0;
-}
-
-.main-section-title hr {
-    width: 100%;
-    height: 5px;
-    background-color: var(--blue); 
-    border: none;
-}
