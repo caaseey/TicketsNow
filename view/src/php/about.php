@@ -17,7 +17,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 </head>
 
 <body>
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div>
             <a href="../../../view/index.php" class="logo">
@@ -41,24 +40,27 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     <?php
                     if (isset($_SESSION['logged_in'])) {
                         echo '<li><a href="profile.php">Mi perfil</a></li>';
+
+                        if ($_SESSION['id_role'] == 3) {
+                            echo '<li><a href="dashboard.php">Dashboard</a></li>';
+                        }
+
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
                     } else {
                         echo "<li><a href='login.php'>Iniciar sesión</a></li>";
                         echo "<li><a href='register_user.php'>Regístrate</a></li>";
                     }
                     ?>
-
                     <?php if (isset($_SESSION['logged_in'])): ?>
                         <form id="logoutForm" action="logout.php" method="post" style="display: none;"></form>
                     <?php endif; ?>
                     <hr>
                     <li><a href="../html/work_in_progress.html">Ayuda</a></li>
-                    <li><a href="about.php">Sobre nosotros</a></li>
+                    <li><a href="../php/about.php">Sobre nosotros</a></li>
                     <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
-
-
+        </div>
     </nav>
 
     <!-- CSS GLOBAL -->
@@ -88,15 +90,15 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                         </p>
                     </div>
 
-                <div class="youtube-container">
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/vEFUXC6flUI?autoplay=1&mute=1&loop=1&playlist=vEFUXC6flUI"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
+                    <div class="youtube-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/vEFUXC6flUI?autoplay=1&mute=1&loop=1&playlist=vEFUXC6flUI"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
 
                 </div>
             </section>
@@ -218,7 +220,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
         </main>
 
         <!-- FOOTER -->
-        <footer id = "footer">
+        <footer id="footer">
             <div class="footer-logo">
                 <img src="../../media/img/interfaces/logo_footer.png" alt="TicketsNow logo footer">
             </div>
