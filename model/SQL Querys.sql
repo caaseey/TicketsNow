@@ -20,8 +20,5 @@ CREATE TABLE users (
     -- Insertar en la tabla roles (¡no en users!) 
     INSERT INTO roles (rol_name) VALUES   ('user'),   ('artist'),   ('admin');
     
-    -- Insertar usuarios (no hace falta especificar id_user) 
-    INSERT INTO users (name, surname, email, password, id_role, profile_photo) VALUES   ('casey', 'cleto', 'casey@gmail.com', '123', 1, ''),   ('jonji', 'salango', 'jonji@gmail.com', '123', 2, ''),   ('marc', 'lopez', 'marc@gmail.com', '123', 3, '');
-    
     -- Verificar 
     SELECT * FROM users;

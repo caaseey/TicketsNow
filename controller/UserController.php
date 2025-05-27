@@ -5,11 +5,35 @@ class UserController
 
     public function __construct()
     {
-        $this->conn = new mysqli("localhost", "root", "", "ticketsnow");
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+        try {
+            // Conectar sin base de datos primero
+            $pdo = new PDO("mysql:host=localhost", "root", "");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Crear la base de datos si no existe
+            $pdo->exec("CREATE DATABASE IF NOT EXISTS ticketsnow");
+
+            // Ahora conectar a la base de datos
+            $this->conn = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Crear tabla users si no existe (opcional)
+            $this->conn->exec("
+            CREATE TABLE IF NOT EXISTS users (
+                id_user INT AUTO_INCREMENT PRIMARY KEY,
+                email VARCHAR(255) NOT NULL UNIQUE,
+                password VARCHAR(255) NOT NULL,
+                name VARCHAR(100),
+                surname VARCHAR(100),
+                id_role INT,
+                profile_photo VARCHAR(255)
+            )
+        ");
+        } catch (PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
         }
     }
+
 
     public function login(): string
     {
@@ -24,27 +48,21 @@ class UserController
             }
 
             $stmt = $this->conn->prepare("SELECT id_user, name, surname, id_role, password FROM users WHERE email = ?");
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $result = $stmt->get_result();
+            $stmt->execute([$email]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($result->num_rows === 1) {
-                $user = $result->fetch_assoc();
+            if ($user && password_verify($password, $user['password'])) {
+                $_SESSION['logged_in'] = true;
+                $_SESSION['id_user'] = $user['id_user'];
+                $_SESSION['user_name'] = $user['name'];
+                $_SESSION['user_surname'] = $user['surname'];
+                $_SESSION['user_email'] = $email;
+                $_SESSION['id_role'] = $user['id_role'];
 
-                if (password_verify($password, $user['password'])) {
-                    $_SESSION['logged_in'] = true;
-                    $_SESSION['id_user'] = $user['id_user'];
-                    $_SESSION['user_name'] = $user['name'];
-                    $_SESSION['user_surname'] = $user['surname'];
-                    $_SESSION['user_email'] = $email;
-                    $_SESSION['id_role'] = $user['id_role'];
-
-                    header("Location: ./profile.php");
-                    exit;
-                }
+                header("Location: ./profile.php");
+                exit;
             }
 
-            $stmt->close();
             $error = "Email o contraseña incorrectos.";
         }
 
@@ -54,18 +72,15 @@ class UserController
     public function emailExists($email): bool
     {
         $stmt = $this->conn->prepare("SELECT id_user FROM users WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->store_result();
-        return $stmt->num_rows > 0;
+        $stmt->execute([$email]);
+        return $stmt->rowCount() > 0;
     }
 
     public function updatePassword($email, $newPassword): void
     {
-        $stmt = $this->conn->prepare("UPDATE users SET password = ? WHERE email = ?");
         $hashed = password_hash($newPassword, PASSWORD_DEFAULT);
-        $stmt->bind_param("ss", $hashed, $email);
-        $stmt->execute();
+        $stmt = $this->conn->prepare("UPDATE users SET password = ? WHERE email = ?");
+        $stmt->execute([$hashed, $email]);
     }
 
     public function logout(): void {}
@@ -101,17 +116,14 @@ class UserController
         $profilePhoto = '';
 
         try {
-            $db = new PDO("mysql:host=localhost;dbname=ticketsnow", "root", "");
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $check = $db->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
+            $check = $this->conn->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
             $check->execute([$email]);
 
             if ($check->fetchColumn() > 0) {
                 return "El correo electrónico ya está registrado.";
             }
 
-            $stmt = $db->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
 
             header("Location: login.php");

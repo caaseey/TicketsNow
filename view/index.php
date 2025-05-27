@@ -26,15 +26,15 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <nav class="navbar">
         <div>
             <a href="#" class="logo">
-            <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
+                <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
         <form class="search-container" action="../view/src/php/search.php" method="get">
-    <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
-    <button type="submit" class="search-button">
-        <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
-    </button>
-</form>
+            <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
+            <button type="submit" class="search-button">
+                <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
+            </button>
+        </form>
 
         <div class="account-menu">
             <button class="account-button">
@@ -50,8 +50,13 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <div class="account-dropdown-menu">
                 <ul>
                     <?php
-                    if (isset($_SESSION['logged_in'])) {    
+                    if (isset($_SESSION['logged_in'])) {
                         echo '<li><a href="../view/src/php/profile.php">Mi perfil</a></li>';
+
+                        if (isset($_SESSION['id_role']) && $_SESSION['id_role'] == 3) {
+                            echo '<li><a href="../view/src/php/admin/dashboard.php">Dashboard</a></li>';
+                        }
+
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
                     } else {
                         echo "<li><a href='../view/src/php/login.php'>Iniciar sesión</a></li>";
@@ -67,6 +72,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                     <li><a href="#footer">Contacto</a></li>
                 </ul>
             </div>
+
     </nav>
 
     <!-- CARROUSEL -->
@@ -125,7 +131,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <h2>Conciertos destacados</h2>
             <hr>
         </div>
-        </div>
+    </div>
     </div>
     <section id="featured-concerts" class="featured-concerts">
         <a href="../view/src/php/concerts/sza.php" class="concert-banner most-featured-concert">
