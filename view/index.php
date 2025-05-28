@@ -184,7 +184,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
         <h2>Conciertos recomendados</h2>
         <hr>
     </div>
-    <section id="recommended-concerts" class="recommended-concerts">
+    <section class="recommended-concerts">
         <a href="../view/src/php/concerts/marca_registrada.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/marca_registrada.jpg" alt="Marca Registrada">
             <div class="concert-info">
@@ -344,32 +344,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 floatingSearch.classList.remove('visible');
             }
         });
-    </script>
-
-    <!-- Recommended concerts invert colors effect script -->
-    <script>
-        // Section to detect
-        const section = document.querySelector('#recommended-concerts');
-
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
-                        // When the section is visible more than 20%, activate the invert effect
-                        section.classList.add('active');
-                    } else {
-                        // If not, remove the invert effect
-                        section.classList.remove('active');
-                    }
-                });
-            },
-            // Detect when the section is 0% visible or 20% visible
-            {
-                threshold: [0, 0.2]
-            }
-        );
-
-        observer.observe(section);
     </script>
 
     <!-- Carousel script -->

@@ -508,6 +508,7 @@ body {
     padding-bottom: 3rem;
     width: 100%;
     box-sizing: border-box;
+    background-color: var(--blue);
 }
 .recommended-concerts a {
     height: 30em;
@@ -525,43 +526,19 @@ body {
 }
 
 /* RECOMMENDED CONCERTS */
-/* NOT VISIBLE */
-.recommended-concerts {
-    background-color: transparent;
-    transition: background-color 0.5s ease;
-}
 .recommended-concerts .concert-info h3,
 .recommended-concerts .concert-info p {
-    color: var(--blue);
-    transition: color 0.5s ease;
+    color: var(--light);
 }
 .recommended-concerts .concert-banner:hover {
-    background-color: var(--blue);
-    color: var(--light);
-}
-.recommended-concerts .concert-banner:hover h3,
-.recommended-concerts .concert-banner:hover p {
-    color: var(--light);
-}
-
-/* RECOMMENDED CONCERTS */
-/* VISIBLE */
-.recommended-concerts.active {
-    background-color: var(--blue);
-}
-.recommended-concerts.active .concert-info h3,
-.recommended-concerts.active .concert-info p {
-    color: var(--light);
-}
-.recommended-concerts.active .concert-banner:hover {
     background-color: var(--light);
     color: var(--blue);
 }
-.recommended-concerts.active .concert-banner:hover h3,
-.recommended-concerts.active .concert-banner:hover p {
+.recommended-concerts .concert-banner:hover h3,
+.recommended-concerts .concert-banner:hover p {
     color: var(--blue);
 }
-.recommended-concerts.active .empty-concert {
+.recommended-concerts .empty-concert {
     background: var(--blue);
     color: var(--light);
     border-color: var(--light);
