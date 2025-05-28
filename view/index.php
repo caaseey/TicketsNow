@@ -84,7 +84,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 </video>
                 <div class="carousel-text">
                     <h1>Bruno Mars - World Tour</h1>
-                    <a href="../view/src/php/concerts/bruno_mars.php"><button>ENTRADAS</button></a>
+                    <a href="../view/src/php/artist.php?name=Bruno Mars"><button>ENTRADAS</button></a>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 </video>
                 <div class="carousel-text">
                     <h1>TWICE - Ready To Be</h1>
-                    <a href="../view/src/php/concerts/twice.php"><button>ENTRADAS</button></a>
+                    <a href="../view/src/php/artist.php?name=TWICE"><button>ENTRADAS</button></a>
                 </div>
             </div>
 
@@ -104,7 +104,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 </video>
                 <div class="carousel-text">
                     <h1>The Weeknd - After Hours Til Dawn Tour</h1>
-                    <a href="../view/src/php/concerts/the_weeknd.php"><button>ENTRADAS</button></a>
+                    <a href="../view/src/php/artist.php?name=The Weeknd"><button>ENTRADAS</button></a>
                 </div>
             </div>
         </div>

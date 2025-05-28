@@ -1042,4 +1042,11 @@ PC: 1920 × 1080 px
 }
 */
 
-
+/* ARTISTS TEXT */
+.no-concert-message p {
+    font-size: 2rem;
+    padding-bottom: 4rem;
+    margin: 0;
+    color: var(--dark);
+    text-align: center;
+}

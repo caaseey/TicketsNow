@@ -127,35 +127,41 @@ $concerts = $concertController->getConcertsByArtist($id_artist);
             $internationalConcerts[] = $concert;
         }
     }
-
-
-    foreach ($spanishConcerts as $concert) {
-        $date = new DateTime($concert['date']);
-        $day = $date->format('d');
-        $month = $date->format('M');
-        $year = $date->format('Y');
-        $time = (new DateTime($concert['time']))->format('H:i');
-        $dayOfWeek = $date->format('D');
-    ?>
-        <section class="ticket-container">
-            <div class="ticket">
-                <div class="ticket-info">
-                    <div class="ticket-date">
-                        <p><?php echo $day; ?></p>
-                        <p><?php echo strtoupper($month); ?></p>
-                        <p><?php echo $year; ?></p>
-                    </div>
-                    <div class="ticket-details">
-                        <p><?php echo strtolower($dayOfWeek); ?> · <?php echo $time; ?></p>
-                        <p><?php echo htmlspecialchars($concert['name']); ?></p>
-                        <p><?php echo htmlspecialchars($concert['location']); ?></p>
-                    </div>
-                </div>
-                <a href="../tickets.php"><button>ENTRADAS</button></a>
-            </div>
-        </section>
+    
+    if (empty($spanishConcerts)) { ?>
+        <div class="no-concert-message">
+            <p>No hay conciertos disponibles en España.</p>
+        </div>
     <?php 
-    } 
+    } else {
+        foreach ($spanishConcerts as $concert) {
+            $date = new DateTime($concert['date']);
+            $day = $date->format('d');
+            $month = $date->format('M');
+            $year = $date->format('Y');
+            $time = (new DateTime($concert['time']))->format('H:i');
+            $dayOfWeek = $date->format('D');
+        ?>
+            <section class="ticket-container">
+                <div class="ticket">
+                    <div class="ticket-info">
+                        <div class="ticket-date">
+                            <p><?php echo $day; ?></p>
+                            <p><?php echo strtoupper($month); ?></p>
+                            <p><?php echo $year; ?></p>
+                        </div>
+                        <div class="ticket-details">
+                            <p><?php echo strtolower($dayOfWeek); ?> · <?php echo $time; ?></p>
+                            <p><?php echo htmlspecialchars($concert['name']); ?></p>
+                            <p><?php echo htmlspecialchars($concert['location']); ?></p>
+                        </div>
+                    </div>
+                    <a href="../tickets.php"><button>ENTRADAS</button></a>
+                </div>
+            </section>
+        <?php 
+        } 
+    }
     ?>
 
     <!-- INTERNATIONAL TICKETS -->
@@ -164,38 +170,41 @@ $concerts = $concertController->getConcertsByArtist($id_artist);
     </div>
 
     <?php
-    $internationalConcerts = array_filter($concerts, function ($concert) {
-        return stripos($concert['location'], 'Bilbao') === false &&
-            stripos($concert['location'], 'Madrid') === false &&
-            stripos($concert['location'], 'Barcelona') === false;
-    });
-
-    foreach ($internationalConcerts as $concert) {
-        $date = new DateTime($concert['date']);
-        $day = $date->format('d');
-        $month = $date->format('M');
-        $year = $date->format('Y');
-        $time = (new DateTime($concert['time']))->format('H:i');
-        $dayOfWeek = $date->format('D');
-    ?>
-        <section class="ticket-container">
-            <div class="ticket">
-                <div class="ticket-info">
-                    <div class="ticket-date">
-                        <p><?php echo $day; ?></p>
-                        <p><?php echo strtoupper($month); ?></p>
-                        <p><?php echo $year; ?></p>
+    if (empty($internationalConcerts)) { ?>
+        <div class="no-concert-message">
+            <p>No hay conciertos internacionales disponibles.</p>
+        </div>
+    <?php 
+    } else {
+        foreach ($internationalConcerts as $concert) {
+            $date = new DateTime($concert['date']);
+            $day = $date->format('d');
+            $month = $date->format('M');
+            $year = $date->format('Y');
+            $time = (new DateTime($concert['time']))->format('H:i');
+            $dayOfWeek = $date->format('D');
+        ?>
+            <section class="ticket-container">
+                <div class="ticket">
+                    <div class="ticket-info">
+                        <div class="ticket-date">
+                            <p><?php echo $day; ?></p>
+                            <p><?php echo strtoupper($month); ?></p>
+                            <p><?php echo $year; ?></p>
+                        </div>
+                        <div class="ticket-details">
+                            <p><?php echo strtolower($dayOfWeek); ?> · <?php echo $time; ?></p>
+                            <p><?php echo htmlspecialchars($concert['name']); ?></p>
+                            <p><?php echo htmlspecialchars($concert['location']); ?></p>
+                        </div>
                     </div>
-                    <div class="ticket-details">
-                        <p><?php echo strtolower($dayOfWeek); ?> · <?php echo $time; ?></p>
-                        <p><?php echo htmlspecialchars($concert['name']); ?></p>
-                        <p><?php echo htmlspecialchars($concert['location']); ?></p>
-                    </div>
+                    <a href="../tickets.php"><button>ENTRADAS</button></a>
                 </div>
-                <a href="../tickets.php"><button>ENTRADAS</button></a>
-            </div>
-        </section>
-    <?php } ?>
+            </section>
+        <?php 
+        } 
+    }
+    ?>
 
     <!-- FOOTER -->
     <footer id="footer">
