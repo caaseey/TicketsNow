@@ -22,12 +22,45 @@ CREATE TABLE IF NOT EXISTS concerts (
     name VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL,
     date DATE NOT NULL,
-    price DECIMAL(10,2) NOT NULL
-);
+    time TIME NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    id_artist INT,
+    FOREIGN KEY (id_artist) REFERENCES artists(id_artist)
+)
+
+CREATE TABLE IF NOT EXISTS artists (
+    id_artist INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    genre VARCHAR(100),
+    banner_image VARCHAR(255)
+)
 
 -- Insertar roles
 INSERT INTO roles (rol_name) VALUES ('user'), ('artist'), ('admin');
 
+-- Insertar artistas
+INSERT INTO artists (name, genre, banner_image) VALUES
+    ('ACDC', 'Rock', '../../media/img/concert_banners/acdc.jpg'),
+    ('Ado', 'J-Pop', '../../media/img/concert_banners/ado.jpg'),
+    ('aespa', 'K-Pop', '../../media/img/concert_banners/aespa.jpg'),
+    ('AURORA', 'Indie Pop', '../../media/img/concert_banners/aurora.jpg'),
+    ('Bruno Mars', 'Pop', '../../media/img/concert_banners/bruno_mars.jpg'),
+    ('Cuarteto de Nos', 'Rock Alternativo', '../../media/img/concert_banners/cuarteto_de_nos.jpg'),
+    ('Eladio Carrión', 'Reggaeton', '../../media/img/concert_banners/eladio_carrion.jpg'),
+    ('Imagine Dragons', 'Rock', '../../media/img/concert_banners/imagine_dragons.jpg'),
+    ('Kendrick Lamar', 'Hip-Hop', '../../media/img/concert_banners/kendrick_lamar.jpg'),
+    ('Keshi', 'Indie Pop', '../../media/img/concert_banners/keshi.jpg'),
+    ('KSI', 'Hip-Hop', '../../media/img/concert_banners/ksi.jpg'),
+    ('Laufey', 'Jazz Pop', '../../media/img/concert_banners/laufey.jpg'),
+    ('Marca Registrada', 'Regional Mexicano', '../../media/img/concert_banners/marca_registrada.jpg'),
+    ('Omar Courtz', 'Reggaeton', '../../media/img/concert_banners/omar_courtz.jpg'),
+    ('Swingrowers', 'Electro Swing', '../../media/img/concert_banners/swingrowers.jpg'),
+    ('SZA', 'R&B', '../../media/img/concert_banners/sza.jpg'),
+    ('The Weeknd', 'Pop/R&B', '../../media/img/concert_banners/the_weeknd.jpg'),
+    ('TWICE', 'K-Pop', '../../media/img/concert_banners/twice.jpg'),
+    ('YOASOBI', 'J-Pop', '../../media/img/concert_banners/yoasobi.jpg');
+
 -- Verificar
 SELECT * FROM users;
 SELECT * FROM concerts;
+SELECT * FROM artists;
