@@ -43,6 +43,10 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
           if (isset($_SESSION['logged_in'])) {
             echo '<li><a href="../profile.php">Mi perfil</a></li>';
             echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
+
+            if ($_SESSION['id_role'] == 3) {
+              echo '<li><a href="../dashboard.php">Dashboard</a></li>';
+            }
           } else {
             echo "<li><a href='../login.php'>Iniciar sesión</a></li>";
             echo "<li><a href='../register_user.php'>Regístrate</a></li>";
@@ -57,6 +61,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
           <li><a href="#footer">Contacto</a></li>
         </ul>
       </div>
+    </div>
   </nav>
 
   <!-- HEADER -->
