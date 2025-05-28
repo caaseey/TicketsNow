@@ -30,20 +30,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         if (isset($_POST['create'])) {
+            // Manejo de la subida de la foto
+            if (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
+                throw new Exception("Debes subir una foto para el concierto.");
+            }
+            $photoName = uniqid() . '_' . basename($_FILES['photo']['name']);
+            $photoPath = '../../../media/concerts/' . $photoName;
+            $photoDbPath = 'media/concerts/' . $photoName;
+            if (!move_uploaded_file($_FILES['photo']['tmp_name'], __DIR__ . '/../../../' . $photoDbPath)) {
+                throw new Exception("Error al guardar la foto.");
+            }
+
             $concertController->createConcert(
                 trim($_POST['name']),
                 trim($_POST['location']),
                 $_POST['date'],
-                floatval($_POST['price'])
+                floatval($_POST['price']),
+                $photoDbPath // Nuevo parámetro para la foto
             );
             $_SESSION['success'] = "Concierto creado correctamente";
         } elseif (isset($_POST['update'])) {
+            // Para editar, la foto es opcional
+            $photoDbPath = null;
+            if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+                $photoName = uniqid() . '_' . basename($_FILES['photo']['name']);
+                $photoPath = '../../../media/concerts/' . $photoName;
+                $photoDbPath = 'media/concerts/' . $photoName;
+                if (!move_uploaded_file($_FILES['photo']['tmp_name'], __DIR__ . '/../../../' . $photoDbPath)) {
+                    throw new Exception("Error al guardar la foto.");
+                }
+            }
             $concertController->updateConcert(
                 intval($_POST['id_concert']),
                 trim($_POST['name']),
                 trim($_POST['location']),
                 $_POST['date'],
-                floatval($_POST['price'])
+                floatval($_POST['price']),
+                $photoDbPath // Nuevo parámetro para la foto (puede ser null)
             );
             $_SESSION['success'] = "Concierto actualizado correctamente";
         } elseif (isset($_POST['delete'])) {
@@ -132,7 +155,7 @@ $concerts = $concertController->getAllConcerts();
         <section class="admin-section">
             <h2>Crear Nuevo Concierto</h2>
             <hr />
-            <form method="post" class="concert-form" onsubmit="return validateForm(this)">
+            <form method="post" class="concert-form" enctype="multipart/form-data" onsubmit="return validateForm(this)">
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>" />
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Nombre del evento" required />
@@ -141,6 +164,7 @@ $concerts = $concertController->getAllConcerts();
                 <div class="form-group">
                     <input type="date" name="date" required min="<?= date('Y-m-d') ?>" />
                     <input type="number" name="price" placeholder="Precio (€)" step="0.01" min="0.01" required />
+                    <input type="file" name="photo" accept="image/*" required />
                 </div>
                 <button type="submit" name="create" class="primary-button">Publicar Concierto</button>
             </form>
@@ -152,6 +176,9 @@ $concerts = $concertController->getAllConcerts();
             <div class="concerts-grid">
                 <?php foreach ($concerts as $concert): ?>
                     <div class="concert-card">
+                        <?php if (!empty($concert['photo'])): ?>
+                            <img src="../../../<?= htmlspecialchars($concert['photo']) ?>" alt="Foto del concierto" class="concert-photo" />
+                        <?php endif; ?>
                         <div class="concert-info">
                             <h3><?= htmlspecialchars($concert['name']) ?></h3>
                             <p class="concert-location"><?= htmlspecialchars($concert['location']) ?></p>
@@ -184,7 +211,7 @@ $concerts = $concertController->getAllConcerts();
         <div class="modal-content">
             <span class="close-button" onclick="closeEditModal()">&times;</span>
             <h2>Editar Concierto</h2>
-            <form method="post" class="concert-form" onsubmit="return validateForm(this)">
+            <form method="post" class="concert-form" enctype="multipart/form-data" onsubmit="return validateForm(this)">
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>" />
                 <input type="hidden" name="id_concert" id="edit-id" />
                 <div class="form-group">
@@ -194,6 +221,7 @@ $concerts = $concertController->getAllConcerts();
                 <div class="form-group">
                     <input type="date" name="date" id="edit-date" required min="<?= date('Y-m-d') ?>" />
                     <input type="number" name="price" id="edit-price" placeholder="Precio (€)" step="0.01" min="0.01" required />
+                    <input type="file" name="photo" accept="image/*" />
                 </div>
                 <button type="submit" name="update" class="primary-button">Actualizar Concierto</button>
             </form>
@@ -221,6 +249,12 @@ $concerts = $concertController->getAllConcerts();
                 alert("El precio debe ser mayor a 0");
                 return false;
             }
+            const photoInput = form.querySelector('input[name="photo"]');
+            // Solo obligatorio en creación
+            if (form.querySelector('button[name="create"]') && (!photoInput || !photoInput.value)) {
+                alert("Debes subir una foto para el concierto.");
+                return false;
+            }
             return true;
         }
 
@@ -245,4 +279,3 @@ $concerts = $concertController->getAllConcerts();
 </body>
 
 </html>
-
