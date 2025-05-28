@@ -54,7 +54,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                         echo '<li><a href="../view/src/php/profile.php">Mi perfil</a></li>';
 
                         if (isset($_SESSION['id_role']) && $_SESSION['id_role'] == 3) {
-                            echo '<li><a href="../view/src/php/admin/dashboard.php">Dashboard</a></li>';
+                            echo '<li><a href="../view/src/php/dashboard.php">Dashboard</a></li>';
                         }
 
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
