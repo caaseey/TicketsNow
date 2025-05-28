@@ -26,15 +26,15 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
     <nav class="navbar">
         <div>
             <a href="#" class="logo">
-            <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
+                <img src="../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
         <form class="search-container" action="../view/src/php/search.php" method="get">
-    <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
-    <button type="submit" class="search-button">
-        <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
-    </button>
-</form>
+            <input type="text" name="q" class="search-bar" placeholder="Buscar conciertos...">
+            <button type="submit" class="search-button">
+                <img src="../view/media/img/interfaces/lupa.png" alt="Buscar">
+            </button>
+        </form>
 
         <div class="account-menu">
             <button class="account-button">
@@ -50,7 +50,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <div class="account-dropdown-menu">
                 <ul>
                     <?php
-                    if (isset($_SESSION['logged_in'])) {    
+                    if (isset($_SESSION['logged_in'])) {
                         echo '<li><a href="../view/src/php/profile.php">Mi perfil</a></li>';
                         echo "<li><a href='#' onclick=\"document.getElementById('logoutForm').submit(); return false;\">Cerrar sesión</a></li>";
                     } else {
@@ -125,7 +125,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
             <h2>Conciertos destacados</h2>
             <hr>
         </div>
-        </div>
+    </div>
     </div>
     <section id="featured-concerts" class="featured-concerts">
         <a href="../view/src/php/concerts/sza.php" class="concert-banner most-featured-concert">
@@ -178,7 +178,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
         <h2>Conciertos recomendados</h2>
         <hr>
     </div>
-    <section id="recommended-concerts" class="recommended-concerts">
+    <section class="recommended-concerts">
         <a href="../view/src/php/concerts/marca_registrada.php" class="concert-banner">
             <img src="../view/media/img/concert_banners/marca_registrada.jpg" alt="Marca Registrada">
             <div class="concert-info">
@@ -338,32 +338,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
                 floatingSearch.classList.remove('visible');
             }
         });
-    </script>
-
-    <!-- Recommended concerts invert colors effect script -->
-    <script>
-        // Section to detect
-        const section = document.querySelector('#recommended-concerts');
-
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
-                        // When the section is visible more than 20%, activate the invert effect
-                        section.classList.add('active');
-                    } else {
-                        // If not, remove the invert effect
-                        section.classList.remove('active');
-                    }
-                });
-            },
-            // Detect when the section is 0% visible or 20% visible
-            {
-                threshold: [0, 0.2]
-            }
-        );
-
-        observer.observe(section);
     </script>
 
     <!-- Carousel script -->
