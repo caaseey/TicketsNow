@@ -87,6 +87,18 @@ class ConcertController
         return $stmt->execute([$name, $location, $date, $time, $price, $id_artist]);
     }
 
+    // READ (Todos los conciertos y todos los artistas)
+    public function getAllConcerts()
+    {
+        $stmt = $this->conn->query("SELECT * FROM concerts ORDER BY date ASC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getAllArtists()
+    {
+        $stmt = $this->conn->query("SELECT * FROM artists ORDER BY name ASC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // READ (Todos los conciertos por artista)
     public function getConcertsByArtist($id_artist)
     {
@@ -98,6 +110,12 @@ class ConcertController
     {
         $stmt = $this->conn->prepare("SELECT * FROM artists WHERE name = ?");
         $stmt->execute([$artistName]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function getArtistByID($id_artist)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM artists WHERE id_artist = ?");
+        $stmt->execute([$id_artist]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 

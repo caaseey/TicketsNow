@@ -156,7 +156,7 @@ $concerts = $concertController->getConcertsByArtist($id_artist);
                             <p><?php echo htmlspecialchars($concert['location']); ?></p>
                         </div>
                     </div>
-                    <a href="../tickets.php"><button>ENTRADAS</button></a>
+                    <a href="tickets.php"><button>ENTRADAS</button></a>
                 </div>
             </section>
         <?php 

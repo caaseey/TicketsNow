@@ -3,70 +3,29 @@ session_start();
 require_once '../../../controller/ConcertController.php';
 $concertController = new ConcertController();
 
-// Check admin role
-if (empty($_SESSION['logged_in']) || ($_SESSION['id_role'] ?? 0) != 3) {
-    header("Location: ../../../view/index.php");
-    exit;
-}
-
-// Generate CSRF token if not set
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-
-// Function to check CSRF token and handle errors
-function checkCsrf()
-{
-    if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        $_SESSION['error'] = "CSRF token validation failed";
-        header("Location: dashboard.php");
-        exit;
-    }
-}
-
 // Handle POST requests
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    checkCsrf();
-
     try {
         if (isset($_POST['create'])) {
-            // Manejo de la subida de la foto
-            if (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
-                throw new Exception("Debes subir una foto para el concierto.");
-            }
-            $photoName = uniqid() . '_' . basename($_FILES['photo']['name']);
-            $photoPath = '../../../media/concerts/' . $photoName;
-            $photoDbPath = 'media/concerts/' . $photoName;
-            if (!move_uploaded_file($_FILES['photo']['tmp_name'], __DIR__ . '/../../../' . $photoDbPath)) {
-                throw new Exception("Error al guardar la foto.");
-            }
-
+            $artistName = $concertController->getArtistByID(intval($_POST['id_artist']))['name'];
             $concertController->createConcert(
-                trim($_POST['name']),
+                trim($artistName . " - " . $_POST['name']),
                 trim($_POST['location']),
                 $_POST['date'],
+                $_POST['time'],
                 floatval($_POST['price']),
-                $photoDbPath // Nuevo parámetro para la foto
+                intval($_POST['id_artist'])
             );
             $_SESSION['success'] = "Concierto creado correctamente";
         } elseif (isset($_POST['update'])) {
-            // Para editar, la foto es opcional
-            $photoDbPath = null;
-            if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-                $photoName = uniqid() . '_' . basename($_FILES['photo']['name']);
-                $photoPath = '../../../media/concerts/' . $photoName;
-                $photoDbPath = 'media/concerts/' . $photoName;
-                if (!move_uploaded_file($_FILES['photo']['tmp_name'], __DIR__ . '/../../../' . $photoDbPath)) {
-                    throw new Exception("Error al guardar la foto.");
-                }
-            }
             $concertController->updateConcert(
                 intval($_POST['id_concert']),
                 trim($_POST['name']),
                 trim($_POST['location']),
                 $_POST['date'],
+                $_POST['time'],
                 floatval($_POST['price']),
-                $photoDbPath // Nuevo parámetro para la foto (puede ser null)
+                intval($_POST['id_artist'])
             );
             $_SESSION['success'] = "Concierto actualizado correctamente";
         } elseif (isset($_POST['delete'])) {
@@ -80,8 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// Get all concerts
+// Conseguir todos artistas
+$artists = $concertController->getAllArtists();
 $concerts = $concertController->getAllConcerts();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -102,6 +64,18 @@ $concerts = $concertController->getAllConcerts();
             <a href="../../../" class="logo">
                 <img src="../../../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
+        </div>
+
+        <div>
+            <!-- Mensaje al crear un concierto -->
+            <?php if (!empty($_SESSION['success'])): ?>
+                <div class="success-message"><?= htmlspecialchars($_SESSION['success']) ?></div>
+                <?php unset($_SESSION['success']); ?>
+            <?php endif; ?>
+            <?php if (!empty($_SESSION['error'])): ?>
+                <div class="error-message"><?= htmlspecialchars($_SESSION['error']) ?></div>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; ?>
         </div>
 
         <div class="account-menu">
@@ -142,140 +116,147 @@ $concerts = $concertController->getAllConcerts();
         </div>
     </nav>
 
-    <div class="admin-container">
-        <?php if (!empty($_SESSION['success'])): ?>
-            <div class="success-message"><?= htmlspecialchars($_SESSION['success']) ?></div>
-            <?php unset($_SESSION['success']); ?>
-        <?php endif; ?>
-        <?php if (!empty($_SESSION['error'])): ?>
-            <div class="error-message"><?= htmlspecialchars($_SESSION['error']) ?></div>
-            <?php unset($_SESSION['error']); ?>
-        <?php endif; ?>
+    <!-- MAIN -->
+    <div class="main-container">
+        
 
-        <section class="admin-section">
+        <!-- Formulario para crear conciertos -->
+        <section class="section">
             <h2>Crear Nuevo Concierto</h2>
-            <hr />
-            <form method="post" class="concert-form" enctype="multipart/form-data" onsubmit="return validateForm(this)">
-                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>" />
-                <div class="form-group">
+            <hr/>
+            <form method="post" class="concert-form">
+                <div class="">
                     <input type="text" name="name" placeholder="Nombre del evento" required />
                     <input type="text" name="location" placeholder="Ubicación" required />
                 </div>
-                <div class="form-group">
-                    <input type="date" name="date" required min="<?= date('Y-m-d') ?>" />
-                    <input type="number" name="price" placeholder="Precio (€)" step="0.01" min="0.01" required />
-                    <input type="file" name="photo" accept="image/*" required />
+                <div class="">
+                    <input type="date" name="date" required min="<?= date('Y-m-d'); ?>"/>
+                    <input type="time" name="time" required/>
+                    <input type="number" name="price" placeholder="Precio (€)" step="0.01" min="0.01" required/>
                 </div>
-                <button type="submit" name="create" class="primary-button">Publicar Concierto</button>
+                <div class="">
+                    <select name="id_artist" required>
+                        <option value="">Seleccionar Artista</option>
+                        <?php foreach ($artists as $artist): ?>
+                            <option value="<?php echo $artist['id_artist']; ?>">
+                                <?php echo htmlspecialchars($artist['name']); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <button type="submit" name="create" class="">Publicar Concierto</button>
             </form>
         </section>
 
-        <section class="admin-section">
+        <!-- Sección para mostrar conciertos -->
+        <section class="section">
             <h2>Conciertos Programados</h2>
-            <hr />
-            <div class="concerts-grid">
-                <?php foreach ($concerts as $concert): ?>
-                    <div class="concert-card">
-                        <?php if (!empty($concert['photo'])): ?>
-                            <img src="../../../<?= htmlspecialchars($concert['photo']) ?>" alt="Foto del concierto" class="concert-photo" />
-                        <?php endif; ?>
-                        <div class="concert-info">
-                            <h3><?= htmlspecialchars($concert['name']) ?></h3>
-                            <p class="concert-location"><?= htmlspecialchars($concert['location']) ?></p>
-                            <div class="concert-details">
-                                <p><?= date('d M Y', strtotime($concert['date'])) ?></p>
-                                <p class="concert-price"><?= number_format($concert['price'], 2) ?> €</p>
-                            </div>
-                        </div>
-                        <div class="concert-actions">
-                            <button class="edit-button" onclick="openEditModal(
-                        <?= $concert['id_concert'] ?>,
-                        '<?= htmlspecialchars($concert['name'], ENT_QUOTES) ?>',
-                        '<?= htmlspecialchars($concert['location'], ENT_QUOTES) ?>',
-                        '<?= $concert['date'] ?>',
-                        <?= $concert['price'] ?>
-                    )">Editar</button>
-                            <form method="post" style="display:inline;">
-                                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>" />
-                                <input type="hidden" name="delete" value="<?= $concert['id_concert'] ?>" />
-                                <button type="submit" class="delete-button" onclick="return confirm('¿Eliminar concierto?')">Eliminar</button>
-                            </form>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
-    </div>
+            <hr>
 
-    <div id="editModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeEditModal()">&times;</span>
-            <h2>Editar Concierto</h2>
-            <form method="post" class="concert-form" enctype="multipart/form-data" onsubmit="return validateForm(this)">
-                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>" />
-                <input type="hidden" name="id_concert" id="edit-id" />
-                <div class="form-group">
-                    <input type="text" name="name" id="edit-name" placeholder="Nombre del evento" required />
-                    <input type="text" name="location" id="edit-location" placeholder="Ubicación" required />
-                </div>
-                <div class="form-group">
-                    <input type="date" name="date" id="edit-date" required min="<?= date('Y-m-d') ?>" />
-                    <input type="number" name="price" id="edit-price" placeholder="Precio (€)" step="0.01" min="0.01" required />
-                    <input type="file" name="photo" accept="image/*" />
-                </div>
-                <button type="submit" name="update" class="primary-button">Actualizar Concierto</button>
-            </form>
-        </div>
+            <!-- Tabla de conciertos -->
+            <table>
+                <th>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Lugar</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Precio (€)</th>
+                        <th>Artista</th>
+                        <th>Acciones</th>
+                    </tr>
+                </th>
+                <tb>
+                    <?php if (empty($concerts)): ?>
+                        <tr>
+                            <td colspan="7">No hay conciertos para mostrar.</td>
+                        </tr>
+                    <?php else: ?>
+                        <?php foreach ($concerts as $concert): ?>
+                            <?php 
+                            $artista = $concertController->getArtistById($concert['id_artist']);
+                            $nombre_artista = $artista ? htmlspecialchars($artista['name']) : 'Sin artista';
+
+                            // Mira cada fila, si el ID concuerda con el $_GET['edit'], muestra en la fila un formulario de actualizar
+                            $isEditing = false;
+                            if (isset($_GET['edit']) && $_GET['edit'] == $concert['id_concert']) {
+                                $isEditing = true;
+                            }
+                            ?>
+                            <!-- Si se clica en "Editar", la fila cambia de estar en forma de ver a salir un formulario para actualizar los datos -->
+                            <?php if ($isEditing): ?>
+                                <!-- Formulario de edición (Se coloca en la fila del registro) -->
+                                <!-- Cada campo tiene de valor predeterminado el que tiene actualmente -->
+                                <tr>
+                                    <td colspan="7">
+                                        <form method="post" class="">
+                                            <div class="">
+                                                <input type="hidden" name="id_concert" value="<?php echo $concert['id_concert']; ?>">
+                                                <input type="text" name="name" value="<?php echo htmlspecialchars($concert['name']); ?>" required />
+                                                <input type="text" name="location" value="<?php echo htmlspecialchars($concert['location']); ?>" required />
+                                            </div>
+                                            <div class="">
+                                                <input type="date" name="date" value="<?php echo $concert['date']; ?>" required min="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="time" name="time" value="<?php echo $concert['time']; ?>" required />
+                                                <input type="number" name="price" value="<?php echo $concert['price']; ?>" step="0.01" min="0.01" required />
+                                            </div>
+                                            <div class="">
+                                                <select name="id_artist" required>
+                                                    <option value="">Seleccionar Artista</option>
+                                                    <?php foreach ($artists as $artist) { ?>
+                                                        <option value="<?php echo $artist['id_artist']; ?>" <?php echo $artist['id_artist'] == $concert['id_artist'] ? 'selected' : ''; ?>>
+                                                            <?php echo htmlspecialchars($artist['name']); ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                            <button type="submit" name="update" class="">Guardar Cambios</button>
+                                            <a href="dashboard.php" class="">Cancelar</a>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php else: ?>
+                                <!-- Filas de la tabla en estado normal -->
+                                <tr>
+                                    <td><?php echo htmlspecialchars($concert['name']); ?></td>
+                                    <td><?php echo htmlspecialchars($concert['location']); ?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($concert['date'])); ?></td>
+                                    <td><?php echo date('H:i', strtotime($concert['time'])); ?></td>
+                                    <td><?php echo number_format($concert['price'], 2); ?></td>
+                                    <td><?php echo $nombre_artista; ?></td>
+                                    <td>
+                                        <!-- Botón para editar (Da el ID del artista al $_GET['edit']) -->
+                                        <a href="dashboard.php?edit=<?php echo $concert['id_concert']; ?>" class="">Editar</a>
+                                        <!-- Botón para eliminar -->
+                                        <form method="post" style="display:inline;">
+                                            <input type="hidden" name="delete" value="<?php echo $concert['id_concert']; ?>">
+                                            <button type="submit" class="" onclick="return confirm('¿Quieres eliminar este concierto?')">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tb>
+            </table>
+        </section>
     </div>
 
     <footer id="footer">
+        <div class="footer-logo">
+            <img src="../../media/img/interfaces/logo_footer.png" alt="TicketsNow logo footer">
+        </div>
         <div class="footer-links">
             <div class="footer-column">
-                <h3>Soporte</h3>
-                <a href="mailto:soporte@ticketsnow.com">soporte@ticketsnow.com</a>
+                <h3>Email</h3>
+                <a href="mailto:ticketsnow_official@gmail.com">ticketsnow_official@gmail.com</a>
             </div>
             <div class="footer-column">
-                <h3>Emergencias</h3>
-                <a href="tel:+34987654321">+34 987 654 321</a>
+                <h3>Telefono</h3>
+                <a href="tel:+34666666666">+34 666 66 66 66</a>
             </div>
         </div>
-        <div class="footer-bottom">© 2025 TicketsNow. Administración de contenidos.</div>
     </footer>
-
-    <script>
-        function validateForm(form) {
-            const priceInput = form.querySelector('input[name="price"]');
-            if (!priceInput || parseFloat(priceInput.value) <= 0) {
-                alert("El precio debe ser mayor a 0");
-                return false;
-            }
-            const photoInput = form.querySelector('input[name="photo"]');
-            // Solo obligatorio en creación
-            if (form.querySelector('button[name="create"]') && (!photoInput || !photoInput.value)) {
-                alert("Debes subir una foto para el concierto.");
-                return false;
-            }
-            return true;
-        }
-
-        function openEditModal(id, name, location, date, price) {
-            document.getElementById('edit-id').value = id;
-            document.getElementById('edit-name').value = name;
-            document.getElementById('edit-location').value = location;
-            document.getElementById('edit-date').value = date;
-            document.getElementById('edit-price').value = price;
-            document.getElementById('editModal').style.display = 'block';
-        }
-
-        function closeEditModal() {
-            document.getElementById('editModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('editModal');
-            if (event.target === modal) closeEditModal();
-        };
-    </script>
 </body>
 
 </html>
