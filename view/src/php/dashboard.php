@@ -137,11 +137,11 @@ $concerts = $concertController->getAllConcerts();
                 <div class="">
                     <select name="id_artist" required>
                         <option value="">Seleccionar Artista</option>
-                        <?php foreach ($artists as $artist): ?>
+                        <?php foreach ($artists as $artist) { ?>
                             <option value="<?php echo $artist['id_artist']; ?>">
                                 <?php echo htmlspecialchars($artist['name']); ?>
                             </option>
-                        <?php endforeach; ?>
+                        <?php } ?>
                     </select>
                 </div>
                 <button type="submit" name="create" class="">Publicar Concierto</button>
@@ -167,12 +167,12 @@ $concerts = $concertController->getAllConcerts();
                     </tr>
                 </th>
                 <tb>
-                    <?php if (empty($concerts)): ?>
+                    <?php if (empty($concerts)) { ?>
                         <tr>
                             <td colspan="7">No hay conciertos para mostrar.</td>
                         </tr>
-                    <?php else: ?>
-                        <?php foreach ($concerts as $concert): ?>
+                    <?php } else { ?>
+                        <?php foreach ($concerts as $concert) { ?>
                             <?php 
                             $artista = $concertController->getArtistById($concert['id_artist']);
                             $nombre_artista = $artista ? htmlspecialchars($artista['name']) : 'Sin artista';
@@ -184,7 +184,7 @@ $concerts = $concertController->getAllConcerts();
                             }
                             ?>
                             <!-- Si se clica en "Editar", la fila cambia de estar en forma de ver a salir un formulario para actualizar los datos -->
-                            <?php if ($isEditing): ?>
+                            <?php if ($isEditing) { ?>
                                 <!-- Formulario de edición (Se coloca en la fila del registro) -->
                                 <!-- Cada campo tiene de valor predeterminado el que tiene actualmente -->
                                 <tr>
@@ -215,7 +215,7 @@ $concerts = $concertController->getAllConcerts();
                                         </form>
                                     </td>
                                 </tr>
-                            <?php else: ?>
+                            <?php } else { ?>
                                 <!-- Filas de la tabla en estado normal -->
                                 <tr>
                                     <td><?php echo htmlspecialchars($concert['name']); ?></td>
@@ -234,9 +234,9 @@ $concerts = $concertController->getAllConcerts();
                                         </form>
                                     </td>
                                 </tr>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } ?>
                 </tb>
             </table>
         </section>
