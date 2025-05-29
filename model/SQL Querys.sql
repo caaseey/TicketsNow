@@ -17,6 +17,13 @@ CREATE TABLE IF NOT EXISTS users (
     FOREIGN KEY (id_role) REFERENCES roles(id_role)
 );
 
+CREATE TABLE IF NOT EXISTS artists (
+    id_artist INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    genre VARCHAR(100),
+    banner_image VARCHAR(255)
+)
+
 CREATE TABLE IF NOT EXISTS concerts (
     id_concert INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -26,13 +33,6 @@ CREATE TABLE IF NOT EXISTS concerts (
     price DECIMAL(10,2) NOT NULL,
     id_artist INT,
     FOREIGN KEY (id_artist) REFERENCES artists(id_artist)
-)
-
-CREATE TABLE IF NOT EXISTS artists (
-    id_artist INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL UNIQUE,
-    genre VARCHAR(100),
-    banner_image VARCHAR(255)
 )
 
 -- Insertar roles

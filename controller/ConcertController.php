@@ -87,7 +87,7 @@ class ConcertController
         return $stmt->execute([$name, $location, $date, $time, $price, $id_artist]);
     }
 
-    // READ (Todos los conciertos y todos los artistas)
+    // READ (Todos los conciertos y todos los artistas)--
     public function getAllConcerts()
     {
         $stmt = $this->conn->query("SELECT * FROM concerts ORDER BY date ASC");
