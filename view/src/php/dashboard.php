@@ -53,6 +53,7 @@ $concerts = $concertController->getAllConcerts();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../../../view/src/css/index.css" />
+    <link rel="stylesheet" href="../../../view/src/css/dashboard.css" />
     <title>Admin Dashboard - TicketsNow</title>
 </head>
 
@@ -61,7 +62,7 @@ $concerts = $concertController->getAllConcerts();
     <!-- NAVBAR -->
     <nav class="navbar">
         <div>
-            <a href="../../../" class="logo">
+            <a href="../../" class="logo">
                 <img src="../../../view/media/img/interfaces/logo.png" alt="Tickets Now">
             </a>
         </div>
@@ -125,16 +126,16 @@ $concerts = $concertController->getAllConcerts();
             <h2>Crear Nuevo Concierto</h2>
             <hr/>
             <form method="post" class="concert-form">
-                <div class="">
+                <div class="form-group">
                     <input type="text" name="name" placeholder="Nombre del evento" required />
                     <input type="text" name="location" placeholder="Ubicación" required />
                 </div>
-                <div class="">
+                <div class="form-group">
                     <input type="date" name="date" required min="<?= date('Y-m-d'); ?>"/>
                     <input type="time" name="time" required/>
                     <input type="number" name="price" placeholder="Precio (€)" step="0.01" min="0.01" required/>
                 </div>
-                <div class="">
+                <div class="form-group">
                     <select name="id_artist" required>
                         <option value="">Seleccionar Artista</option>
                         <?php foreach ($artists as $artist) { ?>
@@ -144,7 +145,7 @@ $concerts = $concertController->getAllConcerts();
                         <?php } ?>
                     </select>
                 </div>
-                <button type="submit" name="create" class="">Publicar Concierto</button>
+                <button type="submit" name="create" class="primary-button">Publicar Concierto</button>
             </form>
         </section>
 
@@ -155,7 +156,7 @@ $concerts = $concertController->getAllConcerts();
 
             <!-- Tabla de conciertos -->
             <table>
-                <th>
+                <thead>
                     <tr>
                         <th>Evento</th>
                         <th>Lugar</th>
@@ -165,8 +166,8 @@ $concerts = $concertController->getAllConcerts();
                         <th>Artista</th>
                         <th>Acciones</th>
                     </tr>
-                </th>
-                <tb>
+                </thead>
+                <tbody>
                     <?php if (empty($concerts)) { ?>
                         <tr>
                             <td colspan="7">No hay conciertos para mostrar.</td>
@@ -189,18 +190,18 @@ $concerts = $concertController->getAllConcerts();
                                 <!-- Cada campo tiene de valor predeterminado el que tiene actualmente -->
                                 <tr>
                                     <td colspan="7">
-                                        <form method="post" class="">
-                                            <div class="">
+                                        <form method="post" class="concert-form">
+                                            <div class="form-group">
                                                 <input type="hidden" name="id_concert" value="<?php echo $concert['id_concert']; ?>">
                                                 <input type="text" name="name" value="<?php echo htmlspecialchars($concert['name']); ?>" required />
                                                 <input type="text" name="location" value="<?php echo htmlspecialchars($concert['location']); ?>" required />
                                             </div>
-                                            <div class="">
+                                            <div class="form-group">
                                                 <input type="date" name="date" value="<?php echo $concert['date']; ?>" required min="<?php echo date('Y-m-d'); ?>" />
                                                 <input type="time" name="time" value="<?php echo $concert['time']; ?>" required />
                                                 <input type="number" name="price" value="<?php echo $concert['price']; ?>" step="0.01" min="0.01" required />
                                             </div>
-                                            <div class="">
+                                            <div class="form-group">
                                                 <select name="id_artist" required>
                                                     <option value="">Seleccionar Artista</option>
                                                     <?php foreach ($artists as $artist) { ?>
@@ -210,8 +211,8 @@ $concerts = $concertController->getAllConcerts();
                                                     <?php } ?>
                                                 </select>
                                             </div>
-                                            <button type="submit" name="update" class="">Guardar Cambios</button>
-                                            <a href="dashboard.php" class="">Cancelar</a>
+                                            <button type="submit" name="update" class="primary-button">Guardar Cambios</button>
+                                            <a href="dashboard.php" class="cancel-button">Cancelar</a>
                                         </form>
                                     </td>
                                 </tr>
@@ -226,18 +227,18 @@ $concerts = $concertController->getAllConcerts();
                                     <td><?php echo $nombre_artista; ?></td>
                                     <td>
                                         <!-- Botón para editar (Da el ID del artista al $_GET['edit']) -->
-                                        <a href="dashboard.php?edit=<?php echo $concert['id_concert']; ?>" class="">Editar</a>
+                                        <a href="dashboard.php?edit=<?php echo $concert['id_concert']; ?>" class="edit-button">Editar</a>
                                         <!-- Botón para eliminar -->
                                         <form method="post" style="display:inline;">
                                             <input type="hidden" name="delete" value="<?php echo $concert['id_concert']; ?>">
-                                            <button type="submit" class="" onclick="return confirm('¿Quieres eliminar este concierto?')">Eliminar</button>
+                                            <button type="submit" class="delete-button" onclick="return confirm('¿Quieres eliminar este concierto?')">Eliminar</button>
                                         </form>
                                     </td>
                                 </tr>
                             <?php } ?>
                         <?php } ?>
                     <?php } ?>
-                </tb>
+                </tbody>
             </table>
         </section>
     </div>
