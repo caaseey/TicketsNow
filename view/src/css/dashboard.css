@@ -145,19 +145,19 @@ td form {
 /* Mensajes de éxito/error */
 .success-message,
 .error-message {
-    padding: 0.5rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
     text-align: center;
 }
 
 .success-message {
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: rgb(255, 255, 255);
     color: green;
 }
 
 .error-message {
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
     color: red;
 }
 
