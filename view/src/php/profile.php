@@ -1,9 +1,18 @@
 <?php
 session_start();
+require_once __DIR__ . '/../../../controller/UserController.php';
 
 if (!isset($_SESSION['logged_in']) || !isset($_SESSION['id_user'])) {
     header('Location: login.php');
     exit();
+}
+
+$controller = new UserController();
+
+// Si se ha enviado el formulario de borrar cuenta
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_account'])) {
+    $controller->deleteUser($_SESSION['id_user']);
+    exit(); // Este exit es redundante pero asegura que no sigue procesando más HTML
 }
 
 try {
@@ -82,7 +91,6 @@ $role = $user['id_role'];
 </head>
 
 <body>
-<!-- NAVBAR igual que en index.php pero sin barra de búsqueda -->
 <nav class="navbar">
     <div>
         <a href="../../../view/index.php" class="logo">
@@ -129,43 +137,50 @@ $role = $user['id_role'];
     </div>
 </nav>
 
-    <div class="profile-container">
-        <div class="profile-sidebar">
-            <img src="<?php echo htmlspecialchars($photo); ?>" alt="Foto de perfil">
-            <h3><?php echo htmlspecialchars($name); ?></h3>
-        </div>
-        <div class="profile-info">
-            <h2>👤 Mi perfil</h2>
-            <?php if (!empty($errorMsg)): ?>
-                <div class="error-msg"><?= htmlspecialchars($errorMsg); ?></div>
-            <?php endif; ?>
-
-
-            <div class="info-group">
-                <label>Nombre</label>
-                <span><?php echo htmlspecialchars($name); ?></span>
-            </div>
-            <div class="info-group">
-                <label>Apellido</label>
-                <span><?php echo htmlspecialchars($surname); ?></span>
-            </div>
-            <div class="info-group">
-                <label>Correo electrónico</label>
-                <span><?php echo htmlspecialchars($email); ?></span>
-            </div>
-
-            <?php if ($role == 3): ?>
-                <form action="profile.php" method="post" enctype="multipart/form-data">
-                    <div class="info-group">
-                        <label>Cambiar foto de perfil</label>
-                        <input type="file" name="profile_photo" accept="image/*" required>
-                    </div>
-                    <button type="submit" class="profile-update-btn">Guardar cambios</button>
-                </form>
-            <?php endif; ?>
-        </div>
+<div class="profile-container">
+    <div class="profile-sidebar">
+        <img src="<?php echo htmlspecialchars($photo); ?>" alt="Foto de perfil">
+        <h3><?php echo htmlspecialchars($name); ?></h3>
     </div>
+    <div class="profile-info">
+        <h2>👤 Mi perfil</h2>
+        <?php if (!empty($errorMsg)): ?>
+            <div class="error-msg"><?= htmlspecialchars($errorMsg); ?></div>
+        <?php endif; ?>
 
+        <div class="info-group">
+            <label>Nombre</label>
+            <span><?php echo htmlspecialchars($name); ?></span>
+        </div>
+        <div class="info-group">
+            <label>Apellido</label>
+            <span><?php echo htmlspecialchars($surname); ?></span>
+        </div>
+        <div class="info-group">
+            <label>Correo electrónico</label>
+            <span><?php echo htmlspecialchars($email); ?></span>
+        </div>
+
+        <?php if ($role == 3): ?>
+            <form action="profile.php" method="post" enctype="multipart/form-data">
+                <div class="info-group">
+                    <label>Cambiar foto de perfil</label>
+                    <input type="file" name="profile_photo" accept="image/*" required>
+                </div>
+                <button type="submit" class="profile-update-btn">Guardar cambios</button>
+            </form>
+        <?php endif; ?>
+
+        <!-- Formulario para borrar cuenta -->
+        <form method="post" onsubmit="return confirm('¿Estás seguro de que deseas borrar tu cuenta? Esta acción no se puede deshacer.');">
+            <input type="hidden" name="delete_account" value="1">
+            <button type="submit" class="profile-delete-btn" style="background-color:#e74c3c; color:white; margin-top:20px;">
+                🗑️ Borrar cuenta
+            </button>
+        </form>
+
+    </div>
+</div>
 </body>
 
 </html>

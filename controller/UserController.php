@@ -132,4 +132,37 @@ class UserController
             return "Error al registrar: " . $e->getMessage();
         }
     }
+
+    public function deleteUser($id_user)
+    {
+        try {
+            // Obtener la foto actual del usuario
+            $stmt = $this->conn->prepare("SELECT profile_photo FROM users WHERE id_user = ?");
+            $stmt->execute([$id_user]);
+            $photo = $stmt->fetchColumn();
+
+            // Eliminar usuario
+            $stmt = $this->conn->prepare("DELETE FROM users WHERE id_user = ?");
+            $stmt->execute([$id_user]);
+
+            // Eliminar foto si no es la predeterminada
+            $defaultPhoto = '../../media/img/Interfaces/user_icon.png';
+            if ($photo && $photo !== $defaultPhoto) {
+                $filePath = __DIR__ . '/../../' . str_replace('../', '', $photo);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+            }
+
+            // Destruir sesión
+            session_start();
+            session_destroy();
+
+            header("Location: login.php");
+            exit();
+        } catch (PDOException $e) {
+            die("Error al eliminar el usuario: " . $e->getMessage());
+        }
+    }
+
 }
