@@ -102,6 +102,7 @@ class UserController
         return $this->register($data, 3);
     }
 
+    // Hice el merge muy mal perdon, a la siguiente lo hare mejor pero no me di cuenta que estaba en otra rama
     private function register($data, $role_id)
     {
         if (
