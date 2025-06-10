@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/register.css">
 </head>
+
 <body>
     <header class="navbar logo-only">
         <div class="logo">
@@ -59,6 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="input-group">
                     <input type="text" name="apellido2" placeholder="Segundo apellido" required>
                 </div>
+                <div class="input-group">
+                    <input type="date" name="fechade_nacimiento" placeholder="Fecha de nacimiento" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="telefono" placeholder="Teléfono" required>
+                </div>
                 <div class="buttons">
                     <button type="submit" class="button">Registrar</button>
                 </div>
@@ -67,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="register_user.php">Registrarse como Usuario</a>
                     <a href="register_admin.php">Registrarse como Admin</a>
                 </div>
-            </form> 
+            </form>
         </div>
 
         <div class="image-container">
@@ -75,4 +83,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 </body>
+
 </html>

@@ -26,6 +26,8 @@ class UserController
                     name VARCHAR(100),
                     surname VARCHAR(100),
                     surname2 VARCHAR(100),
+                    fechade_nacimiento DATE,
+                    telefono VARCHAR(9) DEFAULT NULL,
                     id_role INT,
                     profile_photo VARCHAR(255)
                 )
@@ -59,6 +61,8 @@ class UserController
                 $_SESSION['user_surname'] = $user['surname'];
                 $_SESSION['user_surname2'] = $user['surname2'];
                 $_SESSION['user_email'] = $email;
+                $_SESSION['fechade_nacimiento'] = $user['fechade_nacimiento'];
+                $_SESSION['telefono'] = $user['telefono'] ?? ''; // telefono es opcional
                 $_SESSION['id_role'] = $user['id_role'];
 
                 header("Location: ./profile.php");
@@ -110,11 +114,12 @@ class UserController
             empty($data['password']) ||
             empty($data['nombre']) ||
             empty($data['apellido']) ||
-            empty($data['apellido2'] ?? '') // apellido2 es opcional
+            empty($data['apellido2'] ?? '') || // apellido2 es opcional
+            empty($data['fechade_nacimiento']) || 
+            empty($data['telefono'] ?? '')          // teléfono es opcional
         ) {
             return "Todos los campos son obligatorios.";
         }
-
         $email = $data['email'];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return "El correo electrónico no es válido.";
@@ -129,6 +134,20 @@ class UserController
         $name = $data['nombre'];
         $surname = $data['apellido'];
         $surname2 = $data['apellido2'] ?? ''; // apellido2 es opcional
+        $fechade_nacimiento = $data['fechade_nacimiento'];
+        // Convertir la fecha de nacimiento a un objeto DateTime
+        $fecha_nacimiento = new DateTime($fechade_nacimiento);
+        $today = new DateTime();
+        // Calcular la diferencia de fechas
+        $diferencia = $today->diff($fecha_nacimiento);
+        // Verificar si el usuario tiene al menos 18 años
+        if ($diferencia->y < 18) {
+            return "Debes tener al menos 18 años para registrarte.";
+        }
+        $telefono = $data['telefono'] ?? ''; // teléfono es opcional
+        if($telefono && !preg_match('/^\d{9}$/', $telefono)) {
+            return "El teléfono debe tener 9 dígitos.";
+        }
         $profilePhoto = '';
 
         try {
@@ -139,8 +158,8 @@ class UserController
                 return "El correo electrónico ya está registrado.";
             }
 
-            $stmt = $this->conn->prepare("INSERT INTO users (email, password, name, surname, surname2, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$email, $password, $name, $surname, $surname2, $role_id, $profilePhoto]);
+            $stmt = $this->conn->prepare("INSERT INTO users (email, password, name, surname, surname2, fechade_nacimiento, telefono, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$email, $password, $name, $surname, $surname2, $fecha_nacimiento->format('Y-m-d'), $telefono, $role_id, $profilePhoto]);
 
             header("Location: login.php");
             exit;
@@ -148,7 +167,6 @@ class UserController
             return "Error al registrar: " . $e->getMessage();
         }
     }
-
     public function deleteUser($id_user)
     {
         try {
