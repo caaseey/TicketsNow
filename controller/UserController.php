@@ -116,6 +116,9 @@ class UserController
         }
 
         $email = $data['email'];
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "El correo electrónico no es válido.";
+        }
         $password = $data['password'];
         $pattern = "/^(?=.*\d)[a-zA-Z]{6}\d?|\d[a-zA-Z]{6}$/"; // He usado el chatgpt para el regex ya que no soy experto en regex
         // Verificamos con un if que la contraseña sea válida con el patron del regex que hemos usado antes
