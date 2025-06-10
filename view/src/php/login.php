@@ -6,9 +6,11 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 require_once __DIR__ . '/../../../controller/UserController.php';
 
 $error = "";
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//Si a este fichero (login.php) se le envía una petición POST, significa que se ha enviado el formulario de inicio de sesión
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+    // Se crea una instancia del controlador de usuarios
     $UserController = new UserController();
-    $error = $UserController->login();
+    $error = $UserController->login(); // Llama al método login del controlador de usuarios, que maneja el inicio de sesión
 }
 ?>
 <!DOCTYPE html>
