@@ -105,15 +105,23 @@ class UserController
     private function register($data, $role_id)
     {
         if (
-            empty($data['email']) || empty($data['password']) ||
-            empty($data['nombre']) || empty($data['apellido']) ||
+            empty($data['email']) ||
+            empty($data['password']) ||
+            empty($data['nombre']) ||
+            empty($data['apellido']) ||
             empty($data['apellido2'] ?? '') // apellido2 es opcional
         ) {
             return "Todos los campos son obligatorios.";
         }
 
         $email = $data['email'];
-        $password = password_hash($data['password'], PASSWORD_DEFAULT);
+        $password = $data['password'];
+        $pattern = "/^(?=.*\d)[a-zA-Z]{6}\d?|\d[a-zA-Z]{6}$/"; // He usado el chatgpt para el regex ya que no soy experto en regex
+        // Verificamos con un if que la contraseña sea válida con el patron del regex que hemos usado antes
+        if (!preg_match($pattern, $password)) { // si no coincide con el patrón
+            return "La contraseña debe contener exactamente 6 letras seguidas de 1 dígito."; //return de un mensaje de error
+        } // si la contraseña es válida, la hasheamos
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $name = $data['nombre'];
         $surname = $data['apellido'];
         $surname2 = $data['apellido2'] ?? ''; // apellido2 es opcional
@@ -168,5 +176,4 @@ class UserController
             die("Error al eliminar el usuario: " . $e->getMessage());
         }
     }
-
 }
