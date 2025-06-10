@@ -10,7 +10,10 @@ CREATE TABLE IF NOT EXISTS users (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(25) NOT NULL,
     surname VARCHAR(25) NOT NULL,
+    surname2 VARCHAR(25),
+    fechade_nacimiento DATE,
     email VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(9),
     password VARCHAR(255) NOT NULL,
     id_role INT NOT NULL,
     profile_photo VARCHAR(255),
@@ -22,7 +25,7 @@ CREATE TABLE IF NOT EXISTS artists (
     name VARCHAR(255) NOT NULL UNIQUE,
     genre VARCHAR(100),
     banner_image VARCHAR(255)
-)
+);
 
 CREATE TABLE IF NOT EXISTS concerts (
     id_concert INT AUTO_INCREMENT PRIMARY KEY,
@@ -33,7 +36,7 @@ CREATE TABLE IF NOT EXISTS concerts (
     price DECIMAL(10,2) NOT NULL,
     id_artist INT,
     FOREIGN KEY (id_artist) REFERENCES artists(id_artist)
-)
+);
 
 -- Insertar roles
 INSERT INTO roles (rol_name) VALUES ('user'), ('artist'), ('admin');
