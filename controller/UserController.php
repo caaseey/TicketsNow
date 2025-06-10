@@ -25,6 +25,7 @@ class UserController
                     password VARCHAR(255) NOT NULL,
                     name VARCHAR(100),
                     surname VARCHAR(100),
+                    surname2 VARCHAR(100),
                     id_role INT,
                     profile_photo VARCHAR(255)
                 )
@@ -56,6 +57,7 @@ class UserController
                 $_SESSION['id_user'] = $user['id_user'];
                 $_SESSION['user_name'] = $user['name'];
                 $_SESSION['user_surname'] = $user['surname'];
+                $_SESSION['user_surname2'] = $user['surname2'];
                 $_SESSION['user_email'] = $email;
                 $_SESSION['id_role'] = $user['id_role'];
 
@@ -104,7 +106,8 @@ class UserController
     {
         if (
             empty($data['email']) || empty($data['password']) ||
-            empty($data['nombre']) || empty($data['apellido'])
+            empty($data['nombre']) || empty($data['apellido']) ||
+            empty($data['apellido2'] ?? '') // apellido2 es opcional
         ) {
             return "Todos los campos son obligatorios.";
         }
@@ -113,6 +116,7 @@ class UserController
         $password = password_hash($data['password'], PASSWORD_DEFAULT);
         $name = $data['nombre'];
         $surname = $data['apellido'];
+        $surname2 = $data['apellido2'] ?? ''; // apellido2 es opcional
         $profilePhoto = '';
 
         try {
@@ -123,8 +127,8 @@ class UserController
                 return "El correo electrónico ya está registrado.";
             }
 
-            $stmt = $this->conn->prepare("INSERT INTO users (email, password, name, surname, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$email, $password, $name, $surname, $role_id, $profilePhoto]);
+            $stmt = $this->conn->prepare("INSERT INTO users (email, password, name, surname, surname2, id_role, profile_photo) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$email, $password, $name, $surname, $surname2, $role_id, $profilePhoto]);
 
             header("Location: login.php");
             exit;
