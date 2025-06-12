@@ -160,6 +160,10 @@ $role = $user['id_role'];
             <label>Correo electrónico</label>
             <span><?php echo htmlspecialchars($email); ?></span>
         </div>
+        <div class="info-group">
+            <label>Número de telefono</label>
+            <span><?php echo htmlspecialchars($user['telefono']); ?></span>
+        </div>
 
         <?php if ($role == 3): ?>
             <form action="profile.php" method="post" enctype="multipart/form-data">
